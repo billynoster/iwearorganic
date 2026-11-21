@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Logo } from '@/components/logo';
 
 /** Brand kit §40 footer groups */
 const COLUMNS = [
@@ -45,9 +46,7 @@ export function EditorialFooter() {
       <div className="ca-container">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-4">
-            <p className="font-brand text-lg font-semibold tracking-tight text-forest">
-              I Wear Organic.
-            </p>
+            <Logo variant="forest" className="w-[168px]" />
             <p className="ca-editorial mt-3 max-w-xs text-xl text-mineral-ink">
               Wear something better.
             </p>

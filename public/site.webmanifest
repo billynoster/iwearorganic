@@ -1,0 +1,19 @@
+{
+  "name": "I Wear Organic",
+  "short_name": "IWO",
+  "icons": [
+    {
+      "src": "/brand/icons/iwo-icon-forest-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/brand/icons/iwo-icon-forest-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#294936",
+  "background_color": "#F6F2E8",
+  "display": "standalone"
+}
