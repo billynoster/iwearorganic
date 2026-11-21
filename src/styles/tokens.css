@@ -1,0 +1,121 @@
+/**
+ * Coastal Analog 3.2 — design tokens
+ * Creative lock: Option B — Bold Editorial
+ * Campaign: The Art of Everyday.
+ * Typography: BLEND America Typography System v2.0
+ */
+
+:root {
+  /* Brand palette */
+  --ca-linen: #f4f1eb;
+  --ca-oat: #ddd4c9;
+  --ca-dusk-rose: #bfa4a1;
+  --ca-haze-blue: #91a7af;
+  --ca-mineral-ink: #303435;
+  --ca-white: #ffffff;
+
+  /* Semantic mapping (light editorial surface) */
+  --background: 40 24% 94%; /* Linen */
+  --foreground: 186 5% 20%; /* Mineral Ink */
+  --card: 36 18% 92%;
+  --card-foreground: 186 5% 20%;
+  --popover: 40 24% 94%;
+  --popover-foreground: 186 5% 20%;
+  --primary: 186 5% 20%;
+  --primary-foreground: 40 24% 94%;
+  --secondary: 33 15% 84%;
+  --secondary-foreground: 186 5% 20%;
+  --muted: 33 15% 88%;
+  --muted-foreground: 186 5% 32%;
+  --accent: 198 16% 63%;
+  --accent-foreground: 186 5% 20%;
+  --destructive: 0 55% 42%;
+  --destructive-foreground: 40 24% 94%;
+  --border: 33 12% 82%;
+  --input: 33 12% 82%;
+  --ring: 186 5% 20%;
+  --radius: 0.375rem; /* ~6px architectural */
+
+  /**
+   * Typography roles — Phase 8A consolidation
+   * Loaded via Google Fonts in layout:
+   * Outfit 700 (wordmark only) / DM Sans (all functional) / Instrument Serif (editorial).
+   * Archivo removed — functional display aliases map to DM Sans.
+   */
+  --font-brand: 'Outfit', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-editorial: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  /* Functional display / legacy heading aliases → DM Sans */
+  --font-display: var(--font-body);
+  --font-heading: var(--font-body);
+
+  /**
+   * Fluid type scale
+   * Editorial sizes pair with Instrument (.ca-editorial-display / .text-hero…).
+   * Functional sizes pair with DM Sans (.ca-display / .ca-heading / .text-collection…).
+   * Do not use .text-hero on functional commerce titles — use .text-collection / .text-h2.
+   */
+  --text-hero: clamp(2.75rem, 1.7rem + 4.2vw, 5.5rem); /* 44–88 · editorial campaign H1 only */
+  --text-editorial: clamp(2.625rem, 1.7rem + 3.2vw, 4.5rem); /* 42–72 · Lookbook / Worn storytelling */
+  --text-editorial-section: clamp(2rem, 1.65rem + 1.4vw, 3rem); /* 32–48 · Everyday Uniform */
+  --text-editorial-promo: clamp(2rem, 1.55rem + 1.8vw, 3rem); /* 32–48 · App Store */
+  --text-collection: clamp(2rem, 1.55rem + 2.2vw, 3.5rem); /* 32–56 · functional page / collection H1 */
+  --text-h2: clamp(1.75rem, 1.4rem + 1.5vw, 2.75rem); /* 28–44 · functional section H2 */
+  --text-h3: clamp(1.375rem, 1.2rem + 0.7vw, 1.875rem); /* 22–30 */
+  --text-pdp-title: clamp(1.625rem, 1.5rem + 0.6vw, 2.25rem); /* 26–36 · product H1 */
+  --text-product: clamp(1rem, 0.95rem + 0.2vw, 1.125rem); /* 16–18 · card title */
+  --text-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); /* 16–18 */
+  --text-support: 0.875rem; /* 14 · meta / secondary */
+  --text-eyebrow: 0.6875rem; /* 11 · labels / captions */
+  --text-button: 0.875rem; /* 14 */
+  --leading-headline: 1.1;
+  --leading-editorial: 1.08;
+  --leading-body: 1.55;
+  /* Hierarchy → utilities in globals.css:
+     editorial display | functional display | title | body | label | meta */
+  --ca-swatch-size: 1.875rem; /* 30px circular color swatches */
+
+  /* Layout */
+  --ca-max: 1360px;
+  --ca-gutter: clamp(1rem, 4vw, 4rem);
+  --header-height: 4rem;
+
+  /**
+   * 8px spacing scale (Coastal Analog shop UI).
+   * Prefer these over one-off magic numbers in commerce surfaces.
+   * Maps cleanly to Tailwind: 2=8, 4=16, 6=24, 8=32, 10=40, 12=48.
+   */
+  --ca-space-1: 0.5rem; /* 8px — tight control/chip gap */
+  --ca-space-2: 1rem; /* 16px — label → control */
+  --ca-space-3: 1.5rem; /* 24px — related block nest */
+  --ca-space-4: 2rem; /* 32px — major purchase/commerce stack */
+  --ca-space-5: 2.5rem; /* 40px — section breathing */
+  --ca-space-6: 3rem; /* 48px — page section */
+  --ca-touch: 2.75rem; /* 44px — min touch target */
+
+  /**
+   * Editorial homepage section band (token-derived, not one-off).
+   * One band between sections; adjacent .ca-section-y collapse top pad
+   * so stacked linen blocks don’t double the gap.
+   */
+  --ca-section-y: calc(var(--ca-space-6) + var(--ca-space-2)); /* 64px */
+}
+
+@media (min-width: 640px) {
+  :root {
+    --ca-section-y: calc(var(--ca-space-6) + var(--ca-space-4)); /* 80px */
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --ca-section-y: calc(var(--ca-space-6) * 2); /* 96px */
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-height: 4.5rem;
+    --text-eyebrow: 0.75rem; /* 12 */
+  }
+}

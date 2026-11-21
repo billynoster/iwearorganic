@@ -1,0 +1,5 @@
+{
+  "name": "I Wear Organic",
+  "description": "I Wear Organic — made-to-order organic apparel storefront (Printify / Stripe / Firebase).",
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,436 @@
+@import '../styles/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-height) + 0.75rem);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-linen text-mineral-ink antialiased;
+    font-family: var(--font-body);
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-mineral-ink ring-offset-2 ring-offset-linen;
+  }
+}
+
+@layer utilities {
+  .font-brand {
+    font-family: var(--font-brand);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-editorial {
+    font-family: var(--font-editorial);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /** Editorial campaign H1 size only — pair with .ca-editorial-display */
+  .text-hero {
+    font-size: var(--text-hero);
+    line-height: var(--leading-editorial);
+  }
+
+  .text-editorial {
+    font-size: var(--text-editorial);
+    line-height: var(--leading-editorial);
+  }
+
+  .text-editorial-section {
+    font-size: var(--text-editorial-section);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+  }
+
+  .text-editorial-promo {
+    font-size: var(--text-editorial-promo);
+    line-height: var(--leading-editorial);
+  }
+
+  .text-collection {
+    font-size: var(--text-collection);
+    line-height: var(--leading-headline);
+  }
+
+  .text-h2 {
+    font-size: var(--text-h2);
+    line-height: var(--leading-headline);
+  }
+
+  .text-h3 {
+    font-size: var(--text-h3);
+    line-height: 1.15;
+  }
+
+  .text-pdp-title {
+    font-size: var(--text-pdp-title);
+    line-height: 1.2;
+  }
+
+  .text-product {
+    font-size: var(--text-product);
+    line-height: 1.35;
+  }
+
+  .ca-container {
+    width: 100%;
+    max-width: var(--ca-max);
+    margin-inline: auto;
+    padding-inline: var(--ca-gutter);
+    min-width: 0;
+  }
+
+  .ca-grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.28'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer components {
+  /**
+   * Typography hierarchy — Phase 8A
+   * editorial display → .ca-editorial-display (Instrument) + .text-hero / .text-editorial*
+   * functional display → .ca-display / .ca-heading (DM Sans) + .text-collection / .text-h2 / .text-h3 / .text-pdp-title
+   * title  → .ca-product-title | .ca-display + .text-pdp-title
+   * body   → .ca-lede
+   * label  → .ca-eyebrow | .ca-field-label | .ca-btn-*
+   * meta   → .ca-meta | .ca-caption
+   * brand  → .font-brand (Outfit 700 wordmark only)
+   * Override color with Tailwind when on photo (e.g. text-linen/90).
+   */
+  .ca-eyebrow {
+    @apply font-body font-medium uppercase tracking-[0.16em];
+    font-size: var(--text-eyebrow);
+    color: color-mix(in srgb, var(--ca-mineral-ink) 55%, transparent);
+  }
+
+  /** Functional commerce headings — DM Sans (was Archivo) */
+  .ca-display {
+    @apply font-body font-semibold tracking-[-0.02em] text-mineral-ink text-balance;
+    line-height: var(--leading-headline);
+  }
+
+  .ca-heading {
+    @apply font-body font-semibold tracking-tight text-mineral-ink text-balance;
+    line-height: var(--leading-headline);
+  }
+
+  .ca-editorial {
+    @apply font-editorial italic tracking-[-0.01em] text-mineral-ink text-balance;
+  }
+
+  /**
+   * Editorial campaign / Lookbook storytelling headlines (Instrument Serif).
+   * Distinct from `.ca-display` (DM Sans) on shop / PLP / PDP / checkout.
+   */
+  .ca-editorial-display {
+    @apply font-editorial font-normal tracking-[-0.01em] text-balance;
+    line-height: var(--leading-editorial);
+  }
+
+  .ca-lede {
+    @apply font-body;
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+    color: color-mix(in srgb, var(--ca-mineral-ink) 72%, transparent);
+  }
+
+  .ca-product-title {
+    @apply font-body font-semibold tracking-tight text-mineral-ink;
+    font-size: var(--text-product);
+    line-height: 1.35;
+  }
+
+  /** Secondary UI copy — prices, refine labels, helper lines */
+  .ca-meta {
+    @apply font-body;
+    font-size: var(--text-support);
+    line-height: 1.45;
+    color: color-mix(in srgb, var(--ca-mineral-ink) 60%, transparent);
+  }
+
+  /** Micro captions / badges — eyebrow metrics, quieter ink */
+  .ca-caption {
+    @apply font-body font-medium uppercase tracking-[0.16em];
+    font-size: var(--text-eyebrow);
+    color: color-mix(in srgb, var(--ca-mineral-ink) 45%, transparent);
+  }
+
+  .ca-btn-primary {
+    @apply inline-flex max-w-full min-h-11 items-center justify-center gap-2 rounded-full bg-mineral-ink px-6 py-3 font-body font-semibold tracking-wide text-linen transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mineral-ink focus-visible:ring-offset-2 focus-visible:ring-offset-linen;
+    font-size: var(--text-button);
+    color: var(--ca-linen);
+  }
+
+  .ca-btn-primary:hover {
+    background-color: color-mix(in srgb, var(--ca-mineral-ink) 90%, white);
+    color: var(--ca-linen);
+  }
+
+  .ca-btn-primary:disabled {
+    color: var(--ca-linen);
+  }
+
+  .ca-btn-secondary {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-linen px-6 py-3 font-body font-semibold tracking-wide text-mineral-ink transition-colors duration-150 hover:bg-oat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-linen focus-visible:ring-offset-2 focus-visible:ring-offset-mineral-ink;
+    font-size: var(--text-button);
+  }
+
+  .ca-text-link {
+    @apply inline-flex items-center gap-1.5 font-body text-sm font-medium text-mineral-ink underline-offset-4 hover:underline;
+  }
+
+  /**
+   * Shopwide 8px rhythm utilities (Option B commerce surfaces).
+   * Align with --ca-space-* in tokens.css / PDP purchase panel.
+   */
+  .ca-field {
+    @apply flex flex-col items-start gap-4; /* 16px label → control */
+  }
+
+  .ca-field-label {
+    @apply block font-body text-sm font-medium text-mineral-ink;
+  }
+
+  .ca-control-row {
+    @apply flex flex-wrap gap-2; /* 8px between chips / options */
+  }
+
+  /**
+   * PDP circular color swatches (Visual Polish v2.1).
+   * 44px touch target; ~30px visual circle; selected/focus/unavailable states.
+   */
+  .ca-swatch-row {
+    @apply flex flex-wrap gap-1; /* tight row; touch pads provide spacing */
+  }
+
+  .ca-swatch {
+    display: inline-flex;
+    height: var(--ca-touch);
+    width: var(--ca-touch);
+    flex-shrink: 0;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+  }
+
+  .ca-swatch-face {
+    position: relative;
+    display: block;
+    height: var(--ca-swatch-size);
+    width: var(--ca-swatch-size);
+    border-radius: 9999px;
+    border: 1px solid color-mix(in srgb, var(--ca-mineral-ink) 18%, transparent);
+    background-color: var(--ca-oat);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ca-white) 35%, transparent);
+    transition: box-shadow 150ms ease, border-color 150ms ease;
+  }
+
+  .ca-swatch:hover .ca-swatch-face {
+    border-color: color-mix(in srgb, var(--ca-mineral-ink) 40%, transparent);
+  }
+
+  .ca-swatch-face--unknown {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      var(--ca-oat),
+      var(--ca-oat) 3px,
+      color-mix(in srgb, var(--ca-mineral-ink) 8%, var(--ca-oat)) 3px,
+      color-mix(in srgb, var(--ca-mineral-ink) 8%, var(--ca-oat)) 6px
+    );
+  }
+
+  .peer:checked + .ca-swatch .ca-swatch-face {
+    box-shadow:
+      0 0 0 2px var(--ca-linen),
+      0 0 0 3.5px var(--ca-mineral-ink);
+    border-color: transparent;
+  }
+
+  .peer:focus-visible + .ca-swatch {
+    outline: 2px solid var(--ca-haze-blue);
+    outline-offset: 2px;
+  }
+
+  .peer:disabled + .ca-swatch {
+    cursor: not-allowed;
+  }
+
+  .peer:disabled + .ca-swatch .ca-swatch-face {
+    opacity: 0.45;
+  }
+
+  .peer:disabled + .ca-swatch .ca-swatch-face::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+      to top right,
+      transparent calc(50% - 0.5px),
+      color-mix(in srgb, var(--ca-mineral-ink) 55%, transparent) 50%,
+      transparent calc(50% + 0.5px)
+    );
+  }
+
+  .ca-stack {
+    @apply flex flex-col gap-8; /* 32px major commerce blocks */
+  }
+
+  .ca-stack-tight {
+    @apply flex flex-col gap-4; /* 16px related rows */
+  }
+
+  .ca-panel-header {
+    @apply flex shrink-0 items-center justify-between gap-4 border-b border-oat px-6 py-4;
+  }
+
+  .ca-panel-body {
+    @apply min-h-0 flex-1 overflow-y-auto overscroll-contain px-6 py-4;
+  }
+
+  .ca-panel-footer {
+    @apply shrink-0 border-t border-oat px-6 pt-4;
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .ca-section-rule {
+    @apply mt-8 border-t border-oat pt-8; /* 32px above + below rule */
+  }
+
+  /**
+   * Homepage / editorial vertical section rhythm.
+   * Uses --ca-section-y from tokens.css. Adjacent siblings collapse
+   * padding-top so Collection → Everyday (etc.) share one band.
+   * Do not collapse into the global footer — EditorialFooter keeps full
+   * padding-block so the top hairline has the same inside-band spacing
+   * on home and PLP (ShopShell) routes.
+   */
+  .ca-section-y {
+    padding-block: var(--ca-section-y);
+  }
+
+  .ca-section-y + .ca-section-y {
+    padding-top: 0;
+  }
+
+  .ca-toolbar {
+    @apply flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-3;
+  }
+
+  .ca-chip-row {
+    @apply flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:flex-wrap sm:overflow-visible;
+  }
+
+  .ca-qty {
+    @apply inline-flex items-stretch border border-oat;
+  }
+
+  .ca-qty-btn {
+    @apply inline-flex min-h-11 min-w-11 items-center justify-center font-body text-mineral-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-inset;
+  }
+
+  .ca-qty-btn:hover:not(:disabled) {
+    background-color: color-mix(in srgb, var(--ca-oat) 40%, transparent);
+  }
+
+  .ca-qty-btn:disabled {
+    opacity: 0.4;
+  }
+
+  .ca-qty-input {
+    @apply w-14 border-x border-oat bg-linen text-center font-body text-sm text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-inset;
+  }
+
+  .ca-input {
+    @apply min-h-11 w-full rounded-[6px] border border-oat bg-linen px-3 py-2 font-body text-sm text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue;
+  }
+
+  .ca-input::placeholder {
+    color: color-mix(in srgb, var(--ca-mineral-ink) 40%, transparent);
+  }
+
+  .ca-select {
+    @apply min-h-11 rounded-[6px] border border-oat bg-linen px-3 font-body text-sm text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue;
+  }
+
+  /**
+   * Skip link — visually hidden until focused; clears sticky masthead.
+   */
+  .ca-skip-link {
+    @apply absolute left-4 top-0 z-[100] -translate-y-[120%] rounded-full bg-mineral-ink px-4 py-2 font-body text-sm font-medium text-linen transition-transform focus:translate-y-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-offset-2 focus-visible:ring-offset-linen;
+  }
+
+  #main-content {
+    scroll-margin-top: calc(var(--header-height) + 0.75rem);
+  }
+
+  /**
+   * PDP sticky purchase panel — desktop ≥1024px only.
+   * Header: sticky h-16 (4rem) / lg h-[4.5rem]; keep 24px gap below.
+   */
+  .product-info-panel {
+    position: static;
+  }
+
+  @media (min-width: 1024px) {
+    .product-info-panel {
+      position: sticky;
+      top: calc(4.5rem + 24px);
+      align-self: start;
+      max-height: calc(100vh - 4.5rem - 32px);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+  }
+}
