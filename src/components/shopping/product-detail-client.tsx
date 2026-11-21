@@ -658,7 +658,7 @@ export function ProductDetailClient({ product }: { product: PrintifyProduct }) {
                     <Zap className="mr-2 h-5 w-5 fill-current" /> Buy Now
                 </Button>
                 <Button size="lg" variant="outline" className="w-full h-14 text-lg font-bold uppercase tracking-[0.2em]" onClick={handleAddToCart} disabled={!selectedVariant}>
-                    Add to Cart
+                    Add to Bag
                 </Button>
             </div>
 
@@ -710,7 +710,7 @@ export function ProductDetailClient({ product }: { product: PrintifyProduct }) {
           Buy Now
         </Button>
         <Button variant="outline" className="flex-1 h-12 font-bold uppercase tracking-widest" onClick={handleAddToCart} disabled={!selectedVariant}>
-          Add to Cart
+          Add to Bag
         </Button>
       </div>
     </main>

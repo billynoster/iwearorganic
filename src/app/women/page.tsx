@@ -4,7 +4,7 @@ import { collectionsService } from '@/services';
 
 export const metadata: Metadata = {
   title: 'Women',
-  description: 'Womenswear essentials for The Art of Everyday — i wear organic.',
+  description: 'Womenswear essentials — organic clothing made for everyday life.',
 };
 
 export default async function WomenPage() {

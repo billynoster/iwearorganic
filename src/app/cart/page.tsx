@@ -65,14 +65,14 @@ export default function CartPage() {
               Your bag is empty.
             </p>
             <p className="ca-lede">
-              Explore The Everyday Collection and add pieces when you are ready.
+              Find something you&apos;ll want to wear often.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/shopping" className="ca-btn-primary">
-                Shop the collection
+              <Link href="/new-arrivals" className="ca-btn-primary">
+                Shop New Arrivals
               </Link>
-              <Link href="/new-arrivals" className="ca-text-link min-h-11 py-3">
-                New arrivals
+              <Link href="/shopping" className="ca-text-link min-h-11 py-3">
+                Shop all
                 <span aria-hidden="true">→</span>
               </Link>
             </div>

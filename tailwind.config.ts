@@ -32,20 +32,27 @@ export default {
         },
       }),
       fontFamily: {
-        body: ['var(--font-body)', 'DM Sans', 'sans-serif'],
-        brand: ['var(--font-brand)', 'Outfit', 'sans-serif'],
-        /* Phase 8A: functional display aliases → DM Sans (Archivo removed) */
-        display: ['var(--font-body)', 'DM Sans', 'sans-serif'],
+        body: ['var(--font-body)', 'Inter', 'system-ui', 'sans-serif'],
+        brand: ['var(--font-brand)', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['var(--font-body)', 'Inter', 'system-ui', 'sans-serif'],
         editorial: [
           'var(--font-editorial)',
-          'Instrument Serif',
+          'DM Serif Display',
           'Georgia',
           'serif',
         ],
-        heading: ['var(--font-body)', 'DM Sans', 'sans-serif'],
-        headline: ['var(--font-body)', 'DM Sans', 'sans-serif'],
+        heading: ['var(--font-body)', 'Inter', 'system-ui', 'sans-serif'],
+        headline: ['var(--font-body)', 'Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
+        forest: 'var(--color-forest)',
+        cotton: 'var(--color-cotton)',
+        soil: 'var(--color-soil)',
+        sage: 'var(--color-sage)',
+        clay: 'var(--color-clay)',
+        surface: 'var(--color-surface)',
+        'text-secondary': 'var(--color-text-secondary)',
+        /* Legacy aliases → brand kit */
         linen: 'var(--ca-linen)',
         oat: 'var(--ca-oat)',
         'dusk-rose': 'var(--ca-dusk-rose)',
@@ -104,9 +111,9 @@ export default {
         },
       },
       borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        lg: 'var(--radius-lg)',
+        md: 'var(--radius-md)',
+        sm: 'var(--radius-sm)',
       },
       keyframes: {
         'accordion-down': {
@@ -143,10 +150,9 @@ export default {
         'ca-ink-in': 'ca-ink-in 1.1s ease-out both',
       },
       boxShadow: {
-        DEFAULT:
-          '0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05)',
-        sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
-        lg: '0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07)',
+        DEFAULT: '0 1px 2px 0 rgb(0 0 0 / 0.04)',
+        sm: '0 1px 1px 0 rgb(0 0 0 / 0.03)',
+        lg: '0 2px 8px 0 rgb(0 0 0 / 0.06)',
       },
     },
   },

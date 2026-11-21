@@ -1,62 +1,74 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
+/** Brand kit §40 footer groups */
 const COLUMNS = [
   {
     title: 'Shop',
     links: [
-      { href: '/men', label: 'Men' },
       { href: '/women', label: 'Women' },
+      { href: '/men', label: 'Men' },
       { href: '/new-arrivals', label: 'New Arrivals' },
-      { href: '/shopping', label: 'All' },
-      { href: '/lookbook', label: 'Lookbook' },
+      { href: '/shopping', label: 'Best Sellers' },
     ],
   },
   {
-    title: 'Support',
+    title: 'About',
     links: [
+      { href: '/about', label: 'Our Story' },
+      { href: '/about', label: 'Materials' },
+      { href: '/about', label: 'Organic Standards' },
+    ],
+  },
+  {
+    title: 'Help',
+    links: [
+      { href: '/shipping', label: 'Shipping' },
+      { href: '/shipping', label: 'Returns' },
+      { href: '/contact', label: 'Size Guide' },
       { href: '/contact', label: 'Contact' },
-      { href: '/about', label: 'About' },
-      { href: '/shipping', label: 'Shipping & Returns' },
     ],
   },
   {
-    title: 'Policies',
+    title: 'Follow',
     links: [
-      { href: '/privacy', label: 'Privacy' },
-      { href: '/terms', label: 'Terms' },
+      { href: 'https://instagram.com/iwearorganic', label: 'Instagram', external: true },
+      { href: 'https://www.tiktok.com/@iwearorganic', label: 'TikTok', external: true },
+      { href: 'https://www.pinterest.com/iwearorganic', label: 'Pinterest', external: true },
+      { href: 'https://x.com/iwearorganic', label: 'X', external: true },
     ],
   },
 ];
 
-const USA_FLAG = '/editorial/brand/usa-flag.webp';
-
 export function EditorialFooter() {
   return (
-    <footer className="ca-section-y border-t border-oat bg-linen">
+    <footer className="ca-section-y border-t border-oat bg-cotton">
       <div className="ca-container">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-4">
-            <p className="font-brand text-lg font-bold lowercase tracking-tight text-mineral-ink">
-              i wear organic.
+            <p className="font-brand text-lg font-semibold tracking-tight text-forest">
+              I Wear Organic.
             </p>
-            <p className="ca-editorial mt-3 max-w-xs text-base text-mineral-ink/60">
-              Easy to wear. Hard to overlook.
+            <p className="ca-editorial mt-3 max-w-xs text-xl text-mineral-ink">
+              Wear something better.
+            </p>
+            <p className="ca-lede mt-3 max-w-xs text-sm">
+              Wear Better. Naturally.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:col-span-7 md:col-start-6">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:col-span-8">
             {COLUMNS.map((column) => (
               <div key={column.title}>
-                <p className="ca-eyebrow text-mineral-ink">
-                  {column.title}
-                </p>
+                <p className="ca-eyebrow text-mineral-ink">{column.title}</p>
                 <ul className="mt-4 space-y-2">
                   {column.links.map((link) => (
                     <li key={`${column.title}-${link.label}`}>
                       <Link
                         href={link.href}
-                        className="ca-meta inline-flex min-h-11 items-center transition-colors hover:text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue"
+                        {...('external' in link && link.external
+                          ? { target: '_blank', rel: 'noopener noreferrer' }
+                          : {})}
+                        className="ca-meta inline-flex min-h-11 items-center transition-colors hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest"
                       >
                         {link.label}
                       </Link>
@@ -69,17 +81,8 @@ export function EditorialFooter() {
         </div>
 
         <div className="mt-12 border-t border-oat pt-6">
-          <p className="ca-meta inline-flex items-center gap-2 text-mineral-ink/45">
-            <Image
-              src={USA_FLAG}
-              alt=""
-              width={91}
-              height={48}
-              unoptimized
-              className="h-4 w-auto"
-              aria-hidden="true"
-            />
-            <span>© {new Date().getFullYear()} I Wear Organic</span>
+          <p className="ca-meta text-mineral-ink/45">
+            © {new Date().getFullYear()} I Wear Organic
           </p>
         </div>
       </div>

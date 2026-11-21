@@ -71,7 +71,7 @@ export function LookbookHero() {
               pieces.
             </p>
             <p className="ca-editorial mt-6 text-base text-mineral-ink">
-              Easy to wear. Hard to overlook.
+              Wear Better. Naturally.
             </p>
           </div>
         </div>

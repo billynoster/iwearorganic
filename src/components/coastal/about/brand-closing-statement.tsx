@@ -1,41 +1,39 @@
 import Link from 'next/link';
 
-/** Closing brand signature + verified shop CTA (`/shopping`). */
+/** Closing brand signature + shop CTA (`/shopping`). */
 export function BrandClosingStatement() {
   return (
     <section
       aria-labelledby="about-closing-heading"
-      className="border-t border-oat/70 bg-linen"
+      className="border-t border-oat/70 bg-cotton"
     >
       <div className="ca-container py-16 sm:py-20 md:py-24">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="ca-eyebrow mb-5 text-haze-blue">
-            blend america / Est. 1997
-          </p>
+          <p className="ca-eyebrow mb-5 text-sage">I Wear Organic</p>
           <h2
             id="about-closing-heading"
             className="ca-editorial-display text-[clamp(2.25rem,1.6rem+2.6vw,4.25rem)] leading-[1.08] tracking-[-0.015em] text-mineral-ink"
           >
-            Born in Chicago.
+            Organic isn&apos;t a collection.
             <br />
-            Made for wherever life takes you.
+            It&apos;s the entire store.
           </h2>
           <p className="ca-editorial mt-6 text-lg text-mineral-ink/60 sm:text-xl">
-            Independent since 1997.
+            Wear Better. Naturally.
           </p>
           <div className="mx-auto mt-8 max-w-xs border-t border-oat pt-8">
-            <p className="font-brand text-base font-bold lowercase tracking-tight text-mineral-ink">
-              blend america.
+            <p className="font-brand text-base font-semibold tracking-tight text-forest">
+              I Wear Organic.
             </p>
             <p className="ca-meta mt-3">
-              Independent since 1997.
+              Made with organic materials.
               <br />
-              Born in Chicago. Made for wherever life takes you.
+              Made to be worn.
             </p>
           </div>
           <div className="mt-10">
-            <Link href="/shopping" className="ca-btn-primary !rounded-[6px]">
-              Explore the Collection
+            <Link href="/shopping" className="ca-btn-primary">
+              Explore the collection
               <span aria-hidden="true">→</span>
             </Link>
           </div>

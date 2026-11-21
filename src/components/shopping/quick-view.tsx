@@ -177,7 +177,7 @@ export function QuickView({ product, isOpen, onClose }: QuickViewProps) {
 
             <div className="flex flex-col gap-3 mt-auto pt-6 border-t">
               <Button size="lg" className="w-full font-bold uppercase tracking-widest" onClick={handleAddToCart} disabled={!selectedVariant}>
-                <ShoppingCart className="mr-2 h-4 w-4" /> Add to Cart
+                <ShoppingCart className="mr-2 h-4 w-4" /> Add to Bag
               </Button>
               <Button variant="outline" size="lg" asChild className="w-full font-bold uppercase tracking-widest">
                 <Link href={`/shopping/${product.id}`} onClick={onClose}>

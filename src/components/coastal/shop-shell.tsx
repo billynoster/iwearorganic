@@ -7,7 +7,7 @@ import { SkipLink } from '@/components/coastal/skip-link';
 /** Shared Option B chrome for shop + support surfaces. */
 export function ShopShell({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-linen text-mineral-ink">
+    <div className="min-h-screen bg-white text-mineral-ink">
       <SkipLink />
       <EditorialNav />
       <div id="main-content" className="min-h-[70vh]">

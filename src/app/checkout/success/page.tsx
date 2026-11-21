@@ -163,7 +163,7 @@ function CheckoutSuccessContent() {
       <h1 className="mt-3 ca-display text-h3">
         Your order is in.
       </h1>
-      <p className="ca-lede mt-4">Thanks for shopping i wear organic.</p>
+      <p className="ca-lede mt-4">Thanks for shopping I Wear Organic.</p>
 
       {orderId ? (
         <div className="mt-10 border border-oat bg-[color-mix(in_srgb,var(--ca-linen)_70%,var(--ca-oat))] px-6 py-5 text-left">

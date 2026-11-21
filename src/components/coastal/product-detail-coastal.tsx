@@ -44,7 +44,7 @@ function toCartShapes(product: Product, variant: ProductVariant): {
       tags: product.tags,
       images: product.images.map((img, i) => ({
         src: img.src.startsWith('data:')
-          ? 'https://placehold.co/800x1000/EBE6DF/303435?text=BLEND'
+          ? 'https://placehold.co/800x1000/F6F2E8/294936?text=IWO'
           : img.src,
         variant_ids: (img.variantIds || product.variants.map((v) => v.id)).map(
           (id) => Number(id) || Math.abs(hashId(id))

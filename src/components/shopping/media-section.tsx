@@ -328,7 +328,7 @@ function MediaCard({
                         <>
                           <p className="font-medium text-muted-foreground mt-1">${((activeVariant?.price || 0) / 100).toFixed(2)}</p>
                           <div className="mt-3 flex gap-2">
-                             <Button size="sm" className="w-full text-xs font-bold" onClick={(e) => { e.stopPropagation(); if (activeVariant) addToCart(product, activeVariant, 1); }}>Add to Cart</Button>
+                             <Button size="sm" className="w-full text-xs font-bold" onClick={(e) => { e.stopPropagation(); if (activeVariant) addToCart(product, activeVariant, 1); }}>Add to Bag</Button>
                           </div>
                         </>
                       );

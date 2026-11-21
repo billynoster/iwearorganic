@@ -16,7 +16,7 @@ export function PageHero({
   description,
 }: PageHeroProps) {
   return (
-    <header className="border-b border-oat/70 bg-linen">
+    <header className="border-b border-oat/70 bg-cotton">
       <div className="ca-container py-12 sm:py-16 md:py-20">
         {eyebrow ? <p className="ca-eyebrow mb-3">{eyebrow}</p> : null}
         <h1

@@ -4,7 +4,7 @@ import { collectionsService } from '@/services';
 
 export const metadata: Metadata = {
   title: 'New Arrivals',
-  description: 'The latest from The Everyday Collection — i wear organic.',
+  description: 'New arrivals — organic clothing made for everyday life.',
 };
 
 export default async function NewArrivalsPage() {
@@ -16,7 +16,7 @@ export default async function NewArrivalsPage() {
       eyebrow="Shop / New Arrivals"
       title="New Arrivals."
       editorialTitle
-      description="The latest for The Art of Everyday — fresh silhouettes, familiar ease."
+      description="Fresh silhouettes, familiar ease — made to be worn."
       products={products}
       usingFixtures={meta.usingFixtures}
       catalogUnavailable={Boolean(meta.catalogUnavailable)}
