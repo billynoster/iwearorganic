@@ -40,7 +40,9 @@
 
 @layer utilities {
   .font-brand {
-    font-family: var(--font-brand);
+    font-family: var(--iwo-logo-font, var(--font-brand));
+    font-weight: var(--iwo-logo-weight, 600);
+    letter-spacing: var(--iwo-logo-tracking, -0.045em);
   }
 
   .font-display {

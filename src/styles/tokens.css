@@ -1,17 +1,25 @@
 /**
  * I Wear Organic — design tokens
- * Source of truth: brand kit v1.0 §44
+ * Source of truth: brand kit + logo system v1.1
  * Organic Forest primary · Natural Cotton editorial · Pure White ecommerce canvas
  */
 
 :root {
-  /* Brand kit palette (§44) */
+  /* Brand kit palette + logo kit v1.1 tokens */
   --color-forest: #294936;
   --color-cotton: #f6f2e8;
   --color-white: #ffffff;
   --color-soil: #453b32;
   --color-sage: #93a88e;
   --color-clay: #c98467;
+
+  --iwo-organic-forest: var(--color-forest);
+  --iwo-natural-cotton: var(--color-cotton);
+  --iwo-pure-white: var(--color-white);
+  --iwo-charcoal: #242724;
+  --iwo-soil: var(--color-soil);
+  --iwo-sage: var(--color-sage);
+  --iwo-clay: var(--color-clay);
 
   --color-text: #242724;
   --color-text-secondary: #686b67;
@@ -75,11 +83,15 @@
   --radius: var(--radius-sm); /* 6px architectural default */
 
   /**
-   * Typography — brand kit §6
+   * Typography — brand kit §6 + logo kit v1.1
    * Inter (UI / ecommerce) · DM Serif Display (editorial only)
-   * Wordmark uses Inter semibold via --font-brand.
+   * Approved wordmark assets use Inter Display SemiBold; CSS fallback
+   * for text lockups uses Inter 600 at -0.045em tracking.
    */
   --font-brand: 'Inter', system-ui, sans-serif;
+  --iwo-logo-font: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --iwo-logo-weight: 600;
+  --iwo-logo-tracking: -0.045em;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-editorial: 'DM Serif Display', Georgia, 'Times New Roman', serif;
   --font-display: var(--font-body);

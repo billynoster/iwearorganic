@@ -9,6 +9,7 @@ import { useCart } from '@/context/cart-context';
 import { CartSheet } from '@/components/shopping/cart-sheet';
 import { SearchTypeahead } from '@/components/coastal/search-typeahead';
 import { AccountMenu } from '@/components/coastal/account-menu';
+import { Logo } from '@/components/logo';
 
 /** Brand kit §13 — Logo | Shop | Women | Men | New | Materials | Search | Account | Bag */
 const NAV_LINKS = [
@@ -60,10 +61,14 @@ export function EditorialNav() {
       <div className="ca-container relative flex h-16 items-center justify-between gap-4 lg:h-[4.5rem]">
         <Link
           href="/"
-          className="font-brand text-[1.0625rem] font-semibold tracking-[-0.01em] text-forest sm:text-[1.125rem]"
-          aria-label="I Wear Organic home"
+          className="inline-flex shrink-0 items-center"
+          aria-label="i wear organic home"
         >
-          I Wear Organic.
+          <Logo
+            variant="forest"
+            priority
+            className="w-[108px] sm:w-[132px] lg:w-[148px]"
+          />
         </Link>
 
         <nav

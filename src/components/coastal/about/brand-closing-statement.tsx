@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Logo } from '@/components/logo';
 
 /** Closing brand signature + shop CTA (`/shopping`). */
 export function BrandClosingStatement() {
@@ -22,9 +23,9 @@ export function BrandClosingStatement() {
             Wear Better. Naturally.
           </p>
           <div className="mx-auto mt-8 max-w-xs border-t border-oat pt-8">
-            <p className="font-brand text-base font-semibold tracking-tight text-forest">
-              I Wear Organic.
-            </p>
+            <div className="flex justify-center">
+              <Logo variant="forest" className="w-[160px]" />
+            </div>
             <p className="ca-meta mt-3">
               Made with organic materials.
               <br />
