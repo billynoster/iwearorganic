@@ -1,0 +1,366 @@
+{
+  "entities": {
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Represents a user of the I Wear Organic application.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the user."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the user.",
+          "format": "email"
+        },
+        "firstName": {
+          "type": "string",
+          "description": "First name of the user."
+        },
+        "lastName": {
+          "type": "string",
+          "description": "Last name of the user."
+        },
+        "dateJoined": {
+          "type": "string",
+          "description": "Date the user joined the application.",
+          "format": "date-time"
+        },
+        "vibe": {
+          "type": "string",
+          "description": "The user's selected style vibe (e.g., 'Classic Americana', 'Coastal Summer', 'Urban Edge', 'Vintage Retro')."
+        },
+        "stylePreferences": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "An array of the user's style preferences, stored as 'questionId:answerId' strings."
+        },
+        "shippingInfo": {
+          "type": "object",
+          "description": "Saved shipping information for the user.",
+          "properties": {
+            "firstName": { "type": "string" },
+            "lastName": { "type": "string" },
+            "address1": { "type": "string" },
+            "address2": { "type": "string" },
+            "city": { "type": "string" },
+            "state": { "type": "string" },
+            "zip": { "type": "string" },
+            "country": { "type": "string" },
+            "phone": { "type": "string" }
+          }
+        }
+      },
+      "required": [
+        "id",
+        "email",
+        "firstName",
+        "lastName",
+        "dateJoined"
+      ]
+    },
+    "UserPreference": {
+      "title": "UserPreference",
+      "type": "object",
+      "description": "A document storing a user's detailed style and shopping preferences.",
+      "properties": {
+        "userId": { "type": "string" },
+        "categoryIds": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "stylePreferences": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "An array of the user's style preferences, stored as 'questionId:answerId' strings."
+        },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "categoryIds", "stylePreferences", "updatedAt"]
+    },
+    "CartItem": {
+      "title": "CartItem",
+      "type": "object",
+      "description": "An item in the user's shopping cart.",
+      "properties": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "variantId": { "type": "number" },
+        "quantity": { "type": "number" },
+        "productData": { "type": "string", "description": "JSON stringified product data" },
+        "variantData": { "type": "string", "description": "JSON stringified variant data" },
+        "addedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "productId", "variantId", "quantity", "productData", "variantData", "addedAt"]
+    },
+    "WishlistItem": {
+      "title": "WishlistItem",
+      "type": "object",
+      "description": "An item in the user's wishlist.",
+      "properties": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "productData": { "type": "string", "description": "JSON stringified product data" },
+        "addedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "productId", "productData", "addedAt"]
+    },
+    "Order": {
+      "title": "Order",
+      "type": "object",
+      "description": "A completed order.",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "email": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "processing", "shipped", "delivered", "cancelled"] },
+        "totalAmount": { "type": "number" },
+        "items": {
+          "type": "array",
+          "items": { "type": "string", "description": "JSON stringified cart item" }
+        },
+        "shippingInfo": { "type": "string", "description": "JSON stringified shipping info" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "email", "status", "totalAmount", "items", "shippingInfo", "createdAt"]
+    },
+    "Review": {
+      "title": "Review",
+      "type": "object",
+      "description": "A product review.",
+      "properties": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "rating": { "type": "number" },
+        "comment": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "productId", "userId", "userName", "rating", "comment", "createdAt"]
+    },
+    "BlendBoard": {
+      "title": "BlendBoard",
+      "type": "object",
+      "description": "A user's custom styling board.",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["items", "updatedAt"]
+    },
+    "StripeCustomer": {
+      "title": "StripeCustomer",
+      "type": "object",
+      "description": "Represents a customer in Stripe, linked to a Firebase user. Managed by the Stripe Payments Firebase Extension.",
+      "properties": {
+        "stripeId": {
+          "type": "string",
+          "description": "The customer ID from Stripe."
+        },
+        "stripeLink": {
+          "type": "string",
+          "description": "A link to the customer in the Stripe dashboard."
+        }
+      },
+      "required": [
+        "stripeId"
+      ]
+    },
+    "CheckoutSession": {
+      "title": "CheckoutSession",
+      "type": "object",
+      "description": "A document created by the client to initiate a Stripe Checkout session.",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "payment",
+            "setup",
+            "subscription"
+          ]
+        },
+        "success_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "cancel_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "line_items": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "The Stripe checkout URL, added by the extension."
+        },
+        "error": {
+          "type": "object",
+          "description": "An error object if the session creation fails."
+        }
+      },
+      "required": [
+        "mode",
+        "success_url",
+        "cancel_url"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "google.com"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "User",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Stores user profiles. Access is restricted to the user themselves (path-based ownership).",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/preferences/{preferenceId}",
+        "definition": {
+          "entityName": "UserPreference",
+          "schema": {
+            "$ref": "#/backend/entities/UserPreference"
+          },
+          "description": "Stores detailed user style and shopping preferences.",
+          "params": [
+            { "name": "userId", "description": "The unique identifier of the user." },
+            { "name": "preferenceId", "description": "The unique identifier of the preference document." }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/cartItems/{cartItemId}",
+        "definition": {
+          "entityName": "CartItem",
+          "schema": {
+            "$ref": "#/backend/entities/CartItem"
+          },
+          "description": "Stores user cart items.",
+          "params": [
+            { "name": "userId", "description": "The unique identifier of the user." },
+            { "name": "cartItemId", "description": "The unique identifier of the cart item." }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/wishlistItems/{itemId}",
+        "definition": {
+          "entityName": "WishlistItem",
+          "schema": {
+            "$ref": "#/backend/entities/WishlistItem"
+          },
+          "description": "Stores user wishlist items.",
+          "params": [
+            { "name": "userId", "description": "The unique identifier of the user." },
+            { "name": "itemId", "description": "The unique identifier of the wishlist item." }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/blendboard/{boardId}",
+        "definition": {
+          "entityName": "BlendBoard",
+          "schema": {
+            "$ref": "#/backend/entities/BlendBoard"
+          },
+          "description": "Stores user styling boards.",
+          "params": [
+            { "name": "userId", "description": "The unique identifier of the user." },
+            { "name": "boardId", "description": "The unique identifier of the board." }
+          ]
+        }
+      },
+      {
+        "path": "/orders/{orderId}",
+        "definition": {
+          "entityName": "Order",
+          "schema": {
+            "$ref": "#/backend/entities/Order"
+          },
+          "description": "Stores completed orders. Filtered by userId for security.",
+          "params": [
+            { "name": "orderId", "description": "The unique identifier of the order." }
+          ]
+        }
+      },
+      {
+        "path": "/reviews/{reviewId}",
+        "definition": {
+          "entityName": "Review",
+          "schema": {
+            "$ref": "#/backend/entities/Review"
+          },
+          "description": "Stores product reviews. Publicly readable.",
+          "params": [
+            { "name": "reviewId", "description": "The unique identifier of the review." }
+          ]
+        }
+      },
+      {
+        "path": "/customers/{customerId}",
+        "definition": {
+          "entityName": "StripeCustomer",
+          "schema": {
+            "$ref": "#/backend/entities/StripeCustomer"
+          },
+          "description": "Stores Stripe customer information, linking Firebase Auth users to Stripe customers. Managed by the Stripe Payments extension.",
+          "params": [
+            {
+              "name": "customerId",
+              "description": "The Firebase UID of the user."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/customers/{customerId}/checkout_sessions/{sessionId}",
+        "definition": {
+          "entityName": "CheckoutSession",
+          "schema": {
+            "$ref": "#/backend/entities/CheckoutSession"
+          },
+          "description": "Client-written documents to initiate a Stripe checkout. The Stripe Payments extension reads these and writes back a URL.",
+          "params": [
+            {
+              "name": "customerId",
+              "description": "The Firebase UID of the user."
+            },
+            {
+              "name": "sessionId",
+              "description": "The unique ID for the checkout session."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed for a fashion e-commerce application (I Wear Organic). It uses path-based ownership for private user data (cart, wishlist, profile, blendboard) and top-level collections for shared data (orders, reviews). Orders are secured by filtering on the userId field, while reviews are publicly readable but writable only by the author. This structure ensures data privacy while supporting the necessary queries for a shopping experience."
+  }
+}
+
+
+    
