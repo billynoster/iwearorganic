@@ -241,7 +241,13 @@ export const FIXTURE_PRODUCTS: Product[] = [
     id: 'fixture-everyday-crew',
     title: 'The Everyday Crew',
     priceCents: 7200,
-    tags: ['everyday', 'ca-cat:sweatshirts', 'ca-audience:men', 'just-dropped'],
+    tags: [
+      'everyday',
+      'ca-cat:sweatshirts',
+      'ca-audience:men',
+      'just-dropped',
+      'organic cotton fleece',
+    ],
     collectionIds: ['everyday-uniform', 'menswear', 'new-arrivals'],
     colors: ['Oat', 'Mineral', 'Haze'],
     unavailable: [{ color: 'Mineral', size: 'XS' }, { color: 'Haze', size: 'XL' }],
@@ -252,7 +258,12 @@ export const FIXTURE_PRODUCTS: Product[] = [
     id: 'fixture-essential-hoodie',
     title: 'The Essential Hoodie',
     priceCents: 8200,
-    tags: ['everyday', 'ca-cat:hoodies', 'ca-audience:men'],
+    tags: [
+      'everyday',
+      'ca-cat:hoodies',
+      'ca-audience:men',
+      '100% organic cotton',
+    ],
     collectionIds: ['everyday-uniform', 'menswear'],
     colors: ['Mineral', 'Oat'],
   }),
@@ -260,7 +271,13 @@ export const FIXTURE_PRODUCTS: Product[] = [
     id: 'fixture-classic-tee',
     title: 'The Classic Tee',
     priceCents: 4200,
-    tags: ['everyday', 'ca-cat:t-shirts', 'ca-audience:women', 'just-dropped'],
+    tags: [
+      'everyday',
+      'ca-cat:t-shirts',
+      'ca-audience:women',
+      'just-dropped',
+      '100% organic cotton',
+    ],
     collectionIds: ['everyday-uniform', 'womenswear', 'new-arrivals'],
     // Many colors — mirrors live Printify overload; Refine collapses to top 8 + More.
     colors: WOMEN_COLOR_FIXTURE_PALETTE,
@@ -270,7 +287,12 @@ export const FIXTURE_PRODUCTS: Product[] = [
     id: 'fixture-relaxed-hoodie',
     title: 'The Relaxed Hoodie',
     priceCents: 8200,
-    tags: ['everyday', 'ca-cat:hoodies', 'ca-audience:women'],
+    tags: [
+      'everyday',
+      'ca-cat:hoodies',
+      'ca-audience:women',
+      'organic cotton',
+    ],
     collectionIds: ['everyday-uniform', 'womenswear'],
     colors: ['Dusk', 'Oat', 'Sand', 'Sage', 'Rose', 'Mist', 'Navy', 'Ivory', 'Clay'],
   }),
@@ -278,7 +300,13 @@ export const FIXTURE_PRODUCTS: Product[] = [
     id: 'fixture-heritage-crew',
     title: 'The Heritage Crew',
     priceCents: 7200,
-    tags: ['everyday', 'ca-cat:sweatshirts', 'ca-audience:men', 'just-dropped'],
+    tags: [
+      'everyday',
+      'ca-cat:sweatshirts',
+      'ca-audience:men',
+      'just-dropped',
+      'organic cotton fleece',
+    ],
     collectionIds: ['everyday-uniform', 'menswear', 'new-arrivals'],
     releasedAt: '2026-10-28T12:00:00.000Z',
   }),
@@ -286,7 +314,12 @@ export const FIXTURE_PRODUCTS: Product[] = [
     id: 'fixture-everyday-tee',
     title: 'The Everyday Tee',
     priceCents: 4200,
-    tags: ['everyday', 'ca-cat:t-shirts', 'ca-audience:women'],
+    tags: [
+      'everyday',
+      'ca-cat:t-shirts',
+      'ca-audience:women',
+      '100% organic cotton',
+    ],
     collectionIds: ['everyday-uniform', 'womenswear', 'new-arrivals'],
     // Fully out-of-stock fixture for OOS UX
     unavailable: ['XS', 'S', 'M', 'L', 'XL'].map((size) => ({
@@ -294,12 +327,18 @@ export const FIXTURE_PRODUCTS: Product[] = [
       size,
     })),
   }),
-  // Regression: Printify-style Colors/Sizes keys (Billy Muscle Tee / Sweatshirt bug)
+  // Regression: Printify-style Colors/Sizes keys (muscle tee / sweatshirt bug)
   fixtureProduct({
     id: 'fixture-logo-muscle-tee',
-    title: 'BLEND Logo Muscle Tee, Tank Top',
+    title: 'Organic Logo Muscle Tee',
     priceCents: 2700,
-    tags: ['everyday', 'ca-cat:t-shirts', 'ca-audience:unisex', 'just-dropped'],
+    tags: [
+      'everyday',
+      'ca-cat:t-shirts',
+      'ca-audience:unisex',
+      'just-dropped',
+      '100% organic cotton',
+    ],
     collectionIds: ['everyday-uniform', 'womenswear', 'menswear', 'new-arrivals'],
     releasedAt: '2026-11-06T12:00:00.000Z',
     colors: [
@@ -359,4 +398,4 @@ export const FIXTURE_COLLECTIONS: Collection[] = [
   },
 ];
 
-export const FIXTURE_PLACEHOLDER_IMAGE = placeholder('BLEND');
+export const FIXTURE_PLACEHOLDER_IMAGE = placeholder('IWO');

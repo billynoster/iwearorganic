@@ -34,7 +34,7 @@ export function EverydayUniformGallery({
   return (
     <section
       aria-labelledby="uniform-heading"
-      className="ca-section-y bg-linen"
+      className="ca-section-y bg-white"
     >
       <div className="ca-container">
         <div className="mb-10 flex flex-col gap-4 sm:mb-12 md:flex-row md:items-end md:justify-between">

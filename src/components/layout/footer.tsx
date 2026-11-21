@@ -93,7 +93,7 @@ export function Footer() {
         </div>
         <div className="mt-8 border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/60">
             <div className="flex items-center justify-center gap-2">
-                <p>&copy; {new Date().getFullYear()} i wear organic. All rights reserved.</p>
+                <p>&copy; {new Date().getFullYear()} I Wear Organic. All rights reserved.</p>
                 <AmericanFlagIcon />
             </div>
         </div>

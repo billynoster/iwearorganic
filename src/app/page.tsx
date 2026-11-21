@@ -12,9 +12,9 @@ import { collectionsService, catalogService } from '@/services';
 import { selectEverydayUniformProducts } from '@/lib/everyday-uniform';
 
 export const metadata: Metadata = {
-  title: 'i wear organic — Made for the Moment',
+  title: 'I Wear Organic — Wear Better. Naturally.',
   description:
-    'Easy to wear. Hard to overlook. The Everyday Collection — Coastal Analog editorial commerce by i wear organic.',
+    'Wear Better. Naturally. Organic clothing made for everyday life.',
 };
 
 /**
@@ -34,7 +34,7 @@ export default async function CoastalHomePage() {
   const galleryProducts = selectEverydayUniformProducts(products, 4);
 
   return (
-    <div className="bg-linen text-mineral-ink">
+    <div className="bg-white text-mineral-ink">
       <SkipLink />
       <EditorialNav />
       <main id="main-content">

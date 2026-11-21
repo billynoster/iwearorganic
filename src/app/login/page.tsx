@@ -102,7 +102,7 @@ export default function LoginPage() {
         await ensureUserProfile(firestore, cred.user);
         toast({
           title: 'Signed in',
-          description: 'Welcome back to i wear organic.',
+          description: 'Welcome back to I Wear Organic.',
         });
         router.replace(redirectUrl);
       })
@@ -138,7 +138,7 @@ export default function LoginPage() {
     await ensureUserProfile(firestore, credUser);
     toast({
       title: 'Signed in',
-      description: 'Welcome back to i wear organic.',
+      description: 'Welcome back to I Wear Organic.',
     });
     router.replace(redirectUrl);
   };

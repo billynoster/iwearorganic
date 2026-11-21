@@ -37,7 +37,7 @@ export function AppShowcaseSection({
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-headline tracking-tight leading-tight">
-              The blend america experience, now on iOS.
+              The I Wear Organic experience, now on iOS.
             </h2>
 
             <p className="text-base sm:text-lg text-slate-300 max-w-xl font-body leading-relaxed">
@@ -118,7 +118,7 @@ export function AppShowcaseSection({
                     <div className="relative w-full h-full">
                       <Image
                         src={activeImageSrc}
-                        alt="blend america iOS App Screen"
+                        alt="I Wear Organic iOS App Screen"
                         fill
                         className="object-cover object-top"
                         sizes="(max-width: 768px) 280px, 320px"
@@ -134,7 +134,7 @@ export function AppShowcaseSection({
                       {/* Screen Header */}
                       <div className="pt-8 px-4 pb-3 flex items-center justify-between border-b border-neutral-800/80 bg-neutral-900/60 backdrop-blur">
                         <span className="text-xs font-bold tracking-widest uppercase font-headline text-white">
-                          blend america
+                          I Wear Organic
                         </span>
                         <span className="text-[10px] text-red-400 font-semibold bg-red-500/10 px-2 py-0.5 rounded-full">
                           iOS App
@@ -154,7 +154,7 @@ export function AppShowcaseSection({
                               HOODIE
                             </div>
                             <div className="flex-1 min-w-0">
-                              <div className="text-[11px] font-medium text-white truncate">BLEND logo hoodie</div>
+                              <div className="text-[11px] font-medium text-white truncate">Organic Essential Hoodie</div>
                               <div className="text-[10px] text-neutral-400">$45.71 · Pullover</div>
                             </div>
                           </div>

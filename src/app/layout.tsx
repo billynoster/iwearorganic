@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     default: 'I Wear Organic',
   },
   description:
-    'I Wear Organic — made-to-order organic apparel. Shop shell adapted from the Coastal Analog storefront.',
+    'Wear Better. Naturally. Organic clothing made for everyday life.',
   keywords: [
     'fashion',
     'organic',
@@ -28,29 +28,28 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://iwearorganic.com',
     title: 'I Wear Organic',
-    description: 'Made-to-order organic apparel.',
+    description: 'Wear Better. Naturally. Organic clothing made for everyday life.',
     siteName: 'I Wear Organic',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'I Wear Organic',
-    description: 'Made-to-order organic apparel.',
+    description: 'Wear Better. Naturally.',
     creator: '@iwearorganic',
   },
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#F4F1EB' },
-    { media: '(prefers-color-scheme: dark)', color: '#303435' },
+    { media: '(prefers-color-scheme: light)', color: '#FFFFFF' },
+    { media: '(prefers-color-scheme: dark)', color: '#294936' },
   ],
   width: 'device-width',
   initialScale: 1,
 };
 
 /**
- * Phase 8A typography — Outfit 700 (wordmark only), DM Sans 400–700
- * (all functional UI), Instrument Serif + italic (editorial). Archivo removed.
+ * Brand kit typography — Inter 400/500/600 (UI), DM Serif Display (editorial).
  * Prefer next/font/google when the build can fetch Google Fonts; this Cloud
  * Agent snapshot fails next/font Google downloads (null parse), so we keep
  * preconnect + stylesheet.
@@ -82,7 +81,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&family=Outfit:wght@700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
         <meta name="apple-itunes-app" content="app-id=6811465301" />

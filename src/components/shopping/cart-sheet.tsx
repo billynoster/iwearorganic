@@ -41,7 +41,7 @@ export function CartSheet() {
       <SheetContent
         side="right"
         className={cn(
-          'flex w-full flex-col gap-0 border-l border-oat bg-linen p-0 text-mineral-ink shadow-none sm:max-w-md',
+          'flex w-full flex-col gap-0 border-l border-oat bg-white p-0 text-mineral-ink shadow-none sm:max-w-md',
           '[&>button]:hidden'
         )}
         aria-describedby={undefined}
@@ -57,7 +57,7 @@ export function CartSheet() {
               ) : null}
             </SheetTitle>
             <SheetClose
-              className="inline-flex min-h-11 min-w-11 items-center justify-center text-mineral-ink/70 transition-colors hover:text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-offset-2 focus-visible:ring-offset-linen"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center text-mineral-ink/70 transition-colors hover:text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               aria-label="Close bag"
             >
               <X className="h-5 w-5" strokeWidth={1.5} />
@@ -85,7 +85,7 @@ export function CartSheet() {
                       <Link
                         href={`/shopping/${item.product.id}`}
                         onClick={() => setIsCartOpen(false)}
-                        className="relative h-24 w-20 shrink-0 overflow-hidden bg-[#ebe6df] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue"
+                        className="relative h-24 w-20 shrink-0 overflow-hidden rounded-[var(--radius-sm)] bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest"
                       >
                         {imgSrc ? (
                           <Image
@@ -109,7 +109,7 @@ export function CartSheet() {
                             <Link
                               href={`/shopping/${item.product.id}`}
                               onClick={() => setIsCartOpen(false)}
-                              className="font-body text-sm font-semibold text-mineral-ink hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue"
+                              className="font-body text-sm font-semibold text-mineral-ink hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest"
                             >
                               {item.product.title}
                             </Link>
@@ -169,7 +169,7 @@ export function CartSheet() {
                           <button
                             type="button"
                             onClick={() => removeFromCart(item.variant.id)}
-                            className="min-h-11 font-body text-sm text-mineral-ink/55 underline-offset-2 hover:text-mineral-ink hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue"
+                            className="min-h-11 font-body text-sm text-mineral-ink/55 underline-offset-2 hover:text-mineral-ink hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest"
                           >
                             Remove
                           </button>
@@ -181,15 +181,14 @@ export function CartSheet() {
               </ul>
             </div>
 
-            <div className="ca-panel-footer mt-auto space-y-4 bg-[color-mix(in_srgb,var(--ca-linen)_75%,var(--ca-oat))]">
+            <div className="ca-panel-footer mt-auto space-y-4 bg-surface">
               <div className="flex items-baseline justify-between gap-4">
                 <div>
                   <p className="font-body text-sm font-semibold text-mineral-ink">
                     Subtotal
                   </p>
                   <p className="mt-1 font-body text-xs text-mineral-ink/50">
-                    Snapshot subtotal · shipping &amp; taxes at checkout. Prices revalidated
-                    server-side before payment.
+                    Shipping &amp; taxes calculated at checkout.
                   </p>
                 </div>
                 <p className="font-body text-base tabular-nums text-mineral-ink">
@@ -199,7 +198,7 @@ export function CartSheet() {
 
               {hasFixtures ? (
                 <p
-                  className="border border-oat bg-linen px-3 py-2 font-body text-xs text-mineral-ink"
+                  className="rounded-[var(--radius-sm)] border border-oat bg-white px-3 py-2 font-body text-xs text-mineral-ink"
                   role="status"
                 >
                   Sample items can&apos;t be purchased. Remove them to continue.
@@ -210,7 +209,7 @@ export function CartSheet() {
                 {checkoutable && !hasFixtures ? (
                   <SheetClose asChild>
                     <Link href="/checkout" className="ca-btn-primary w-full justify-center">
-                      Checkout securely
+                      Checkout
                     </Link>
                   </SheetClose>
                 ) : (
@@ -236,22 +235,20 @@ export function CartSheet() {
             </div>
           </>
         ) : (
-          <div className="ca-stack flex flex-1 items-start justify-center px-6 py-12">
-            <p className="ca-display text-h3">
-              Your bag is empty.
-            </p>
+          <div className="ca-stack flex flex-1 items-start justify-center bg-cotton/40 px-6 py-12">
+            <p className="ca-display text-h3">Your bag is empty.</p>
             <p className="ca-lede max-w-sm">
-              Explore The Everyday Collection and add pieces when you are ready.
+              Find something you&apos;ll want to wear often.
             </p>
             <div className="flex flex-wrap gap-4">
               <SheetClose asChild>
-                <Link href="/shopping" className="ca-btn-primary">
-                  Shop the collection
+                <Link href="/new-arrivals" className="ca-btn-primary">
+                  Shop New Arrivals
                 </Link>
               </SheetClose>
               <SheetClose asChild>
-                <Link href="/new-arrivals" className="ca-text-link min-h-11 py-3">
-                  New arrivals
+                <Link href="/shopping" className="ca-text-link min-h-11 py-3">
+                  Shop all
                   <span aria-hidden="true">→</span>
                 </Link>
               </SheetClose>

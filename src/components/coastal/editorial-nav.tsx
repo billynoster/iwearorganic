@@ -10,11 +10,13 @@ import { CartSheet } from '@/components/shopping/cart-sheet';
 import { SearchTypeahead } from '@/components/coastal/search-typeahead';
 import { AccountMenu } from '@/components/coastal/account-menu';
 
+/** Brand kit §13 — Logo | Shop | Women | Men | New | Materials | Search | Account | Bag */
 const NAV_LINKS = [
-  { href: '/men', label: 'Men' },
+  { href: '/shopping', label: 'Shop' },
   { href: '/women', label: 'Women' },
-  { href: '/new-arrivals', label: 'New Arrivals' },
-  { href: '/lookbook', label: 'Lookbook' },
+  { href: '/men', label: 'Men' },
+  { href: '/new-arrivals', label: 'New' },
+  { href: '/about', label: 'Materials' },
 ];
 
 function isNavActive(pathname: string | null, href: string) {
@@ -32,12 +34,10 @@ export function EditorialNav() {
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const firstMobileLinkRef = useRef<HTMLAnchorElement>(null);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
-  // Esc close + focus first link when opening; return focus to menu button on close
   useEffect(() => {
     if (!open) return;
     const t = window.setTimeout(() => firstMobileLinkRef.current?.focus(), 0);
@@ -55,20 +55,19 @@ export function EditorialNav() {
     };
   }, [open]);
 
-  // Opaque sticky masthead — translucent linen + blur let gallery/thumbs show through on scroll.
   return (
-    <header className="sticky top-0 z-50 border-b border-oat/70 bg-linen">
+    <header className="sticky top-0 z-50 border-b border-oat bg-white/95 backdrop-blur-[2px]">
       <div className="ca-container relative flex h-16 items-center justify-between gap-4 lg:h-[4.5rem]">
         <Link
           href="/"
-          className="font-brand text-[1.125rem] font-bold lowercase tracking-[-0.01em] text-mineral-ink sm:text-[1.1875rem]"
+          className="font-brand text-[1.0625rem] font-semibold tracking-[-0.01em] text-forest sm:text-[1.125rem]"
           aria-label="I Wear Organic home"
         >
-          i wear organic.
+          I Wear Organic.
         </Link>
 
         <nav
-          className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-9 md:flex"
+          className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-8 lg:flex"
           aria-label="Primary"
         >
           {NAV_LINKS.map((link) => {
@@ -78,9 +77,9 @@ export function EditorialNav() {
                 key={link.label}
                 href={link.href}
                 className={cn(
-                  'relative font-body text-[0.8125rem] font-medium tracking-[0.01em] transition-colors',
+                  'relative font-body text-[0.8125rem] font-medium tracking-[0.01em] transition-colors duration-200',
                   active
-                    ? 'text-mineral-ink'
+                    ? 'text-forest'
                     : 'text-mineral-ink/65 hover:text-mineral-ink'
                 )}
                 aria-current={active ? 'page' : undefined}
@@ -88,7 +87,7 @@ export function EditorialNav() {
                 {link.label}
                 <span
                   className={cn(
-                    'absolute -bottom-1 left-0 h-px w-full bg-mineral-ink transition-opacity',
+                    'absolute -bottom-1 left-0 h-px w-full bg-forest transition-opacity duration-200',
                     active ? 'opacity-100' : 'opacity-0'
                   )}
                   aria-hidden="true"
@@ -98,11 +97,7 @@ export function EditorialNav() {
           })}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <p className="ca-editorial hidden text-[0.8125rem] leading-snug text-mineral-ink/50 xl:block">
-            Easy to wear. Hard to overlook.
-          </p>
-
+        <div className="flex items-center gap-1 sm:gap-2">
           <SearchTypeahead
             onOpenChange={(isOpen) => {
               if (isOpen) setOpen(false);
@@ -118,19 +113,19 @@ export function EditorialNav() {
           <button
             type="button"
             onClick={openCart}
-            className="relative inline-flex min-h-11 min-w-11 items-center justify-center text-mineral-ink/80 transition-colors hover:text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-offset-2 focus-visible:ring-offset-linen"
-            aria-label={`Open shopping bag${cartCount ? `, ${cartCount} items` : ''}`}
+            className="relative inline-flex min-h-11 min-w-11 items-center justify-center text-mineral-ink/80 transition-colors hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+            aria-label={`Open bag${cartCount ? `, ${cartCount} items` : ''}`}
           >
             <ShoppingBag className="h-[1.125rem] w-[1.125rem]" strokeWidth={1.5} />
             {cartCount > 0 ? (
-              <span className="absolute right-1.5 top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-mineral-ink px-1 font-body text-[0.625rem] text-linen">
+              <span className="absolute right-1.5 top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-forest px-1 font-body text-[0.625rem] text-white">
                 {cartCount}
               </span>
             ) : null}
           </button>
           <Link
             href="/cart"
-            className="ca-eyebrow hidden min-h-11 items-center text-mineral-ink/60 hover:text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue sm:inline-flex"
+            className="ca-eyebrow hidden min-h-11 items-center text-mineral-ink/60 hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest sm:inline-flex"
           >
             Bag
           </Link>
@@ -138,7 +133,7 @@ export function EditorialNav() {
           <button
             ref={menuButtonRef}
             type="button"
-            className="inline-flex min-h-11 min-w-11 items-center justify-center text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-offset-2 focus-visible:ring-offset-linen md:hidden"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2 focus-visible:ring-offset-white lg:hidden"
             aria-expanded={open}
             aria-controls={mobileNavId}
             aria-label={open ? 'Close menu' : 'Open menu'}
@@ -152,7 +147,7 @@ export function EditorialNav() {
       <div
         id={mobileNavId}
         className={cn(
-          'border-t border-oat bg-linen md:hidden',
+          'border-t border-oat bg-white lg:hidden',
           open ? 'block' : 'hidden'
         )}
       >
@@ -165,9 +160,9 @@ export function EditorialNav() {
                 ref={index === 0 ? firstMobileLinkRef : undefined}
                 href={link.href}
                 className={cn(
-                  'min-h-11 border-l-2 py-3 pl-4 font-body text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue',
+                  'min-h-11 border-l-2 py-3 pl-4 font-body text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest',
                   active
-                    ? 'border-mineral-ink text-mineral-ink'
+                    ? 'border-forest text-forest'
                     : 'border-transparent text-mineral-ink/80'
                 )}
                 aria-current={active ? 'page' : undefined}
@@ -180,14 +175,14 @@ export function EditorialNav() {
           })}
           <Link
             href="/search"
-            className="min-h-11 py-3 font-body text-sm font-medium text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue"
+            className="min-h-11 py-3 font-body text-sm font-medium text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest"
             onClick={() => setOpen(false)}
           >
             Search
           </Link>
           <button
             type="button"
-            className="min-h-11 py-3 text-left font-body text-sm font-medium text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue"
+            className="min-h-11 py-3 text-left font-body text-sm font-medium text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest"
             onClick={() => {
               setOpen(false);
               openCart();
@@ -197,15 +192,12 @@ export function EditorialNav() {
           </button>
           <Link
             href="/cart"
-            className="min-h-11 py-3 font-body text-sm font-medium text-mineral-ink/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue"
+            className="min-h-11 py-3 font-body text-sm font-medium text-mineral-ink/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest"
             onClick={() => setOpen(false)}
           >
             View full bag
           </Link>
           <AccountMenu variant="mobile" onNavigate={() => setOpen(false)} />
-          <p className="ca-editorial pb-4 pt-4 text-sm text-mineral-ink/55">
-            Easy to wear. Hard to overlook.
-          </p>
         </nav>
       </div>
     </header>

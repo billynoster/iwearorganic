@@ -183,7 +183,7 @@ export function VibeCheck({ onComplete }: VibeCheckProps) {
       
       toast({
         title: 'Profile Curated 🎯',
-        description: 'Your blend america experience has been personalized.',
+        description: 'Your I Wear Organic experience has been personalized.',
       });
       
       onComplete(calculatedVibe);
@@ -305,7 +305,7 @@ export function VibeCheck({ onComplete }: VibeCheckProps) {
           <div className="inline-flex items-center justify-center p-4 bg-primary/10 rounded-full mb-6">
             <Sparkles className="w-8 h-8 text-primary" />
           </div>
-          <h2 className="text-2xl font-bold text-muted-foreground mb-2">Your blend america vibe is</h2>
+          <h2 className="text-2xl font-bold text-muted-foreground mb-2">Your I Wear Organic vibe is</h2>
           <h1 className="text-5xl md:text-6xl font-headline font-bold tracking-tight text-primary mb-6">
             {vibeData.title}
           </h1>
@@ -324,7 +324,7 @@ export function VibeCheck({ onComplete }: VibeCheckProps) {
             {isSaving ? (
               <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Curating your store...</>
             ) : (
-              'Enter My Blend'
+              'Enter the shop'
             )}
           </Button>
         </motion.div>

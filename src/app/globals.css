@@ -29,12 +29,12 @@
   }
 
   body {
-    @apply bg-linen text-mineral-ink antialiased;
+    @apply bg-white text-mineral-ink antialiased;
     font-family: var(--font-body);
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-mineral-ink ring-offset-2 ring-offset-linen;
+    @apply outline-none ring-2 ring-forest ring-offset-2 ring-offset-white;
   }
 }
 
@@ -137,15 +137,14 @@
 
 @layer components {
   /**
-   * Typography hierarchy — Phase 8A
-   * editorial display → .ca-editorial-display (Instrument) + .text-hero / .text-editorial*
-   * functional display → .ca-display / .ca-heading (DM Sans) + .text-collection / .text-h2 / .text-h3 / .text-pdp-title
+   * Typography hierarchy — I Wear Organic brand kit
+   * editorial display → .ca-editorial-display (DM Serif Display) + .text-hero / .text-editorial*
+   * functional display → .ca-display / .ca-heading (Inter) + .text-collection / .text-h2 / .text-h3 / .text-pdp-title
    * title  → .ca-product-title | .ca-display + .text-pdp-title
    * body   → .ca-lede
    * label  → .ca-eyebrow | .ca-field-label | .ca-btn-*
    * meta   → .ca-meta | .ca-caption
-   * brand  → .font-brand (Outfit 700 wordmark only)
-   * Override color with Tailwind when on photo (e.g. text-linen/90).
+   * brand  → .font-brand (Inter wordmark)
    */
   .ca-eyebrow {
     @apply font-body font-medium uppercase tracking-[0.16em];
@@ -153,7 +152,7 @@
     color: color-mix(in srgb, var(--ca-mineral-ink) 55%, transparent);
   }
 
-  /** Functional commerce headings — DM Sans (was Archivo) */
+  /** Functional commerce headings — Inter */
   .ca-display {
     @apply font-body font-semibold tracking-[-0.02em] text-mineral-ink text-balance;
     line-height: var(--leading-headline);
@@ -165,12 +164,12 @@
   }
 
   .ca-editorial {
-    @apply font-editorial italic tracking-[-0.01em] text-mineral-ink text-balance;
+    @apply font-editorial tracking-[-0.01em] text-mineral-ink text-balance;
   }
 
   /**
-   * Editorial campaign / Lookbook storytelling headlines (Instrument Serif).
-   * Distinct from `.ca-display` (DM Sans) on shop / PLP / PDP / checkout.
+   * Editorial campaign / Lookbook storytelling headlines (DM Serif Display).
+   * Distinct from `.ca-display` (Inter) on shop / PLP / PDP / checkout.
    */
   .ca-editorial-display {
     @apply font-editorial font-normal tracking-[-0.01em] text-balance;
@@ -206,27 +205,31 @@
   }
 
   .ca-btn-primary {
-    @apply inline-flex max-w-full min-h-11 items-center justify-center gap-2 rounded-full bg-mineral-ink px-6 py-3 font-body font-semibold tracking-wide text-linen transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mineral-ink focus-visible:ring-offset-2 focus-visible:ring-offset-linen;
+    @apply inline-flex max-w-full min-h-12 items-center justify-center gap-2 rounded-[var(--radius-md)] bg-forest px-6 py-3 font-body font-medium tracking-wide text-white transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2 focus-visible:ring-offset-white;
     font-size: var(--text-button);
-    color: var(--ca-linen);
+    color: var(--color-white);
   }
 
   .ca-btn-primary:hover {
-    background-color: color-mix(in srgb, var(--ca-mineral-ink) 90%, white);
-    color: var(--ca-linen);
+    background-color: color-mix(in srgb, var(--color-forest) 88%, black);
+    color: var(--color-white);
   }
 
   .ca-btn-primary:disabled {
-    color: var(--ca-linen);
+    color: var(--color-white);
   }
 
   .ca-btn-secondary {
-    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-linen px-6 py-3 font-body font-semibold tracking-wide text-mineral-ink transition-colors duration-150 hover:bg-oat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-linen focus-visible:ring-offset-2 focus-visible:ring-offset-mineral-ink;
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-[var(--radius-md)] border border-mineral-ink bg-white px-6 py-3 font-body font-medium tracking-wide text-mineral-ink transition-colors duration-200 hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2 focus-visible:ring-offset-white;
     font-size: var(--text-button);
   }
 
   .ca-text-link {
     @apply inline-flex items-center gap-1.5 font-body text-sm font-medium text-mineral-ink underline-offset-4 hover:underline;
+  }
+
+  .ca-material-badge {
+    @apply font-body text-xs font-medium tracking-wide text-text-secondary;
   }
 
   /**
@@ -298,7 +301,7 @@
   }
 
   .peer:focus-visible + .ca-swatch {
-    outline: 2px solid var(--ca-haze-blue);
+    outline: 2px solid var(--color-forest);
     outline-offset: 2px;
   }
 
@@ -377,7 +380,7 @@
   }
 
   .ca-qty-btn {
-    @apply inline-flex min-h-11 min-w-11 items-center justify-center font-body text-mineral-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-inset;
+    @apply inline-flex min-h-11 min-w-11 items-center justify-center font-body text-mineral-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-inset;
   }
 
   .ca-qty-btn:hover:not(:disabled) {
@@ -389,11 +392,11 @@
   }
 
   .ca-qty-input {
-    @apply w-14 border-x border-oat bg-linen text-center font-body text-sm text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-inset;
+    @apply w-14 border-x border-oat bg-white text-center font-body text-sm text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-inset;
   }
 
   .ca-input {
-    @apply min-h-11 w-full rounded-[6px] border border-oat bg-linen px-3 py-2 font-body text-sm text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue;
+    @apply min-h-12 w-full rounded-[var(--radius-sm)] border border-oat bg-white px-3 py-2 font-body text-sm text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest;
   }
 
   .ca-input::placeholder {
@@ -401,14 +404,14 @@
   }
 
   .ca-select {
-    @apply min-h-11 rounded-[6px] border border-oat bg-linen px-3 font-body text-sm text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue;
+    @apply min-h-12 rounded-[var(--radius-sm)] border border-oat bg-white px-3 font-body text-sm text-mineral-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest;
   }
 
   /**
    * Skip link — visually hidden until focused; clears sticky masthead.
    */
   .ca-skip-link {
-    @apply absolute left-4 top-0 z-[100] -translate-y-[120%] rounded-full bg-mineral-ink px-4 py-2 font-body text-sm font-medium text-linen transition-transform focus:translate-y-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-offset-2 focus-visible:ring-offset-linen;
+    @apply absolute left-4 top-0 z-[100] -translate-y-[120%] rounded-[var(--radius-md)] bg-forest px-4 py-2 font-body text-sm font-medium text-white transition-transform focus:translate-y-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2 focus-visible:ring-offset-white;
   }
 
   #main-content {

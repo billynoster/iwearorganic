@@ -1,103 +1,128 @@
 /**
- * Coastal Analog 3.2 — design tokens
- * Creative lock: Option B — Bold Editorial
- * Campaign: The Art of Everyday.
- * Typography: BLEND America Typography System v2.0
+ * I Wear Organic — design tokens
+ * Source of truth: brand kit v1.0 §44
+ * Organic Forest primary · Natural Cotton editorial · Pure White ecommerce canvas
  */
 
 :root {
-  /* Brand palette */
-  --ca-linen: #f4f1eb;
-  --ca-oat: #ddd4c9;
-  --ca-dusk-rose: #bfa4a1;
-  --ca-haze-blue: #91a7af;
-  --ca-mineral-ink: #303435;
-  --ca-white: #ffffff;
+  /* Brand kit palette (§44) */
+  --color-forest: #294936;
+  --color-cotton: #f6f2e8;
+  --color-white: #ffffff;
+  --color-soil: #453b32;
+  --color-sage: #93a88e;
+  --color-clay: #c98467;
 
-  /* Semantic mapping (light editorial surface) */
-  --background: 40 24% 94%; /* Linen */
-  --foreground: 186 5% 20%; /* Mineral Ink */
-  --card: 36 18% 92%;
-  --card-foreground: 186 5% 20%;
-  --popover: 40 24% 94%;
-  --popover-foreground: 186 5% 20%;
-  --primary: 186 5% 20%;
-  --primary-foreground: 40 24% 94%;
-  --secondary: 33 15% 84%;
-  --secondary-foreground: 186 5% 20%;
-  --muted: 33 15% 88%;
-  --muted-foreground: 186 5% 32%;
-  --accent: 198 16% 63%;
-  --accent-foreground: 186 5% 20%;
-  --destructive: 0 55% 42%;
-  --destructive-foreground: 40 24% 94%;
-  --border: 33 12% 82%;
-  --input: 33 12% 82%;
-  --ring: 186 5% 20%;
-  --radius: 0.375rem; /* ~6px architectural */
+  --color-text: #242724;
+  --color-text-secondary: #686b67;
+  --color-border: #e7e8e4;
+  --color-surface: #f8f8f5;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
 
   /**
-   * Typography roles — Phase 8A consolidation
-   * Loaded via Google Fonts in layout:
-   * Outfit 700 (wordmark only) / DM Sans (all functional) / Instrument Serif (editorial).
-   * Archivo removed — functional display aliases map to DM Sans.
+   * Legacy Coastal Analog aliases → I Wear Organic tokens.
+   * Keeps existing Tailwind classes (bg-linen, text-mineral-ink, border-oat…)
+   * mapping to the new brand system without a class rewrite.
    */
-  --font-brand: 'Outfit', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  --font-editorial: 'Instrument Serif', Georgia, 'Times New Roman', serif;
-  /* Functional display / legacy heading aliases → DM Sans */
+  --ca-linen: var(--color-cotton);
+  --ca-oat: var(--color-border);
+  --ca-dusk-rose: var(--color-clay);
+  --ca-haze-blue: var(--color-sage);
+  --ca-mineral-ink: var(--color-text);
+  --ca-white: var(--color-white);
+  --ca-forest: var(--color-forest);
+  --ca-soil: var(--color-soil);
+  --ca-sage: var(--color-sage);
+  --ca-clay: var(--color-clay);
+  --ca-surface: var(--color-surface);
+  --ca-text-secondary: var(--color-text-secondary);
+
+  /* Semantic mapping (white ecommerce canvas) */
+  --background: 60 20% 98%; /* near Light Surface / white */
+  --foreground: 120 5% 14%; /* Charcoal */
+  --card: 0 0% 100%;
+  --card-foreground: 120 5% 14%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 120 5% 14%;
+  --primary: 145 28% 22%; /* Organic Forest */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 40 33% 94%; /* Natural Cotton */
+  --secondary-foreground: 120 5% 14%;
+  --muted: 60 14% 97%; /* Light Surface */
+  --muted-foreground: 90 3% 41%; /* Medium Gray */
+  --accent: 112 13% 61%; /* Sage */
+  --accent-foreground: 120 5% 14%;
+  --destructive: 0 55% 42%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 80 7% 90%; /* Soft Gray */
+  --input: 80 7% 90%;
+  --ring: 145 28% 22%; /* Forest focus */
+  --radius: var(--radius-sm); /* 6px architectural default */
+
+  /**
+   * Typography — brand kit §6
+   * Inter (UI / ecommerce) · DM Serif Display (editorial only)
+   * Wordmark uses Inter semibold via --font-brand.
+   */
+  --font-brand: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-editorial: 'DM Serif Display', Georgia, 'Times New Roman', serif;
   --font-display: var(--font-body);
   --font-heading: var(--font-body);
 
   /**
-   * Fluid type scale
-   * Editorial sizes pair with Instrument (.ca-editorial-display / .text-hero…).
-   * Functional sizes pair with DM Sans (.ca-display / .ca-heading / .text-collection…).
-   * Do not use .text-hero on functional commerce titles — use .text-collection / .text-h2.
+   * Fluid type scale — brand kit §7
+   * Display 48–64 (mobile ~36–44); reserve hero for editorial.
    */
-  --text-hero: clamp(2.75rem, 1.7rem + 4.2vw, 5.5rem); /* 44–88 · editorial campaign H1 only */
-  --text-editorial: clamp(2.625rem, 1.7rem + 3.2vw, 4.5rem); /* 42–72 · Lookbook / Worn storytelling */
-  --text-editorial-section: clamp(2rem, 1.65rem + 1.4vw, 3rem); /* 32–48 · Everyday Uniform */
-  --text-editorial-promo: clamp(2rem, 1.55rem + 1.8vw, 3rem); /* 32–48 · App Store */
-  --text-collection: clamp(2rem, 1.55rem + 2.2vw, 3.5rem); /* 32–56 · functional page / collection H1 */
-  --text-h2: clamp(1.75rem, 1.4rem + 1.5vw, 2.75rem); /* 28–44 · functional section H2 */
-  --text-h3: clamp(1.375rem, 1.2rem + 0.7vw, 1.875rem); /* 22–30 */
-  --text-pdp-title: clamp(1.625rem, 1.5rem + 0.6vw, 2.25rem); /* 26–36 · product H1 */
+  --text-hero: clamp(2.25rem, 1.6rem + 3.2vw, 4rem); /* 36–64 · editorial campaign H1 */
+  --text-editorial: clamp(2rem, 1.55rem + 2.4vw, 3.5rem); /* 32–56 */
+  --text-editorial-section: clamp(1.75rem, 1.45rem + 1.2vw, 2.5rem); /* 28–40 */
+  --text-editorial-promo: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem); /* 28–40 */
+  --text-collection: clamp(1.75rem, 1.4rem + 1.6vw, 3rem); /* 28–48 · functional page H1 */
+  --text-h2: clamp(1.5rem, 1.3rem + 1.1vw, 2.5rem); /* 24–40 */
+  --text-h3: clamp(1.375rem, 1.25rem + 0.5vw, 1.75rem); /* 22–28 */
+  --text-pdp-title: clamp(1.5rem, 1.35rem + 0.6vw, 2.25rem); /* 24–36 · product H1 */
   --text-product: clamp(1rem, 0.95rem + 0.2vw, 1.125rem); /* 16–18 · card title */
   --text-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); /* 16–18 */
   --text-support: 0.875rem; /* 14 · meta / secondary */
-  --text-eyebrow: 0.6875rem; /* 11 · labels / captions */
-  --text-button: 0.875rem; /* 14 */
+  --text-eyebrow: 0.75rem; /* 12 · labels / captions */
+  --text-button: 0.9375rem; /* 15 */
   --leading-headline: 1.1;
-  --leading-editorial: 1.08;
+  --leading-editorial: 1.05;
   --leading-body: 1.55;
-  /* Hierarchy → utilities in globals.css:
-     editorial display | functional display | title | body | label | meta */
   --ca-swatch-size: 1.875rem; /* 30px circular color swatches */
 
-  /* Layout */
+  /* Layout — brand kit §10 */
   --ca-max: 1360px;
-  --ca-gutter: clamp(1rem, 4vw, 4rem);
+  --ca-gutter: clamp(1rem, 4vw, 2rem);
   --header-height: 4rem;
 
   /**
-   * 8px spacing scale (Coastal Analog shop UI).
-   * Prefer these over one-off magic numbers in commerce surfaces.
-   * Maps cleanly to Tailwind: 2=8, 4=16, 6=24, 8=32, 10=40, 12=48.
+   * 8px spacing scale (maps to brand kit §9 / §44).
    */
-  --ca-space-1: 0.5rem; /* 8px — tight control/chip gap */
-  --ca-space-2: 1rem; /* 16px — label → control */
-  --ca-space-3: 1.5rem; /* 24px — related block nest */
-  --ca-space-4: 2rem; /* 32px — major purchase/commerce stack */
-  --ca-space-5: 2.5rem; /* 40px — section breathing */
-  --ca-space-6: 3rem; /* 48px — page section */
+  --ca-space-1: var(--space-2); /* 8px */
+  --ca-space-2: var(--space-4); /* 16px */
+  --ca-space-3: var(--space-6); /* 24px */
+  --ca-space-4: var(--space-8); /* 32px */
+  --ca-space-5: var(--space-10); /* 40px */
+  --ca-space-6: var(--space-12); /* 48px */
   --ca-touch: 2.75rem; /* 44px — min touch target */
 
-  /**
-   * Editorial homepage section band (token-derived, not one-off).
-   * One band between sections; adjacent .ca-section-y collapse top pad
-   * so stacked linen blocks don’t double the gap.
-   */
   --ca-section-y: calc(var(--ca-space-6) + var(--ca-space-2)); /* 64px */
 }
 
@@ -116,6 +141,6 @@
 @media (min-width: 1024px) {
   :root {
     --header-height: 4.5rem;
-    --text-eyebrow: 0.75rem; /* 12 */
+    --text-eyebrow: 0.75rem;
   }
 }
