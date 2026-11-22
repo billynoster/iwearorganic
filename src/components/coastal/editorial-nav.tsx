@@ -64,11 +64,7 @@ export function EditorialNav() {
           className="inline-flex shrink-0 items-center"
           aria-label="i wear organic home"
         >
-          <Logo
-            variant="forest"
-            priority
-            className="w-[108px] sm:w-[132px] lg:w-[148px]"
-          />
+          <Logo variant="forest" lockup="wordmark" />
         </Link>
 
         <nav

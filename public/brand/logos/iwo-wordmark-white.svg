@@ -1,7 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-label="i wear organic">
   <title>i wear organic</title>
-  <style>
-    .logo { font-family: "Inter Display", Inter, "Helvetica Neue", Arial, sans-serif; font-weight: 600; letter-spacing: -0.045em; }
-  </style>
-  <text class="logo" x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="170" fill="#FFFFFF">i wear organic</text>
+  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Sora, system-ui, sans-serif" font-weight="600" font-size="170" letter-spacing="-0.02em" fill="#F6F2E8">i wear organic</text>
 </svg>

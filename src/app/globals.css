@@ -145,7 +145,7 @@
    * title  → .ca-product-title (Sora Medium/Semibold)
    * body   → .ca-lede (Sora Regular)
    * label  → .ca-eyebrow | .ca-field-label | .ca-btn-* (Sora Medium)
-   * brand  → .font-brand (Sora Semibold; raster logo preferred)
+   * brand  → .font-brand (Sora Semibold text wordmark + ™)
    */
   .ca-eyebrow {
     @apply font-body font-medium uppercase tracking-[0.16em];
