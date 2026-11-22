@@ -39,18 +39,17 @@ Central design document for I Wear Organic (`iwearorganic.com`), adapted from th
 *   **Do not** reintroduce Heritage Crimson / Obsidian Indigo as brand colors.
 *   **Homepage**: Match Option B section order, copy, composition, and art-directed desktop (1440) / mobile (390) layouts. Not a generic ecommerce template.
 
-## 4. Homepage section order (locked — Phase 6C)
+## 4. Homepage section order (refined — fewer sections)
 1. Editorial Navigation  
-2. Cinematic Hero — *Made for the Moment.* + **Shop the Collection**  
-3. Category Discovery — Menswear / Womenswear / New Arrivals  
-4. The Everyday Uniform product gallery (4 curated + Shop all)  
-5. Living Lookbook / In Motion — *Not just worn. Lived in.* → Lookbook edit  
-6. Worn Your Way — *The Style Edit* (asymmetric shoppable looks)  
-7. App Store Signature — compact badge promo (no iOS screenshots)  
-8. Editorial Footer — tagline *Easy to wear. Hard to overlook.*
+2. Cinematic Hero — *Wear Better. Naturally.* + Shop Women / Shop Men (+ Why Organic?)  
+3. Featured Products — *Made for Every Day.* (≈4 desktop / 2 mobile + Shop All)  
+4. Brand Proposition — *Organic Isn’t a Collection. It’s the Entire Store.* → Why Organic?  
+5. Editorial Lifestyle — *Naturally Your Own.* → Explore the Collection  
+6. App Store Signature — compact (Shop Anywhere)  
+7. Editorial Footer — tagline *Easy to wear. Hard to overlook.*
 
-**Removed from homepage:** Just dropped strip (Phase 6C — duplicated Everyday Uniform). `/new-arrivals` and data-driven **New** badges remain.  
-Out of Office is no longer a homepage section (draft Style Edit may remain unpublished under `/lookbook`).
+**Removed from homepage:** Collection rail, Everyday Uniform / numbered edits, Living Lookbook, Worn Your Way, Just dropped strip, Out of Office. Deeper pages keep lookbook/about storytelling.  
+`/new-arrivals` and data-driven **New** badges remain on PLPs.
 
 ## 5. Architecture notes
 *   Secrets stay server-side. Do not trust client prices. Do not alter production Stripe webhooks.
