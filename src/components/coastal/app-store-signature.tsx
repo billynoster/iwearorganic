@@ -1,35 +1,35 @@
 import { AppStoreBadge } from '@/components/ui/app-store-badge';
 
 /**
- * Compact App Store Signature — between Worn Your Way and footer.
- * Editorial headline; official badge; no device mockup.
+ * Compact App Store strip — precedes the footer.
+ * Reduced vertical padding vs. prior homepage block.
  */
 export function AppStoreSignature() {
   return (
     <section
       id="app-store"
       aria-labelledby="app-store-heading"
-      className="ca-section-y border-t border-oat bg-cotton pb-[calc(var(--ca-section-y)*0.75)]"
+      className="border-t border-oat bg-cotton py-10 sm:py-12 md:py-14"
     >
       <div className="ca-container">
-        <div className="flex flex-col gap-6 py-8 sm:gap-7 md:flex-row md:items-center md:justify-between md:gap-10 md:py-10">
+        <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between md:gap-10">
           <div className="min-w-0 max-w-2xl flex-1">
-            <p className="ca-eyebrow mb-2">On the go</p>
+            <p className="ca-eyebrow mb-2">Shop Anywhere</p>
             <h2
               id="app-store-heading"
               className="ca-editorial-display text-editorial-promo text-mineral-ink"
             >
-              I Wear Organic. Wherever you go.
+              I Wear Organic. Wherever You Are.
             </h2>
             <p className="ca-lede mt-3 max-w-xl">
-              Discover and shop I Wear Organic on your iPhone. Available on the App
-              Store.
+              Discover new arrivals, save favorites, and shop I Wear Organic from
+              your iPhone.
             </p>
           </div>
 
           <div className="flex shrink-0 flex-col items-start gap-2 md:items-end">
             <AppStoreBadge size="lg" className="min-h-11" />
-            <p className="ca-caption">Available for iPhone</p>
+            <p className="ca-caption">Download on the App Store</p>
           </div>
         </div>
       </div>

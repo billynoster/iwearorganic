@@ -1,14 +1,13 @@
 import type { Metadata } from 'next';
 import { EditorialNav } from '@/components/coastal/editorial-nav';
 import { CinematicHero } from '@/components/coastal/cinematic-hero';
-import { CollectionRail } from '@/components/coastal/collection-rail';
-import { EverydayUniformGallery } from '@/components/coastal/everyday-uniform-gallery';
-import { LivingLookbook } from '@/components/coastal/living-lookbook';
-import { WornYourWay } from '@/components/coastal/worn-your-way';
+import { FeaturedProducts } from '@/components/coastal/featured-products';
+import { BrandProposition } from '@/components/coastal/brand-proposition';
+import { EditorialLifestyle } from '@/components/coastal/editorial-lifestyle';
 import { AppStoreSignature } from '@/components/coastal/app-store-signature';
 import { EditorialFooter } from '@/components/coastal/editorial-footer';
 import { SkipLink } from '@/components/coastal/skip-link';
-import { collectionsService, catalogService } from '@/services';
+import { catalogService } from '@/services';
 import { selectEverydayUniformProducts } from '@/lib/everyday-uniform';
 
 export const metadata: Metadata = {
@@ -18,19 +17,11 @@ export const metadata: Metadata = {
 };
 
 /**
- * Phase 6C homepage order (locked):
- * Header → Hero → Shop by Collection → Everyday Uniform → In Motion →
- * Worn Your Way → App Store → Footer
- * Just dropped strip removed (duplicated Everyday Uniform).
+ * Homepage flow:
+ * Brand (Hero) → Shop (Featured) → Why Organic → Lifestyle → App → Footer
  */
 export default async function CoastalHomePage() {
-  const [{ collections, meta: collectionMeta }, { products, meta: catalogMeta }] =
-    await Promise.all([
-      collectionsService.listCollections(),
-      catalogService.listProducts(),
-    ]);
-
-  const usingFixtures = collectionMeta.usingFixtures || catalogMeta.usingFixtures;
+  const { products, meta: catalogMeta } = await catalogService.listProducts();
   const galleryProducts = selectEverydayUniformProducts(products, 4);
 
   return (
@@ -39,16 +30,12 @@ export default async function CoastalHomePage() {
       <EditorialNav />
       <main id="main-content">
         <CinematicHero />
-        <CollectionRail collections={collections} usingFixtures={usingFixtures} />
-        <EverydayUniformGallery
+        <FeaturedProducts
           products={galleryProducts}
           usingFixtures={catalogMeta.usingFixtures}
         />
-        <LivingLookbook />
-        <WornYourWay
-          products={galleryProducts}
-          usingFixtures={catalogMeta.usingFixtures}
-        />
+        <BrandProposition />
+        <EditorialLifestyle />
         <AppStoreSignature />
       </main>
       <EditorialFooter />
