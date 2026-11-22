@@ -34,7 +34,7 @@ Keep these **names**; values come from tonight’s Printify / Stripe / Firebase 
 | Variable | Notes |
 | --- | --- |
 | `PRINTIFY_API_TOKEN` or `PRINTIFY_API_KEY` | Shop API token |
-| *(shop id)* | Resolved via Printify API when token is present |
+| `PRINTIFY_SHOP_ID` | **Required** if the token sees multiple shops — pin the I Wear Organic shop id (do not rely on `shops[0]`) |
 
 ### Stripe
 

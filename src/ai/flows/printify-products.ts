@@ -8,6 +8,7 @@
  */
 
 import {z} from 'zod';
+import { resolvePrintifyShopId } from '@/lib/printify-shop';
 
 const PrintifyImageSchema = z.object({
   src: z.string().url(),
@@ -1371,35 +1372,12 @@ function applyProductOverrides(product: PrintifyProduct) {
 }
 
 async function getShopId(): Promise<string> {
-  const token = process.env.PRINTIFY_API_TOKEN || process.env.PRINTIFY_API_KEY;
-  
-  if (!token) {
-    console.warn("PRINTIFY_API_TOKEN is not set. Returning empty shop ID.");
-    return "";
+  try {
+    return await resolvePrintifyShopId();
+  } catch (err) {
+    console.error('[printify-products] resolvePrintifyShopId failed:', err);
+    throw err;
   }
-
-  console.log("PRINTIFY_API_TOKEN is present. Fetching shops...");
-
-  const response = await fetch(`${printifyAPI}/shops.json`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  if (!response.ok) {
-    const errorBody = await response.text();
-    console.error("Failed to fetch Printify shops:", errorBody);
-    throw new Error('Failed to fetch Printify shops.');
-  }
-  const shops = await response.json();
-  console.log(`Found ${shops?.length || 0} Printify shops.`);
-  
-  if (!shops || shops.length === 0) {
-    console.warn('No Printify shops found for the provided API token.');
-    return ""; // Return empty instead of throwing so it doesn't crash the page
-  }
-  // Assuming we use the first shop
-  console.log(`Using shop ID: ${shops[0].id}`);
-  return shops[0].id;
 }
 
 
