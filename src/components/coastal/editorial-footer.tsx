@@ -46,7 +46,7 @@ export function EditorialFooter() {
       <div className="ca-container">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-4">
-            <Logo variant="forest" className="w-[168px]" />
+            <Logo variant="forest" lockup="wordmark" className="w-[180px]" />
             <p className="ca-editorial mt-3 max-w-xs text-xl text-mineral-ink">
               Wear something better.
             </p>

@@ -66,8 +66,9 @@ export function EditorialNav() {
         >
           <Logo
             variant="forest"
+            lockup="wordmark"
             priority
-            className="w-[108px] sm:w-[132px] lg:w-[148px]"
+            className="w-[128px] sm:w-[156px] lg:w-[180px]"
           />
         </Link>
 
