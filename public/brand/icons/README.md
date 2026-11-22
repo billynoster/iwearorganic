@@ -1,17 +1,17 @@
 # I Wear Organic — brand icons (locked)
 
-Official monogram assets (leaf-`i` + connected `wo`).
+Official monogram (leaf-`i` + connected `wo`) from Brand Kit masters.
 
 ## Colorways
 
 | Prefix | Background | Mark | Use |
 | --- | --- | --- | --- |
-| `iwo-icon-cotton-*` | Natural Cotton `#F6F2E8` | Organic Forest | Primary light / social |
-| `iwo-icon-forest-*` | Organic Forest `#294936` | Natural Cotton | **Default favicon**, app icon, dark surfaces |
+| `iwo-icon-cotton-*` | Natural Cotton | Organic Forest | Primary light / social |
+| `iwo-icon-forest-*` | Organic Forest | Natural Cotton | **Default favicon**, app icon |
 | `iwo-icon-black-*` | White | Black | Outline / print sparingly |
 
-Sizes: `16`, `32`, `48`, `180`, `192`, `512`, `1024` (+ `*-master.png`).
+Masters: `*-master.jpg` (2048²). Sizes: `16`, `32`, `48`, `180`, `192`, `512`, `1024`.
 
 ## Favicon
 
-Browser tabs use the **forest** colorway via `/favicon.ico`, `/favicon.svg`, and `src/app/icon.png`.
+Tabs use the **forest** colorway: `/favicon.ico`, `/favicon.svg`, `src/app/icon.png`.
