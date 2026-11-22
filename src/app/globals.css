@@ -139,14 +139,13 @@
 
 @layer components {
   /**
-   * Typography hierarchy — I Wear Organic brand kit
-   * editorial display → .ca-editorial-display (DM Serif Display) + .text-hero / .text-editorial*
-   * functional display → .ca-display / .ca-heading (Inter) + .text-collection / .text-h2 / .text-h3 / .text-pdp-title
-   * title  → .ca-product-title | .ca-display + .text-pdp-title
-   * body   → .ca-lede
-   * label  → .ca-eyebrow | .ca-field-label | .ca-btn-*
-   * meta   → .ca-meta | .ca-caption
-   * brand  → .font-brand (Inter wordmark)
+   * Typography hierarchy — Brand Kit v1.3 (Sora only)
+   * editorial display → .ca-editorial-display (Sora Semibold) + .text-hero / .text-editorial*
+   * functional display → .ca-display / .ca-heading (Sora Semibold)
+   * title  → .ca-product-title (Sora Medium/Semibold)
+   * body   → .ca-lede (Sora Regular)
+   * label  → .ca-eyebrow | .ca-field-label | .ca-btn-* (Sora Medium)
+   * brand  → .font-brand (Sora Semibold; raster logo preferred)
    */
   .ca-eyebrow {
     @apply font-body font-medium uppercase tracking-[0.16em];
@@ -154,7 +153,7 @@
     color: color-mix(in srgb, var(--ca-mineral-ink) 55%, transparent);
   }
 
-  /** Functional commerce headings — Inter */
+  /** Functional commerce headings — Sora Semibold */
   .ca-display {
     @apply font-body font-semibold tracking-[-0.02em] text-mineral-ink text-balance;
     line-height: var(--leading-headline);
@@ -166,15 +165,15 @@
   }
 
   .ca-editorial {
-    @apply font-editorial tracking-[-0.01em] text-mineral-ink text-balance;
+    @apply font-body font-semibold tracking-[-0.02em] text-mineral-ink text-balance;
   }
 
   /**
-   * Editorial campaign / Lookbook storytelling headlines (DM Serif Display).
-   * Distinct from `.ca-display` (Inter) on shop / PLP / PDP / checkout.
+   * Campaign / homepage storytelling headlines — Sora Semibold (v1.3).
+   * Same family as commerce; weight + scale create hierarchy.
    */
   .ca-editorial-display {
-    @apply font-editorial font-normal tracking-[-0.01em] text-balance;
+    @apply font-body font-semibold tracking-[-0.02em] text-balance;
     line-height: var(--leading-editorial);
   }
 
@@ -186,7 +185,7 @@
   }
 
   .ca-product-title {
-    @apply font-body font-semibold tracking-tight text-mineral-ink;
+    @apply font-body font-medium tracking-tight text-mineral-ink;
     font-size: var(--text-product);
     line-height: 1.35;
   }
@@ -222,7 +221,7 @@
   }
 
   .ca-btn-secondary {
-    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-[var(--radius-md)] border border-mineral-ink bg-white px-6 py-3 font-body font-medium tracking-wide text-mineral-ink transition-colors duration-200 hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-[var(--radius-md)] border border-forest bg-white px-6 py-3 font-body font-medium tracking-wide text-forest transition-colors duration-200 hover:bg-cotton focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2 focus-visible:ring-offset-white;
     font-size: var(--text-button);
   }
 

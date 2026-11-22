@@ -1,30 +1,40 @@
 /**
  * I Wear Organic — design tokens
- * Source of truth: brand kit + logo system v1.1
+ * Source of truth: Brand Kit + Digital Style Guide v1.3
  * Organic Forest primary · Natural Cotton editorial · Pure White ecommerce canvas
+ * Typeface: Sora 400 / 500 / 600 (no Inter / DM Serif as primary)
  */
 
 :root {
-  /* Brand kit palette + logo kit v1.1 tokens */
+  /* Brand kit palette §10 */
   --color-forest: #294936;
   --color-cotton: #f6f2e8;
   --color-white: #ffffff;
   --color-soil: #453b32;
   --color-sage: #93a88e;
-  --color-clay: #c98467;
+  --color-clay: #c99467;
+
+  /* Canonical --iwo-* aliases (§54) */
+  --iwo-forest: var(--color-forest);
+  --iwo-cotton: var(--color-cotton);
+  --iwo-white: var(--color-white);
+  --iwo-soil: var(--color-soil);
+  --iwo-sage: var(--color-sage);
+  --iwo-clay: var(--color-clay);
+  --iwo-text: #242724;
+  --iwo-text-secondary: #686b67;
+  --iwo-border: #e7e8e4;
+  --iwo-surface: #f8f8f5;
 
   --iwo-organic-forest: var(--color-forest);
   --iwo-natural-cotton: var(--color-cotton);
   --iwo-pure-white: var(--color-white);
-  --iwo-charcoal: #242724;
-  --iwo-soil: var(--color-soil);
-  --iwo-sage: var(--color-sage);
-  --iwo-clay: var(--color-clay);
+  --iwo-charcoal: var(--iwo-text);
 
-  --color-text: #242724;
-  --color-text-secondary: #686b67;
-  --color-border: #e7e8e4;
-  --color-surface: #f8f8f5;
+  --color-text: var(--iwo-text);
+  --color-text-secondary: var(--iwo-text-secondary);
+  --color-border: var(--iwo-border);
+  --color-surface: var(--iwo-surface);
 
   --radius-sm: 6px;
   --radius-md: 8px;
@@ -41,11 +51,16 @@
   --space-16: 64px;
   --space-20: 80px;
   --space-24: 96px;
+  --space-30: 120px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
 
   /**
    * Legacy Coastal Analog aliases → I Wear Organic tokens.
    * Keeps existing Tailwind classes (bg-linen, text-mineral-ink, border-oat…)
-   * mapping to the new brand system without a class rewrite.
+   * mapping to the brand system without a class rewrite.
    */
   --ca-linen: var(--color-cotton);
   --ca-oat: var(--color-border);
@@ -72,60 +87,60 @@
   --secondary: 40 33% 94%; /* Natural Cotton */
   --secondary-foreground: 120 5% 14%;
   --muted: 60 14% 97%; /* Light Surface */
-  --muted-foreground: 90 3% 41%; /* Medium Gray */
+  --muted-foreground: 90 3% 41%;
   --accent: 112 13% 61%; /* Sage */
   --accent-foreground: 120 5% 14%;
   --destructive: 0 55% 42%;
   --destructive-foreground: 0 0% 100%;
-  --border: 80 7% 90%; /* Soft Gray */
+  --border: 80 7% 90%;
   --input: 80 7% 90%;
-  --ring: 145 28% 22%; /* Forest focus */
-  --radius: var(--radius-sm); /* 6px architectural default */
+  --ring: 145 28% 22%;
+  --radius: var(--radius-sm);
 
   /**
-   * Typography — brand kit §6 + logo kit v1.1
-   * Inter (UI / ecommerce) · DM Serif Display (editorial only)
-   * Approved wordmark assets use Inter Display SemiBold; CSS fallback
-   * for text lockups uses Inter 600 at -0.045em tracking.
+   * Typography — brand kit v1.3 §12–16
+   * Sora only (400 / 500 / 600). Editorial display uses Sora Semibold.
+   * Raster wordmark assets remain source of truth for the logo lockup.
    */
-  --font-brand: 'Inter', system-ui, sans-serif;
-  --iwo-logo-font: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-brand: 'Sora', system-ui, sans-serif;
+  --iwo-logo-font: 'Sora', system-ui, sans-serif;
   --iwo-logo-weight: 600;
-  --iwo-logo-tracking: -0.045em;
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-editorial: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+  --iwo-logo-tracking: -0.02em;
+  --font-body: 'Sora', system-ui, sans-serif;
+  --font-editorial: 'Sora', system-ui, sans-serif;
   --font-display: var(--font-body);
   --font-heading: var(--font-body);
 
   /**
-   * Fluid type scale — brand kit §7
-   * Display 48–64 (mobile ~36–44); reserve hero for editorial.
+   * Type scale — brand kit §14–15
+   * H1 48/56 · H2 32/40 · H3 24/32 · Body 16/24 · Small 14/20
+   * Mobile: H1 36–40 · H2 28–32 · H3 22–24
    */
-  --text-hero: clamp(2.25rem, 1.6rem + 3.2vw, 4rem); /* 36–64 · editorial campaign H1 */
-  --text-editorial: clamp(2rem, 1.55rem + 2.4vw, 3.5rem); /* 32–56 */
-  --text-editorial-section: clamp(1.75rem, 1.45rem + 1.2vw, 2.5rem); /* 28–40 */
-  --text-editorial-promo: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem); /* 28–40 */
-  --text-collection: clamp(1.75rem, 1.4rem + 1.6vw, 3rem); /* 28–48 · functional page H1 */
-  --text-h2: clamp(1.5rem, 1.3rem + 1.1vw, 2.5rem); /* 24–40 */
-  --text-h3: clamp(1.375rem, 1.25rem + 0.5vw, 1.75rem); /* 22–28 */
-  --text-pdp-title: clamp(1.5rem, 1.35rem + 0.6vw, 2.25rem); /* 24–36 · product H1 */
-  --text-product: clamp(1rem, 0.95rem + 0.2vw, 1.125rem); /* 16–18 · card title */
-  --text-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); /* 16–18 */
-  --text-support: 0.875rem; /* 14 · meta / secondary */
-  --text-eyebrow: 0.75rem; /* 12 · labels / captions */
+  --text-hero: clamp(2.25rem, 1.9rem + 1.6vw, 3rem); /* 36–48 · H1 */
+  --text-editorial: clamp(2rem, 1.75rem + 1.2vw, 3rem); /* 32–48 */
+  --text-editorial-section: clamp(1.75rem, 1.55rem + 0.9vw, 2rem); /* 28–32 · H2 */
+  --text-editorial-promo: clamp(1.75rem, 1.55rem + 0.9vw, 2rem); /* 28–32 */
+  --text-collection: clamp(1.75rem, 1.5rem + 1.1vw, 2.5rem); /* 28–40 · page H1 */
+  --text-h2: clamp(1.75rem, 1.55rem + 0.9vw, 2rem); /* 28–32 */
+  --text-h3: clamp(1.375rem, 1.3rem + 0.4vw, 1.5rem); /* 22–24 */
+  --text-pdp-title: clamp(1.5rem, 1.4rem + 0.5vw, 2rem); /* 24–32 */
+  --text-product: 1rem; /* 16 · card title */
+  --text-body: 1rem; /* 16 */
+  --text-support: 0.875rem; /* 14 */
+  --text-eyebrow: 0.75rem; /* 12 · labels */
   --text-button: 0.9375rem; /* 15 */
-  --leading-headline: 1.1;
-  --leading-editorial: 1.05;
-  --leading-body: 1.55;
-  --ca-swatch-size: 1.875rem; /* 30px circular color swatches */
+  --leading-headline: 1.1667; /* ~56/48 */
+  --leading-editorial: 1.2;
+  --leading-body: 1.5; /* 24/16 */
+  --ca-swatch-size: 1.875rem;
 
-  /* Layout — brand kit §10 */
+  /* Layout */
   --ca-max: 1360px;
   --ca-gutter: clamp(1rem, 4vw, 2rem);
   --header-height: 4rem;
 
   /**
-   * 8px spacing scale (maps to brand kit §9 / §44).
+   * 8px spacing scale (§26)
    */
   --ca-space-1: var(--space-2); /* 8px */
   --ca-space-2: var(--space-4); /* 16px */

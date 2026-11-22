@@ -31,7 +31,7 @@ export function EditorialLifestyle() {
           <div className="max-w-[18rem] sm:max-w-sm md:max-w-md">
             <h2
               id="lifestyle-heading"
-              className="ca-editorial-display text-editorial text-linen [text-shadow:0_1px_18px_rgba(48,52,53,0.35)]"
+              className="ca-editorial-display text-editorial text-linen"
             >
               Naturally Your Own.
             </h2>

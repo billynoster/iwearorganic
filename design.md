@@ -16,28 +16,21 @@ Central design document for I Wear Organic (`iwearorganic.com`), adapted from th
 *   **Integrations**: Printify, Stripe Checkout
 *   **Hosting**: Firebase App Hosting (`apphosting.yaml`)
 
-## 3. Visual Identity — Coastal Analog 3.2 × Option B
-*   **Concept**: The Quiet Editorial × The Living Lookbook
-*   **Campaign**: The Art of Everyday.
-*   **Tagline**: Easy to wear. Hard to overlook.
-*   **Typography** (Phase 8A consolidation — three families only):
-    *   **Instrument Serif** — editorial headlines, campaigns, Lookbook storytelling, selective italic accents (`.ca-editorial-display`, `.ca-editorial`). Home: Made for the Moment. / Everyday Uniform / In Motion / Worn Your Way / App Store. Lookbook landing + Style Edit heroes. About chapter/hero clamps may exceed `--text-hero` intentionally.
-    *   **DM Sans** (400/500/600/700) — primary functional font for **all** commerce headings, product titles, prices, nav, buttons, labels, body, checkout (`.ca-display`, `.ca-heading`, `.ca-product-title`, `.ca-lede`, `.ca-eyebrow`, …). Legacy `font-display` / `font-headline` aliases map here.
-    *   **Outfit** (700) — brand wordmark `i wear organic.` only (`--font-brand`).
-    *   **Archivo removed** (Phase 8A) — do not reintroduce.
-    *   **Hierarchy roles** (prefer shared utilities):
-        *   **editorial display** — Instrument + `.text-hero` / `.text-editorial*` (campaign / storytelling only)
-        *   **functional display** — DM Sans `.ca-display` / `.ca-heading` + `.text-collection` / `.text-h2` / `.text-h3` / `.text-pdp-title` (never `.text-hero`)
-        *   **title** — `.ca-product-title`; PDP H1 `.ca-display.text-pdp-title`
-        *   **body** — `.ca-lede`
-        *   **label** — `.ca-eyebrow`, `.ca-field-label`, `.ca-btn-*`
-        *   **meta** — `.ca-meta`, `.ca-caption`
-    *   Fluid scale: `--text-hero` (44–88 editorial only), `--text-editorial` (42–72), `--text-editorial-section` (32–48), `--text-editorial-promo` (32–48), `--text-collection` (32–56 functional page H1), `--text-h2` (28–44), `--text-pdp-title` (26–36), `--text-product` / `--text-body` (16–18).
-    *   PDP color UX: circular swatches (`--ca-swatch-size` ~30px) with catalog/known-name hex only.
+## 3. Visual Identity — Brand Kit + Digital Style Guide v1.3
+*   **Tagline**: Wear Better. Naturally.
+*   **Core statement**: Organic isn’t a collection. It’s the entire store.
+*   **Typography**: **Sora** only (400 / 500 / 600). No Inter / DM Serif Display as primary.
+    *   Semibold (600) — headlines, section titles, logo CSS fallback
+    *   Medium (500) — buttons, product titles, active nav, form labels
+    *   Regular (400) — body, UI, navigation, secondary
+    *   Scale: H1 48/56 · H2 32/40 · H3 24/32 · Body 16/24 · Small 14/20 (mobile H1 36–40)
 *   **Color Palette**:
-    *   Linen `#F4F1EB` · Oat `#DDD4C9` · Dusk Rose `#BFA4A1` · Haze Blue `#91A7AF` · Mineral Ink `#303435`
-*   **Do not** reintroduce Heritage Crimson / Obsidian Indigo as brand colors.
-*   **Homepage**: Match Option B section order, copy, composition, and art-directed desktop (1440) / mobile (390) layouts. Not a generic ecommerce template.
+    *   Organic Forest `#294936` · Natural Cotton `#F6F2E8` · Pure White `#FFFFFF`
+    *   Soil `#453B32` · Sage `#93A88E` · Clay `#C99467`
+    *   Charcoal `#242724` · Secondary text `#686B67` · Border `#E7E8E4` · Surface `#F8F8F5`
+*   **Distribution**: ~60–70% White · 15–20% Cotton · 5–10% Charcoal · 5–10% Forest · &lt;5% accents
+*   **Avoid**: gradients, heavy shadows, typeface mixing, numbered homepage sections, stereotypical “eco” styling
+*   **Homepage**: Brand → Shop → Why Organic → Lifestyle → App → Footer (see §4)
 
 ## 4. Homepage section order (refined — fewer sections)
 1. Editorial Navigation  

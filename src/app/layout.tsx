@@ -49,7 +49,7 @@ export const viewport: Viewport = {
 };
 
 /**
- * Brand kit typography — Inter 400/500/600 (UI), DM Serif Display (editorial).
+ * Brand kit v1.3 typography — Sora 400/500/600 (UI + editorial).
  * Prefer next/font/google when the build can fetch Google Fonts; this Cloud
  * Agent snapshot fails next/font Google downloads (null parse), so we keep
  * preconnect + stylesheet.
@@ -84,7 +84,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
         <meta name="apple-itunes-app" content="app-id=6811465301" />
