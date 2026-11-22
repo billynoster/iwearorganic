@@ -2,6 +2,7 @@ import { headers } from 'next/headers';
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { getAdminDb } from '@/lib/firebase-admin';
+import { resolvePrintifyShopId } from '@/lib/printify-shop';
 import { shouldSkipWebhookFulfillment } from '@/lib/webhook-order-guard';
 
 let stripeClient: Stripe | null = null;
@@ -21,22 +22,7 @@ function getStripe(): Stripe {
 const printifyAPI = 'https://api.printify.com/v1';
 
 async function getPrintifyShopId(token: string) {
-  const response = await fetch(`${printifyAPI}/shops.json`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error('Failed to fetch Printify shops.');
-  }
-
-  const shops = await response.json();
-  if (!shops || shops.length === 0) {
-    throw new Error('No Printify shops found.');
-  }
-
-  return shops[0].id;
+  return resolvePrintifyShopId(token);
 }
 
 export async function POST(req: Request) {
