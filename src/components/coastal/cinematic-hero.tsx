@@ -45,15 +45,16 @@ export function CinematicHero() {
               height={1500}
               decoding="async"
               fetchPriority="high"
-              className="absolute inset-0 h-full w-full object-cover object-[42%_36%] md:object-[30%_40%]"
+              className="absolute inset-0 h-full w-full object-cover object-[42%_36%] md:object-[72%_42%]"
             />
           </picture>
           <div
             className="pointer-events-none absolute inset-x-0 bottom-0 h-[58%] bg-gradient-to-t from-cotton/90 via-cotton/45 to-transparent md:hidden"
             aria-hidden="true"
           />
+          {/* Soft left wash for copy — new plate already has open wall on the left */}
           <div
-            className="pointer-events-none absolute inset-y-0 left-0 hidden w-[min(30rem,38%)] bg-gradient-to-r from-cotton/92 via-cotton/55 to-transparent md:block lg:w-[min(28rem,34%)]"
+            className="pointer-events-none absolute inset-y-0 left-0 hidden w-[min(26rem,32%)] bg-gradient-to-r from-cotton/70 via-cotton/35 to-transparent md:block lg:w-[min(24rem,28%)]"
             aria-hidden="true"
           />
         </div>
