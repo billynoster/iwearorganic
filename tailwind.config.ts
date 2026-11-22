@@ -32,17 +32,12 @@ export default {
         },
       }),
       fontFamily: {
-        body: ['var(--font-body)', 'Inter', 'system-ui', 'sans-serif'],
-        brand: ['var(--font-brand)', 'Inter', 'system-ui', 'sans-serif'],
-        display: ['var(--font-body)', 'Inter', 'system-ui', 'sans-serif'],
-        editorial: [
-          'var(--font-editorial)',
-          'DM Serif Display',
-          'Georgia',
-          'serif',
-        ],
-        heading: ['var(--font-body)', 'Inter', 'system-ui', 'sans-serif'],
-        headline: ['var(--font-body)', 'Inter', 'system-ui', 'sans-serif'],
+        body: ['var(--font-body)', 'Sora', 'system-ui', 'sans-serif'],
+        brand: ['var(--font-brand)', 'Sora', 'system-ui', 'sans-serif'],
+        display: ['var(--font-body)', 'Sora', 'system-ui', 'sans-serif'],
+        editorial: ['var(--font-editorial)', 'Sora', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-body)', 'Sora', 'system-ui', 'sans-serif'],
+        headline: ['var(--font-body)', 'Sora', 'system-ui', 'sans-serif'],
       },
       colors: {
         forest: 'var(--color-forest)',
