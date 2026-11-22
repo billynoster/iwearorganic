@@ -1,8 +1,9 @@
 /**
  * I Wear Organic — design tokens
- * Source of truth: Brand Kit + Digital Style Guide v1.3
+ * Source of truth: Brand Kit + Digital Style Guide v1.4
  * Organic Forest primary · Natural Cotton editorial · Pure White ecommerce canvas
- * Typeface: Sora 400 / 500 / 600 (no Inter / DM Serif as primary)
+ * UI typeface: Manrope 400 / 500 / 600
+ * Logo: approved Soft Minimal SVG wordmark (not live text)
  */
 
 :root {
@@ -98,40 +99,41 @@
   --radius: var(--radius-sm);
 
   /**
-   * Typography — brand kit v1.3 §12–16
-   * Sora only (400 / 500 / 600). Editorial display uses Sora Semibold.
-   * Raster wordmark assets remain source of truth for the logo lockup.
+   * Typography — brand kit v1.4
+   * Digital UI: Manrope 400 / 500 / 600 (Medium for headlines).
+   * Logo: approved Soft Minimal SVG — never recreate with Manrope/Sora/Inter.
    */
-  --font-brand: 'Sora', system-ui, sans-serif;
-  --iwo-logo-font: 'Sora', system-ui, sans-serif;
-  --iwo-logo-weight: 600;
-  --iwo-logo-tracking: -0.02em;
-  --font-body: 'Sora', system-ui, sans-serif;
-  --font-editorial: 'Sora', system-ui, sans-serif;
-  --font-display: var(--font-body);
-  --font-heading: var(--font-body);
+  --font-ui: 'Manrope', system-ui, sans-serif;
+  --font-brand: var(--font-ui); /* UI only; logo uses SVG artwork */
+  --iwo-logo-font: var(--font-ui); /* legacy alias — do not use for logo */
+  --iwo-logo-weight: 500;
+  --iwo-logo-tracking: -0.01em;
+  --font-body: var(--font-ui);
+  --font-editorial: var(--font-ui);
+  --font-display: var(--font-ui);
+  --font-heading: var(--font-ui);
 
   /**
-   * Type scale — brand kit §14–15
-   * H1 48/56 · H2 32/40 · H3 24/32 · Body 16/24 · Small 14/20
-   * Mobile: H1 36–40 · H2 28–32 · H3 22–24
+   * Type scale — brand kit v1.4 §18
+   * Hero 56–64 / mobile 38–44 · H1 48/56 · H2 32–40 · H3 24/32 · Body 16/24
+   * Prefer Manrope Medium (500) for headlines.
    */
-  --text-hero: clamp(2.25rem, 1.9rem + 1.6vw, 3rem); /* 36–48 · H1 */
-  --text-editorial: clamp(2rem, 1.75rem + 1.2vw, 3rem); /* 32–48 */
-  --text-editorial-section: clamp(1.75rem, 1.55rem + 0.9vw, 2rem); /* 28–32 · H2 */
-  --text-editorial-promo: clamp(1.75rem, 1.55rem + 0.9vw, 2rem); /* 28–32 */
-  --text-collection: clamp(1.75rem, 1.5rem + 1.1vw, 2.5rem); /* 28–40 · page H1 */
-  --text-h2: clamp(1.75rem, 1.55rem + 0.9vw, 2rem); /* 28–32 */
-  --text-h3: clamp(1.375rem, 1.3rem + 0.4vw, 1.5rem); /* 22–24 */
-  --text-pdp-title: clamp(1.5rem, 1.4rem + 0.5vw, 2rem); /* 24–32 */
-  --text-product: 1rem; /* 16 · card title */
-  --text-body: 1rem; /* 16 */
-  --text-support: 0.875rem; /* 14 */
-  --text-eyebrow: 0.75rem; /* 12 · labels */
-  --text-button: 0.9375rem; /* 15 */
-  --leading-headline: 1.1667; /* ~56/48 */
-  --leading-editorial: 1.2;
-  --leading-body: 1.5; /* 24/16 */
+  --text-hero: clamp(2.375rem, 1.9rem + 2.2vw, 4rem); /* 38–64 */
+  --text-editorial: clamp(2.375rem, 1.95rem + 1.8vw, 3.5rem); /* ~38–56 */
+  --text-editorial-section: clamp(1.75rem, 1.5rem + 1.1vw, 2.5rem); /* 28–40 · H2 */
+  --text-editorial-promo: clamp(1.75rem, 1.5rem + 1.1vw, 2.5rem);
+  --text-collection: clamp(1.75rem, 1.5rem + 1.2vw, 3rem); /* page H1 */
+  --text-h2: clamp(1.75rem, 1.5rem + 1.1vw, 2.5rem); /* 28–40 */
+  --text-h3: clamp(1.375rem, 1.3rem + 0.45vw, 1.5rem); /* 22–24 */
+  --text-pdp-title: clamp(1.5rem, 1.4rem + 0.55vw, 2rem);
+  --text-product: 1rem;
+  --text-body: 1rem;
+  --text-support: 0.875rem;
+  --text-eyebrow: 0.75rem; /* 12 */
+  --text-button: 0.9375rem;
+  --leading-headline: 1.08;
+  --leading-editorial: 1.1;
+  --leading-body: 1.5;
   --ca-swatch-size: 1.875rem;
 
   /* Layout */

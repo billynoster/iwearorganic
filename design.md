@@ -16,20 +16,20 @@ Central design document for I Wear Organic (`iwearorganic.com`), adapted from th
 *   **Integrations**: Printify, Stripe Checkout
 *   **Hosting**: Firebase App Hosting (`apphosting.yaml`)
 
-## 3. Visual Identity — Brand Kit + Digital Style Guide v1.3
+## 3. Visual Identity — Brand Kit + Digital Style Guide v1.4
 *   **Tagline**: Wear Better. Naturally.
 *   **Core statement**: Organic isn’t a collection. It’s the entire store.
-*   **Typography**: **Sora** only (400 / 500 / 600). No Inter / DM Serif Display as primary.
-    *   Semibold (600) — headlines, section titles, logo CSS fallback
-    *   Medium (500) — buttons, product titles, active nav, form labels
-    *   Regular (400) — body, UI, navigation, secondary
-    *   Scale: H1 48/56 · H2 32/40 · H3 24/32 · Body 16/24 · Small 14/20 (mobile H1 36–40)
+*   **Logo**: Soft Minimal **approved SVG wordmark** (Core Sans–style). Never recreate with Manrope / Sora / Inter live text.
+*   **Digital UI type**: **Manrope** 400 / 500 / 600 (prefer Medium for headlines). No Sora / Inter as primary.
+    *   Medium (500) — headlines, nav, buttons, product titles, labels
+    *   Regular (400) — body, descriptions
+    *   Semibold (600) — selective strong statements only
 *   **Color Palette**:
     *   Organic Forest `#294936` · Natural Cotton `#F6F2E8` · Pure White `#FFFFFF`
     *   Soil `#453B32` · Sage `#93A88E` · Clay `#C99467`
     *   Charcoal `#242724` · Secondary text `#686B67` · Border `#E7E8E4` · Surface `#F8F8F5`
 *   **Distribution**: ~60–70% White · 15–20% Cotton · 5–10% Charcoal · 5–10% Forest · &lt;5% accents
-*   **Avoid**: gradients, heavy shadows, typeface mixing, numbered homepage sections, stereotypical “eco” styling
+*   **Avoid**: Sora/Inter as primary, gradients, heavy shadows, numbered homepage sections, stereotypical “eco” styling
 *   **Homepage**: Brand → Shop → Why Organic → Lifestyle → App → Footer (see §4)
 
 ## 4. Homepage section order (refined — fewer sections)

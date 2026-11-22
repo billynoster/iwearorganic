@@ -24,7 +24,7 @@ export function BrandClosingStatement() {
           </p>
           <div className="mx-auto mt-8 max-w-xs border-t border-oat pt-8">
             <div className="flex justify-center">
-              <Logo variant="forest" className="text-[1.5rem]" />
+              <Logo variant="forest" className="w-[160px]" />
             </div>
             <p className="ca-meta mt-3">
               Made with organic materials.
