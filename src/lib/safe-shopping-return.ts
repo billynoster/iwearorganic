@@ -22,6 +22,7 @@ const ALLOWED_PREFIXES = [
   '/cart',
   '/search',
   '/about',
+  '/materials',
   '/contact',
   '/shipping',
   '/privacy',
