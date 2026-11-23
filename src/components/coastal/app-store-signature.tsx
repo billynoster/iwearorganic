@@ -9,7 +9,7 @@ export function AppStoreSignature() {
     <section
       id="app-store"
       aria-labelledby="app-store-heading"
-      className="border-t border-oat bg-cotton py-10 sm:py-12 md:py-14"
+      className="mt-[var(--ca-section-y)] border-t border-oat bg-cotton py-10 sm:py-12 md:py-14"
     >
       <div className="ca-container">
         <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between md:gap-10">
