@@ -47,7 +47,7 @@ export function EditorialFooter() {
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-4">
             <Logo variant="forest" lockup="wordmark" className="w-[132px]" />
-            <p className="mt-3 max-w-xs font-body text-xl font-medium leading-snug tracking-tight text-mineral-ink">
+            <p className="ca-meta mt-3 max-w-xs">
               Wear Better. Naturally.
             </p>
           </div>
