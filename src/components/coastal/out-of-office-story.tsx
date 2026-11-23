@@ -41,7 +41,7 @@ export function OutOfOfficeStory() {
               Open roads, ocean air, and the pieces you reach for again and again.
             </p>
             <div className="mt-8">
-              <Link href="/lookbook/coastal-hours" className="ca-text-link font-semibold underline">
+              <Link href="/lookbook/coastal-hours" className="ca-text-link font-medium underline">
                 Explore the Edit
                 <span aria-hidden="true">→</span>
               </Link>

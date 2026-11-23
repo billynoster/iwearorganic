@@ -197,7 +197,7 @@ export function FilterDrawer({
 
         <header className="ca-panel-header">
           <div>
-            <p className="font-body text-base font-semibold text-mineral-ink">
+            <p className="font-body text-base font-medium text-mineral-ink">
               Filters
             </p>
             {draftSelectionCount > 0 ? (

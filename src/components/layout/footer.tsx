@@ -55,7 +55,7 @@ export function Footer() {
               </Link>
             </div>
             <div className="pt-2">
-              <p className="text-xs uppercase tracking-wider font-semibold text-primary-foreground/70 mb-2">Get the App</p>
+              <p className="text-xs font-medium tracking-wider uppercase text-primary-foreground/70 mb-2">Get the App</p>
               <AppStoreBadge size="sm" />
             </div>
           </div>
@@ -63,7 +63,7 @@ export function Footer() {
           {/* Links */}
            <div className="grid grid-cols-2 md:col-span-1 lg:col-span-2 gap-8">
              <div>
-                <h3 className="text-sm font-semibold uppercase tracking-wider">Company</h3>
+                <h3 className="text-sm font-medium tracking-tight">Company</h3>
                 <ul className="mt-4 space-y-2">
                     <li><Link href="/about" className="text-sm text-primary-foreground/80 hover:text-primary-foreground">About</Link></li>
                     <li><Link href="/careers" className="text-sm text-primary-foreground/80 hover:text-primary-foreground">Collaborate</Link></li>
@@ -72,7 +72,7 @@ export function Footer() {
                 </ul>
              </div>
              <div>
-                <h3 className="text-sm font-semibold uppercase tracking-wider">Legal</h3>
+                <h3 className="text-sm font-medium tracking-tight">Legal</h3>
                 <ul className="mt-4 space-y-2">
                     <li><Link href="/privacy" className="text-sm text-primary-foreground/80 hover:text-primary-foreground">Privacy Policy</Link></li>
                     <li><Link href="/terms" className="text-sm text-primary-foreground/80 hover:text-primary-foreground">Terms of Service</Link></li>
@@ -83,7 +83,7 @@ export function Footer() {
 
           {/* Subscribe */}
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider">Subscribe to our newsletter</h3>
+            <h3 className="text-sm font-medium tracking-tight">Subscribe to our newsletter</h3>
             <p className="text-sm text-primary-foreground/80">Get the latest news and updates delivered to your inbox.</p>
             <form className="flex gap-2">
               <Input type="email" placeholder="Enter your email" className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60 flex-1" />

@@ -194,7 +194,7 @@ function OrdersContent() {
                           ) : null}
                         </div>
                         <div className="min-w-0 flex-1">
-                          <p className="truncate font-body text-sm font-semibold text-mineral-ink">
+                          <p className="truncate font-body text-sm font-medium text-mineral-ink">
                             {item.product?.title || 'Item'}
                           </p>
                           <p className="mt-0.5 truncate font-body text-xs text-mineral-ink/55">

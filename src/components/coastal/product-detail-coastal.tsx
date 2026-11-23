@@ -360,7 +360,7 @@ export function ProductDetailCoastal({
           </h1>
 
           {typeof displayPrice === 'number' ? (
-            <p className="mt-2 font-body text-2xl font-semibold tabular-nums text-mineral-ink sm:text-[1.75rem]">
+            <p className="mt-2 font-body text-2xl font-medium tabular-nums text-mineral-ink sm:text-[1.75rem]">
               {formatPrice(displayPrice)}
               {usingFixtures ? (
                 <span className="ml-2 align-middle font-body text-xs font-medium uppercase tracking-wider text-dusk-rose">
@@ -686,7 +686,7 @@ export function ProductDetailCoastal({
         >
           <div className="mx-auto flex max-w-lg items-center gap-3">
             {typeof displayPrice === 'number' ? (
-              <p className="min-w-0 shrink font-body text-base font-semibold tabular-nums text-mineral-ink">
+              <p className="min-w-0 shrink font-body text-base font-medium tabular-nums text-mineral-ink">
                 {formatPrice(displayPrice)}
                 {selectedSize ? (
                   <span className="ml-2 font-medium text-mineral-ink/55">

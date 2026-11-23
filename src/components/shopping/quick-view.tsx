@@ -135,15 +135,15 @@ export function QuickView({ product, isOpen, onClose }: QuickViewProps) {
             <DialogHeader className="p-0">
               <div className="flex flex-col gap-2">
                 {getProductGenderEligibility(product.title, product.tags).isUnisex && (
-                  <Badge variant="secondary" className="w-fit text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 border border-border/60">
+                  <Badge variant="secondary" className="w-fit text-[10px] font-medium tracking-wider uppercase px-2 py-0.5 border border-border/60">
                     Unisex Fit
                   </Badge>
                 )}
-                <DialogTitle className="text-2xl font-bold font-headline uppercase tracking-tight">
+                <DialogTitle className="text-2xl font-medium font-headline tracking-tight">
                   {product.title}
                 </DialogTitle>
               </div>
-              <p className="text-2xl font-bold text-primary mt-2">
+              <p className="text-2xl font-medium text-primary mt-2">
                 ${price.toFixed(2)}
               </p>
             </DialogHeader>
@@ -151,7 +151,7 @@ export function QuickView({ product, isOpen, onClose }: QuickViewProps) {
             <div className="space-y-6">
               {filteredOptions?.map(option => (
                 <div key={option.name} className="space-y-3">
-                  <Label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+                  <Label className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
                     {option.name}
                   </Label>
                   <RadioGroup
@@ -164,7 +164,7 @@ export function QuickView({ product, isOpen, onClose }: QuickViewProps) {
                         <RadioGroupItem value={val.title} id={`qv-${option.name}-${val.id}`} className="peer sr-only" />
                         <Label
                           htmlFor={`qv-${option.name}-${val.id}`}
-                          className="px-3.5 py-2 border rounded-md cursor-pointer text-xs font-bold uppercase tracking-widest peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/10 peer-data-[state=checked]:text-primary hover:bg-accent/50 transition-all inline-flex items-center justify-center text-center select-none"
+                          className="px-3.5 py-2 border rounded-md cursor-pointer text-xs font-medium tracking-tight peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/10 peer-data-[state=checked]:text-primary hover:bg-accent/50 transition-all inline-flex items-center justify-center text-center select-none"
                         >
                           {val.title}
                         </Label>
@@ -176,10 +176,10 @@ export function QuickView({ product, isOpen, onClose }: QuickViewProps) {
             </div>
 
             <div className="flex flex-col gap-3 mt-auto pt-6 border-t">
-              <Button size="lg" className="w-full font-bold uppercase tracking-widest" onClick={handleAddToCart} disabled={!selectedVariant}>
+              <Button size="lg" className="w-full font-medium" onClick={handleAddToCart} disabled={!selectedVariant}>
                 <ShoppingCart className="mr-2 h-4 w-4" /> Add to Bag
               </Button>
-              <Button variant="outline" size="lg" asChild className="w-full font-bold uppercase tracking-widest">
+              <Button variant="outline" size="lg" asChild className="w-full font-medium">
                 <Link href={`/shopping/${product.id}`} onClick={onClose}>
                   <ExternalLink className="mr-2 h-4 w-4" /> View Full Details
                 </Link>

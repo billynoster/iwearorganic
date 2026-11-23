@@ -140,7 +140,7 @@ export default function CartPage() {
                           <div>
                             <Link
                               href={`/shopping/${item.product.id}`}
-                              className="font-body text-base font-semibold text-mineral-ink hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue"
+                              className="font-body text-base font-medium text-mineral-ink hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue"
                             >
                               {item.product.title}
                             </Link>

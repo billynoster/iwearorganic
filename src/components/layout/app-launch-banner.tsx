@@ -30,7 +30,7 @@ export function AppLaunchBanner() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
         <div className="flex-1 flex items-center justify-center gap-2 sm:gap-3 text-center flex-wrap">
-          <span className="inline-flex items-center gap-1.5 font-semibold text-red-400 bg-red-500/10 border border-red-500/20 px-2.5 py-0.5 rounded-full text-[11px] uppercase tracking-wider">
+          <span className="inline-flex items-center gap-1.5 font-medium text-red-400 bg-red-500/10 border border-red-500/20 px-2.5 py-0.5 rounded-full text-[11px] uppercase tracking-wider">
             <Sparkles className="h-3 w-3 text-red-500" />
             New Launch
           </span>
@@ -41,7 +41,7 @@ export function AppLaunchBanner() {
             href={APP_STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-white font-semibold underline underline-offset-4 hover:text-red-400 transition-colors"
+            className="inline-flex items-center gap-1 text-white font-medium underline underline-offset-4 hover:text-red-400 transition-colors"
           >
             Download for iOS
             <ArrowRight className="h-3.5 w-3.5" />

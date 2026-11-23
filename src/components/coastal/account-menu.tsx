@@ -193,7 +193,7 @@ export function AccountMenu({
               referrerPolicy="no-referrer"
             />
           ) : (
-            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-oat font-body text-[0.65rem] font-semibold text-mineral-ink">
+            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-oat font-body text-[0.65rem] font-medium text-mineral-ink">
               {initials}
             </span>
           )}

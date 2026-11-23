@@ -48,7 +48,7 @@ export function CartSheet() {
       >
         <SheetHeader className="ca-panel-header space-y-0 text-left">
           <div className="flex w-full items-center justify-between gap-4">
-            <SheetTitle className="font-body text-base font-semibold tracking-tight text-mineral-ink">
+            <SheetTitle className="font-body text-base font-medium tracking-tight text-mineral-ink">
               Your bag
               {cartCount > 0 ? (
                 <span className="ml-2 font-body text-sm font-normal text-mineral-ink/55">
@@ -109,7 +109,7 @@ export function CartSheet() {
                             <Link
                               href={`/shopping/${item.product.id}`}
                               onClick={() => setIsCartOpen(false)}
-                              className="font-body text-sm font-semibold text-mineral-ink hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest"
+                              className="font-body text-sm font-medium text-mineral-ink hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest"
                             >
                               {item.product.title}
                             </Link>
@@ -184,7 +184,7 @@ export function CartSheet() {
             <div className="ca-panel-footer mt-auto space-y-4 bg-surface">
               <div className="flex items-baseline justify-between gap-4">
                 <div>
-                  <p className="font-body text-sm font-semibold text-mineral-ink">
+                  <p className="font-body text-sm font-medium text-mineral-ink">
                     Subtotal
                   </p>
                   <p className="mt-1 font-body text-xs text-mineral-ink/50">

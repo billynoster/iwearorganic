@@ -41,7 +41,7 @@ export function UserNav() {
 
   if (!user || user.isAnonymous) {
     return (
-      <Button asChild variant="default" size="sm" className="font-semibold">
+      <Button asChild variant="default" size="sm" className="font-medium">
         <Link href="/login">
           <span>SIGN IN</span>
         </Link>
