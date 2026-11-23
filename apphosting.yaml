@@ -5,3 +5,18 @@ runConfig:
   # Increase this value if you'd like to automatically spin up
   # more instances in response to increased traffic.
   maxInstances: 1
+
+# Non-secret runtime config. Bind STRIPE_SECRET_KEY + STRIPE_WEBHOOK_SECRET
+# (and other shop secrets) in Firebase App Hosting → your backend → Secrets.
+# Use sk_live_* / live whsec_* while testing real checkout; switch back to
+# sk_test_* when returning to sandbox.
+env:
+  - variable: NEXT_PUBLIC_BASE_URL
+    value: https://iwearorganic.com
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: ALLOW_LIVE_STRIPE_CHECKOUT
+    value: "true"
+    availability:
+      - RUNTIME
