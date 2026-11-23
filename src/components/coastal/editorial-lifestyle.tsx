@@ -12,7 +12,7 @@ export function EditorialLifestyle() {
   return (
     <section
       aria-labelledby="lifestyle-heading"
-      className="relative mt-[var(--ca-section-y)] overflow-hidden"
+      className="relative overflow-hidden"
     >
       <div className="relative min-h-[58svh] md:min-h-[64svh] lg:aspect-[16/9] lg:min-h-0">
         <div className="absolute inset-0" aria-hidden="true">
