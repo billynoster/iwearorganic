@@ -36,7 +36,7 @@ export function RequireSignedIn({ children }: { children: React.ReactNode }) {
 
   if (isUserLoading) {
     return (
-      <main className="bg-linen text-mineral-ink">
+      <main className="bg-cotton text-mineral-ink">
         <div className="ca-container flex min-h-[32vh] items-center justify-center px-4 py-12">
           <p className="font-body text-sm text-mineral-ink/60">Loading account…</p>
         </div>
@@ -47,11 +47,13 @@ export function RequireSignedIn({ children }: { children: React.ReactNode }) {
   if (!user || user.isAnonymous) {
     const redirect = pathname || '/account';
     return (
-      <main className="bg-linen text-mineral-ink">
+      <main className="bg-cotton text-mineral-ink">
         <div className="ca-container flex justify-center px-4 pb-16 pt-10 sm:pb-20 sm:pt-12">
           <div className="w-full max-w-[440px]">
-            <p className="ca-eyebrow mb-3">Your account</p>
-            <h1 className="ca-display text-h2">A little more personal.</h1>
+            <p className="ca-eyebrow mb-3 text-forest">I Wear Organic</p>
+            <h1 className="ca-editorial-display text-editorial-section text-mineral-ink">
+              A little more personal.
+            </h1>
             <p className="mt-4 font-body text-base leading-relaxed text-mineral-ink/70">
               Sign in to see your orders and saved details. No account needed to
               keep shopping.

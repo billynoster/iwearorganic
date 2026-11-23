@@ -25,11 +25,13 @@ export function AccountShell({
   const pathname = usePathname();
 
   return (
-    <main className="bg-linen text-mineral-ink">
+    <main className="bg-cotton text-mineral-ink">
       <header className="border-b border-oat/70">
         <div className="ca-container py-10 sm:py-12">
-          <p className="ca-eyebrow mb-3">Your account</p>
-          <h1 className="ca-display text-h2">{title}</h1>
+          <p className="ca-eyebrow mb-3 text-forest">I Wear Organic</p>
+          <h1 className="ca-editorial-display text-editorial-section text-mineral-ink">
+            {title}
+          </h1>
           {description ? (
             <p className="mt-3 max-w-xl font-body text-base leading-relaxed text-mineral-ink/70">
               {description}

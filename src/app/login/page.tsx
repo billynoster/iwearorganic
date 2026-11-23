@@ -19,6 +19,7 @@ import {
   resolveContinueShoppingHref,
 } from '@/lib/safe-shopping-return';
 import { GuestBrowsingFooter } from '@/components/account/continue-shopping-link';
+import { Logo } from '@/components/logo';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 
@@ -291,7 +292,7 @@ export default function LoginPage() {
 
   if (isUserLoading || (user && !user.isAnonymous)) {
     return (
-      <main className="bg-linen text-mineral-ink">
+      <main className="bg-cotton text-mineral-ink">
         <div className="ca-container flex min-h-[42vh] items-center justify-center py-16">
           <p className="font-body text-sm text-mineral-ink/60">Signing you in…</p>
         </div>
@@ -301,11 +302,14 @@ export default function LoginPage() {
 
   if (isEmailSent) {
     return (
-      <main className="bg-linen text-mineral-ink">
+      <main className="bg-cotton text-mineral-ink">
         <div className="ca-container flex justify-center px-4 pb-16 pt-10 sm:pb-20 sm:pt-14">
           <div className="w-full max-w-[440px]">
-            <p className="ca-eyebrow mb-3">Blend america / Your account</p>
-            <h1 className="ca-display text-h2">Check your inbox.</h1>
+            <Logo variant="forest" lockup="wordmark" className="mb-8 w-[132px]" />
+            <p className="ca-eyebrow mb-3 text-forest">I Wear Organic</p>
+            <h1 className="ca-editorial-display text-editorial-section text-mineral-ink">
+              Check your inbox.
+            </h1>
             <p className="mt-4 font-body text-base leading-relaxed text-mineral-ink/70">
               We’ve sent a sign-in link to{' '}
               <span className="font-medium text-mineral-ink">{sentEmail}</span>.
@@ -357,11 +361,14 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="bg-linen text-mineral-ink">
+    <main className="bg-cotton text-mineral-ink">
       <div className="ca-container flex justify-center px-4 pb-16 pt-10 sm:pb-20 sm:pt-14">
         <div className="w-full max-w-[440px]">
-          <p className="ca-eyebrow mb-3">Blend america / Your account</p>
-          <h1 className="ca-display text-h2">Your everyday, made easier.</h1>
+          <Logo variant="forest" lockup="wordmark" className="mb-8 w-[132px]" />
+          <p className="ca-eyebrow mb-3 text-forest">I Wear Organic</p>
+          <h1 className="ca-editorial-display text-editorial-section text-mineral-ink">
+            Wear Better. Naturally.
+          </h1>
           <p className="mt-4 font-body text-base leading-relaxed text-mineral-ink/70">
             Sign in to save your details and keep track of your orders.
           </p>
@@ -381,7 +388,7 @@ export default function LoginPage() {
               disabled={isLoading}
               onClick={handleGoogleSignIn}
               className={cn(
-                'inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-mineral-ink/25 bg-linen px-6 py-3 font-body text-sm font-medium tracking-wide text-mineral-ink transition-colors hover:bg-oat/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-offset-2 focus-visible:ring-offset-linen disabled:pointer-events-none disabled:opacity-60'
+                'inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-mineral-ink/25 bg-cotton px-6 py-3 font-body text-sm font-medium tracking-wide text-mineral-ink transition-colors hover:bg-oat/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-offset-2 focus-visible:ring-offset-cotton disabled:pointer-events-none disabled:opacity-60'
               )}
             >
               <GoogleGlyph />
@@ -392,7 +399,7 @@ export default function LoginPage() {
               disabled={isLoading}
               onClick={handleAppleSignIn}
               className={cn(
-                'inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-mineral-ink/25 bg-linen px-6 py-3 font-body text-sm font-medium tracking-wide text-mineral-ink transition-colors hover:bg-oat/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-offset-2 focus-visible:ring-offset-linen disabled:pointer-events-none disabled:opacity-60'
+                'inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-mineral-ink/25 bg-cotton px-6 py-3 font-body text-sm font-medium tracking-wide text-mineral-ink transition-colors hover:bg-oat/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-offset-2 focus-visible:ring-offset-cotton disabled:pointer-events-none disabled:opacity-60'
               )}
             >
               <AppleGlyph />
@@ -405,7 +412,7 @@ export default function LoginPage() {
               <span className="w-full border-t border-oat" />
             </div>
             <div className="relative flex justify-center">
-              <span className="bg-linen px-3 font-body text-xs uppercase tracking-[0.14em] text-mineral-ink/45">
+              <span className="bg-cotton px-3 font-body text-xs uppercase tracking-[0.14em] text-mineral-ink/45">
                 or continue with email
               </span>
             </div>
@@ -435,7 +442,7 @@ export default function LoginPage() {
                   emailInvalid ? 'email-error' : 'email-help'
                 }
                 className={cn(
-                  'mt-2 w-full border bg-linen px-4 py-3 font-body text-sm text-mineral-ink placeholder:text-mineral-ink/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue',
+                  'mt-2 w-full border bg-cotton px-4 py-3 font-body text-sm text-mineral-ink placeholder:text-mineral-ink/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue',
                   emailInvalid ? 'border-dusk-rose' : 'border-oat'
                 )}
               />
