@@ -5,8 +5,8 @@ export type LogoVariant = 'forest' | 'white' | 'charcoal' | 'black';
 export type LogoLockup = 'wordmark' | 'stacked';
 
 /** Soft Minimal wordmark viewBox from approved vector artwork. */
-const WORDMARK_SIZE = { width: 2292, height: 336 } as const;
-const STACKED_SIZE = { width: 900, height: 520 } as const;
+const WORDMARK_SIZE = { width: 2308, height: 352 } as const;
+const STACKED_SIZE = { width: 784, height: 414 } as const;
 
 type LogoProps = {
   variant?: LogoVariant;
