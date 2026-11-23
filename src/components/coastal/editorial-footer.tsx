@@ -48,10 +48,10 @@ export function EditorialFooter() {
           <div className="md:col-span-4">
             <Logo variant="forest" lockup="wordmark" className="w-[168px]" />
             <p className="ca-editorial mt-3 max-w-xs text-xl text-mineral-ink">
-              Wear something better.
+              Wear Better. Naturally.
             </p>
             <p className="ca-lede mt-3 max-w-xs text-sm">
-              Wear Better. Naturally.
+              Organic apparel for everyday life.
             </p>
           </div>
 
