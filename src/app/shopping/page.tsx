@@ -22,8 +22,8 @@ export default async function ShoppingPage() {
       activeCollection="all"
       discoveryMode
       bannerImage="/editorial/collections/banner-shopping.webp"
-      bannerAlt="I Wear Organic everyday collection — Soft Minimal coastal lifestyle photography."
-      bannerObjectPositionClassName="object-[55%_38%] sm:object-[52%_42%]"
+      bannerAlt="I Wear Organic Everyday Collection — Soft Minimal coastal group on driftwood in organic loungewear."
+      bannerObjectPositionClassName="object-[50%_42%] sm:object-[50%_40%]"
     />
   );
 }
