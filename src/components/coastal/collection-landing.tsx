@@ -26,6 +26,8 @@ interface CollectionLandingProps {
   bannerAlt?: string;
   /** object-position utilities for faces / logos under cover crop. */
   bannerObjectPositionClassName?: string;
+  /** Quiet desktop aside in the cream header. */
+  aside?: string;
 }
 
 export function CollectionLanding({
@@ -41,6 +43,7 @@ export function CollectionLanding({
   bannerImage,
   bannerAlt,
   bannerObjectPositionClassName = 'object-center',
+  aside,
 }: CollectionLandingProps) {
   const collectionLinks = [
     { href: '/shopping', label: 'All', active: activeCollection === 'all' },
@@ -60,6 +63,7 @@ export function CollectionLanding({
         title={title}
         description={description}
         editorial={editorialTitle}
+        aside={aside}
       />
       <div
         className={
