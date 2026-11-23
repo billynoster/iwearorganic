@@ -12,7 +12,7 @@ export function EditorialLifestyle() {
   return (
     <section
       aria-labelledby="lifestyle-heading"
-      className="relative overflow-hidden"
+      className="relative mt-[var(--ca-section-y)] overflow-hidden"
     >
       <div className="relative min-h-[58svh] md:min-h-[64svh] lg:aspect-[16/9] lg:min-h-0">
         <div className="absolute inset-0" aria-hidden="true">
@@ -32,19 +32,19 @@ export function EditorialLifestyle() {
               className="absolute inset-0 h-full w-full object-cover object-[50%_36%] md:object-[72%_48%]"
             />
           </picture>
-          <div className="absolute inset-x-0 bottom-0 h-[62%] bg-gradient-to-t from-mineral-ink/78 via-mineral-ink/36 to-transparent md:hidden" />
-          <div className="absolute inset-y-0 left-0 hidden w-[min(36rem,50%)] bg-gradient-to-r from-mineral-ink/82 via-mineral-ink/46 to-transparent md:block lg:w-[min(34rem,46%)]" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[58%] bg-gradient-to-t from-cotton/90 via-cotton/45 to-transparent md:hidden" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-[min(26rem,32%)] bg-gradient-to-r from-cotton/70 via-cotton/35 to-transparent md:block lg:w-[min(24rem,28%)]" />
         </div>
 
         <div className="ca-container relative z-10 flex min-h-[58svh] items-end pb-12 pt-20 md:min-h-[64svh] md:items-center md:pb-16 lg:h-full lg:min-h-0">
           <div className="max-w-[18rem] sm:max-w-sm md:max-w-md">
             <h2
               id="lifestyle-heading"
-              className="ca-editorial-display text-editorial text-linen"
+              className="ca-editorial-display text-editorial text-mineral-ink"
             >
               Naturally Your Own.
             </h2>
-            <p className="ca-lede mt-4 text-linen/90">
+            <p className="ca-lede mt-4 text-mineral-ink/85">
               Easy layers. Thoughtful materials. Made to fit the way you live.
             </p>
             <div className="mt-8">

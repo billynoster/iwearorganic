@@ -11,10 +11,10 @@ export function BrandProposition() {
   return (
     <section
       aria-labelledby="brand-proposition-heading"
-      className="ca-section-y bg-cotton"
+      className="bg-cotton py-[var(--ca-section-y)]"
     >
       <div className="ca-container">
-        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-14 lg:gap-20">
+        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-14 lg:gap-20 lg:gap-x-24">
           <div className="relative aspect-[4/5] overflow-hidden md:aspect-[5/6]">
             <Image
               src={BRAND_IMAGE}
