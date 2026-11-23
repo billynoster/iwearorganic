@@ -16,6 +16,7 @@ export default async function MenPage() {
       title="Menswear."
       editorialTitle
       description="Quiet structure for coastal days — considered essentials, easy to wear."
+      aside="Clean silhouettes. Organic materials. Essentials built for everyday life."
       products={products}
       usingFixtures={meta.usingFixtures}
       catalogUnavailable={Boolean(meta.catalogUnavailable)}

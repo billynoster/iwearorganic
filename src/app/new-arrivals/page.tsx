@@ -17,6 +17,7 @@ export default async function NewArrivalsPage() {
       title="New Arrivals."
       editorialTitle
       description="Fresh silhouettes, familiar ease — made to be worn."
+      aside="New pieces, same standard — organic materials from the first stitch."
       products={products}
       usingFixtures={meta.usingFixtures}
       catalogUnavailable={Boolean(meta.catalogUnavailable)}

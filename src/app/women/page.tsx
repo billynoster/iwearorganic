@@ -16,6 +16,7 @@ export default async function WomenPage() {
       title="Womenswear."
       editorialTitle
       description="Soft lines, lasting presence — pieces meant for wherever the day takes you."
+      aside="Organic fibers. Easy layers. Clothing made to feel as good as it looks."
       products={products}
       usingFixtures={meta.usingFixtures}
       catalogUnavailable={Boolean(meta.catalogUnavailable)}
