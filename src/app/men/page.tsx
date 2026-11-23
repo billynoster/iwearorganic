@@ -16,7 +16,6 @@ export default async function MenPage() {
       title="Menswear."
       editorialTitle
       description="Quiet structure for coastal days — considered essentials, easy to wear."
-      aside="Clean silhouettes. Organic materials. Essentials built for everyday life."
       products={products}
       usingFixtures={meta.usingFixtures}
       catalogUnavailable={Boolean(meta.catalogUnavailable)}
@@ -25,6 +24,11 @@ export default async function MenPage() {
       bannerImage="/editorial/collections/banner-men.webp"
       bannerAlt="I Wear Organic menswear — Soft Minimal coastal portrait in organic hoodie."
       bannerObjectPositionClassName="object-[28%_45%] sm:object-[24%_42%]"
+      bannerOverlay={{
+        side: 'right',
+        headline: 'Clean silhouettes. Organic materials.',
+        support: 'Essentials built for everyday life.',
+      }}
     />
   );
 }

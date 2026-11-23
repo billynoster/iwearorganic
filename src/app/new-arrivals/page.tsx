@@ -17,7 +17,6 @@ export default async function NewArrivalsPage() {
       title="New Arrivals."
       editorialTitle
       description="Fresh silhouettes, familiar ease — made to be worn."
-      aside="New pieces, same standard — organic materials from the first stitch."
       products={products}
       usingFixtures={meta.usingFixtures}
       catalogUnavailable={Boolean(meta.catalogUnavailable)}
@@ -26,6 +25,11 @@ export default async function NewArrivalsPage() {
       bannerImage="/editorial/collections/banner-new-arrivals.webp"
       bannerAlt="I Wear Organic New Arrivals — Soft Minimal coastal couple in organic loungewear."
       bannerObjectPositionClassName="object-[70%_42%] sm:object-[66%_40%]"
+      bannerOverlay={{
+        side: 'left',
+        headline: 'New pieces. Same standard.',
+        support: 'Organic materials from the first stitch.',
+      }}
     />
   );
 }
