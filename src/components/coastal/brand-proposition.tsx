@@ -18,10 +18,10 @@ export function BrandProposition() {
           <div className="relative aspect-[4/5] overflow-hidden md:aspect-[5/6]">
             <Image
               src={BRAND_IMAGE}
-              alt="Close view of soft organic cotton fabric and everyday layering"
+              alt="Couple in I Wear Organic hoodies on a coastal shore"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover object-[40%_30%]"
+              className="object-cover object-[50%_40%]"
             />
           </div>
 

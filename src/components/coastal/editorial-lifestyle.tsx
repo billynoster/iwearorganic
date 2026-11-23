@@ -1,11 +1,12 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
-const LIFESTYLE_IMAGE = '/editorial/lookbook/film-still.png';
+const LIFESTYLE_DESKTOP = '/editorial/lookbook/lifestyle-desktop.webp';
+const LIFESTYLE_DESKTOP_1920 = '/editorial/lookbook/lifestyle-desktop-1920.webp';
+const LIFESTYLE_MOBILE = '/editorial/lookbook/lifestyle-mobile.webp';
 
 /**
- * Single editorial lifestyle moment — emotional storytelling without
- * competing product grids or multi-card layouts.
+ * Lifestyle section — Brand Kit §29.
+ * Dedicated desktop 16:9 + mobile 4:5 Soft Minimal coastal plates.
  */
 export function EditorialLifestyle() {
   return (
@@ -15,14 +16,22 @@ export function EditorialLifestyle() {
     >
       <div className="relative min-h-[58svh] md:min-h-[64svh] lg:aspect-[16/9] lg:min-h-0">
         <div className="absolute inset-0" aria-hidden="true">
-          <Image
-            src={LIFESTYLE_IMAGE}
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover object-[68%_12%] md:object-[72%_10%]"
-            priority={false}
-          />
+          <picture>
+            <source
+              media="(min-width: 768px)"
+              srcSet={`${LIFESTYLE_DESKTOP_1920} 1920w, ${LIFESTYLE_DESKTOP} 2880w`}
+              sizes="100vw"
+              type="image/webp"
+            />
+            <img
+              src={LIFESTYLE_MOBILE}
+              alt=""
+              width={1200}
+              height={1500}
+              decoding="async"
+              className="absolute inset-0 h-full w-full object-cover object-[50%_36%] md:object-[72%_48%]"
+            />
+          </picture>
           <div className="absolute inset-x-0 bottom-0 h-[62%] bg-gradient-to-t from-mineral-ink/78 via-mineral-ink/36 to-transparent md:hidden" />
           <div className="absolute inset-y-0 left-0 hidden w-[min(36rem,50%)] bg-gradient-to-r from-mineral-ink/82 via-mineral-ink/46 to-transparent md:block lg:w-[min(34rem,46%)]" />
         </div>
