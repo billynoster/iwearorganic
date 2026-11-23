@@ -22,8 +22,8 @@ export default async function MenPage() {
       activeCollection="men"
       discoveryMode
       bannerImage="/editorial/collections/banner-men.webp"
-      bannerAlt="i wear organic menswear collection photography — coastal villa group in BLEND sweatshirts."
-      bannerObjectPositionClassName="object-[54%_38%] sm:object-[52%_42%]"
+      bannerAlt="I Wear Organic menswear — Soft Minimal coastal portrait in organic hoodie."
+      bannerObjectPositionClassName="object-[28%_45%] sm:object-[24%_42%]"
     />
   );
 }

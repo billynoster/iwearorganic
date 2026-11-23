@@ -22,8 +22,8 @@ export default async function WomenPage() {
       activeCollection="women"
       discoveryMode
       bannerImage="/editorial/collections/banner-women.webp"
-      bannerAlt="i wear organic womenswear collection photography — coastal cliff group in BLEND sweatshirts."
-      bannerObjectPositionClassName="object-[50%_36%] sm:object-[50%_42%]"
+      bannerAlt="I Wear Organic womenswear — Soft Minimal coastal portrait in organic loungewear."
+      bannerObjectPositionClassName="object-[72%_42%] sm:object-[68%_40%]"
     />
   );
 }
