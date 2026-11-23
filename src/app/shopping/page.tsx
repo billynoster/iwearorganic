@@ -22,7 +22,7 @@ export default async function ShoppingPage() {
       activeCollection="all"
       discoveryMode
       bannerImage="/editorial/collections/banner-shopping.webp"
-      bannerAlt="I Wear Organic everyday collection coastal lifestyle — group in BLEND sweatshirts on rocky coast."
+      bannerAlt="I Wear Organic everyday collection — Soft Minimal coastal lifestyle photography."
       bannerObjectPositionClassName="object-[55%_38%] sm:object-[52%_42%]"
     />
   );
