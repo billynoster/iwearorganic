@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { AppStoreSignature } from '@/components/coastal/app-store-signature';
 import { EditorialFilm } from '@/components/coastal/lookbook/editorial-film';
 import { LookbookHero } from '@/components/coastal/lookbook/lookbook-hero';
 import { StyleEditCard } from '@/components/coastal/lookbook/style-edit-card';
@@ -98,8 +97,6 @@ export default function LookbookLandingPage() {
           </div>
         </div>
       </section>
-
-      <AppStoreSignature />
     </main>
   );
 }
