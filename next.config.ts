@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    // Brand wordmark SVGs via next/image (unoptimized in Logo); allow SVG metadata
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'inline',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     qualities: [25, 50, 75, 100],
     remotePatterns: [
       {

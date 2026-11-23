@@ -6,7 +6,7 @@ const HERO_MOBILE = '/editorial/heroes/home-hero-mobile.webp';
 
 /**
  * Homepage hero — brand kit §14
- * Fashion-first editorial plate. Sora Semibold headline (brand kit v1.3).
+ * Fashion-first editorial plate. Manrope Medium headline (brand kit v1.4).
  * CTAs: Shop Women + Shop Men. Localized cotton wash only (no full-bleed overlay).
  */
 export function CinematicHero() {

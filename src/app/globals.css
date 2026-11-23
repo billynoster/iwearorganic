@@ -139,13 +139,13 @@
 
 @layer components {
   /**
-   * Typography hierarchy — Brand Kit v1.3 (Sora only)
-   * editorial display → .ca-editorial-display (Sora Semibold) + .text-hero / .text-editorial*
-   * functional display → .ca-display / .ca-heading (Sora Semibold)
-   * title  → .ca-product-title (Sora Medium/Semibold)
-   * body   → .ca-lede (Sora Regular)
-   * label  → .ca-eyebrow | .ca-field-label | .ca-btn-* (Sora Medium)
-   * brand  → .font-brand (Sora Semibold text wordmark + ™)
+   * Typography hierarchy — Brand Kit v1.4 (Manrope)
+   * editorial display → .ca-editorial-display (Manrope Medium) + .text-hero / .text-editorial*
+   * functional display → .ca-display / .ca-heading (Manrope Medium)
+   * title  → .ca-product-title (Manrope Medium)
+   * body   → .ca-lede (Manrope Regular)
+   * label  → .ca-eyebrow | .ca-field-label | .ca-btn-* (Manrope Medium)
+   * logo   → approved Soft Minimal SVG via <Logo /> (never live text)
    */
   .ca-eyebrow {
     @apply font-body font-medium uppercase tracking-[0.16em];
@@ -153,27 +153,27 @@
     color: color-mix(in srgb, var(--ca-mineral-ink) 55%, transparent);
   }
 
-  /** Functional commerce headings — Sora Semibold */
+  /** Functional commerce headings — Manrope Medium (v1.4) */
   .ca-display {
-    @apply font-body font-semibold tracking-[-0.02em] text-mineral-ink text-balance;
+    @apply font-body font-medium tracking-[-0.01em] text-mineral-ink text-balance;
     line-height: var(--leading-headline);
   }
 
   .ca-heading {
-    @apply font-body font-semibold tracking-tight text-mineral-ink text-balance;
+    @apply font-body font-medium tracking-tight text-mineral-ink text-balance;
     line-height: var(--leading-headline);
   }
 
   .ca-editorial {
-    @apply font-body font-semibold tracking-[-0.02em] text-mineral-ink text-balance;
+    @apply font-body font-medium tracking-[-0.01em] text-mineral-ink text-balance;
   }
 
   /**
-   * Campaign / homepage storytelling headlines — Sora Semibold (v1.3).
-   * Same family as commerce; weight + scale create hierarchy.
+   * Campaign / homepage storytelling headlines — Manrope Medium (v1.4).
+   * Prefer quieter Medium over heavy Semibold.
    */
   .ca-editorial-display {
-    @apply font-body font-semibold tracking-[-0.02em] text-balance;
+    @apply font-body font-medium tracking-[-0.01em] text-balance;
     line-height: var(--leading-editorial);
   }
 
