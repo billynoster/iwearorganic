@@ -22,8 +22,9 @@ export default async function NewArrivalsPage() {
       catalogUnavailable={Boolean(meta.catalogUnavailable)}
       activeCollection="new-arrivals"
       discoveryMode
-      bannerImage="/editorial/collections/banner-new-arrivals.png"
-      bannerAlt="i wear organic New Arrivals collection photography — contemporary campaign featuring the latest Everyday Collection pieces."
+      bannerImage="/editorial/collections/banner-new-arrivals.webp"
+      bannerAlt="I Wear Organic New Arrivals — Soft Minimal coastal couple in organic loungewear."
+      bannerObjectPositionClassName="object-[70%_42%] sm:object-[66%_40%]"
     />
   );
 }
