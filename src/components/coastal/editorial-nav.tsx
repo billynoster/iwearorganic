@@ -17,7 +17,7 @@ const NAV_LINKS = [
   { href: '/women', label: 'Women' },
   { href: '/men', label: 'Men' },
   { href: '/new-arrivals', label: 'New' },
-  { href: '/about', label: 'Materials' },
+  { href: '/materials', label: 'Materials' },
 ];
 
 function isNavActive(pathname: string | null, href: string) {
