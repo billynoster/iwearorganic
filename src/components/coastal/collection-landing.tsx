@@ -4,6 +4,7 @@ import { PageHero } from '@/components/coastal/page-hero';
 import { CollectionDiscovery } from '@/components/coastal/discovery/collection-discovery';
 import { PlpView } from '@/components/coastal/plp-view';
 import { ProductGridSkeleton } from '@/components/coastal/product-grid-skeleton';
+import { cn } from '@/lib/utils';
 import type { Product } from '@/services/types';
 
 interface CollectionLandingProps {
@@ -26,8 +27,16 @@ interface CollectionLandingProps {
   bannerAlt?: string;
   /** object-position utilities for faces / logos under cover crop. */
   bannerObjectPositionClassName?: string;
-  /** Quiet desktop aside in the cream header. */
-  aside?: string;
+  /**
+   * Soft Minimal copy overlaid on the banner empty side
+   * (opposite the model / couple).
+   */
+  bannerOverlay?: {
+    headline: string;
+    support?: string;
+    /** Empty side of the plate — left for Women/New, right for Men. */
+    side: 'left' | 'right';
+  };
 }
 
 export function CollectionLanding({
@@ -43,7 +52,7 @@ export function CollectionLanding({
   bannerImage,
   bannerAlt,
   bannerObjectPositionClassName = 'object-center',
-  aside,
+  bannerOverlay,
 }: CollectionLandingProps) {
   const collectionLinks = [
     { href: '/shopping', label: 'All', active: activeCollection === 'all' },
@@ -56,6 +65,8 @@ export function CollectionLanding({
     },
   ];
 
+  const overlayOnLeft = bannerOverlay?.side !== 'right';
+
   return (
     <main>
       <PageHero
@@ -63,7 +74,6 @@ export function CollectionLanding({
         title={title}
         description={description}
         editorial={editorialTitle}
-        aside={aside}
       />
       <div
         className={
@@ -113,7 +123,7 @@ export function CollectionLanding({
           </p>
         )}
 
-        {/* Atmospheric category band — real photography when provided */}
+        {/* Atmospheric category band — Soft Minimal overlay on empty plate side */}
         {bannerImage ? (
           <figure
             className={
@@ -130,6 +140,37 @@ export function CollectionLanding({
               className={`object-cover ${bannerObjectPositionClassName}`}
               priority
             />
+
+            {bannerOverlay ? (
+              <>
+                <div
+                  aria-hidden="true"
+                  className={cn(
+                    'pointer-events-none absolute inset-y-0 w-[min(22rem,48%)] sm:w-[min(26rem,42%)]',
+                    overlayOnLeft
+                      ? 'left-0 bg-gradient-to-r from-cotton/75 via-cotton/40 to-transparent'
+                      : 'right-0 bg-gradient-to-l from-cotton/75 via-cotton/40 to-transparent'
+                  )}
+                />
+                <figcaption
+                  className={cn(
+                    'absolute inset-y-0 z-10 flex w-[min(20rem,55%)] items-center px-4 sm:w-[min(22rem,40%)] sm:px-6 md:px-8',
+                    overlayOnLeft ? 'left-0' : 'right-0 justify-end text-right'
+                  )}
+                >
+                  <div className="max-w-[16rem] sm:max-w-[18rem]">
+                    <p className="ca-editorial-display text-[clamp(1.15rem,0.95rem+0.7vw,1.65rem)] font-medium leading-snug tracking-[-0.015em] text-mineral-ink">
+                      {bannerOverlay.headline}
+                    </p>
+                    {bannerOverlay.support ? (
+                      <p className="ca-lede mt-2 text-sm text-mineral-ink/80 sm:mt-3 sm:text-base">
+                        {bannerOverlay.support}
+                      </p>
+                    ) : null}
+                  </div>
+                </figcaption>
+              </>
+            ) : null}
           </figure>
         ) : (
           <div

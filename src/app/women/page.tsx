@@ -16,7 +16,6 @@ export default async function WomenPage() {
       title="Womenswear."
       editorialTitle
       description="Soft lines, lasting presence — pieces meant for wherever the day takes you."
-      aside="Organic fibers. Easy layers. Clothing made to feel as good as it looks."
       products={products}
       usingFixtures={meta.usingFixtures}
       catalogUnavailable={Boolean(meta.catalogUnavailable)}
@@ -25,6 +24,11 @@ export default async function WomenPage() {
       bannerImage="/editorial/collections/banner-women.webp"
       bannerAlt="I Wear Organic womenswear — Soft Minimal coastal portrait in organic loungewear."
       bannerObjectPositionClassName="object-[72%_42%] sm:object-[68%_40%]"
+      bannerOverlay={{
+        side: 'left',
+        headline: 'Organic fibers. Easy layers.',
+        support: 'Clothing made to feel as good as it looks.',
+      }}
     />
   );
 }
