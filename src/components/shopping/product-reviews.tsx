@@ -128,7 +128,7 @@ export function ProductReviews({ productId }: { productId: string }) {
   return (
     <div className="space-y-8">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold font-headline uppercase tracking-widest">Customer Reviews</h2>
+        <h2 className="text-2xl font-medium font-headline tracking-tight">Customer Reviews</h2>
         {reviews.length > 0 && (
           <div className="flex items-center gap-2">
             <div className="flex">
@@ -142,7 +142,7 @@ export function ProductReviews({ productId }: { productId: string }) {
                 />
               ))}
             </div>
-            <span className="font-bold">{averageRating.toFixed(1)}</span>
+            <span className="font-medium">{averageRating.toFixed(1)}</span>
             <span className="text-muted-foreground text-sm">({reviews.length})</span>
           </div>
         )}
@@ -151,7 +151,7 @@ export function ProductReviews({ productId }: { productId: string }) {
       {/* Review Form */}
       {user ? (
         <form onSubmit={handleSubmit} className="space-y-4 bg-muted/30 p-6 rounded-lg border border-border/50">
-          <h3 className="font-bold uppercase tracking-widest text-sm">Write a Review</h3>
+          <h3 className="font-medium text-sm">Write a Review</h3>
           <div className="flex items-center gap-2 mb-4">
             <span className="text-sm text-muted-foreground">Rating:</span>
             <div className="flex">
@@ -178,7 +178,7 @@ export function ProductReviews({ productId }: { productId: string }) {
             onChange={(e) => setComment(e.target.value)}
             className="min-h-[100px] resize-y"
           />
-          <Button type="submit" disabled={isSubmitting} className="font-bold uppercase tracking-widest">
+          <Button type="submit" disabled={isSubmitting} className="font-medium">
             {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
             Submit Review
           </Button>
@@ -186,7 +186,7 @@ export function ProductReviews({ productId }: { productId: string }) {
       ) : (
         <div className="bg-muted/30 p-6 rounded-lg border border-border/50 text-center">
           <p className="text-muted-foreground mb-4">Please sign in to leave a review.</p>
-          <Button asChild variant="outline" className="font-bold uppercase tracking-widest">
+          <Button asChild variant="outline" className="font-medium">
             <Link href="/login">Sign In</Link>
           </Button>
         </div>
@@ -210,7 +210,7 @@ export function ProductReviews({ productId }: { productId: string }) {
                       <User className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <p className="font-bold text-sm">{review.userName}</p>
+                      <p className="font-medium text-sm">{review.userName}</p>
                       <p className="text-xs text-muted-foreground">
                         {review.createdAt?.toDate ? formatDistanceToNow(review.createdAt.toDate(), { addSuffix: true }) : 'Just now'}
                       </p>

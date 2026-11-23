@@ -74,7 +74,7 @@ export function StyleEditCard({
         </h2>
         <p className="mt-3 max-w-md ca-lede">{edit.galleryDescription}</p>
         <div className="mt-5">
-          <Link href={href} className="ca-text-link font-semibold underline">
+          <Link href={href} className="ca-text-link font-medium underline">
             Explore the Edit
             <span aria-hidden="true">→</span>
           </Link>

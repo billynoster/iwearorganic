@@ -103,7 +103,7 @@ export function ProductCard({ product }: { product: PrintifyProduct }) {
                   </Badge>
                 )}
                 {genderEligibility.isUnisex && (
-                  <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm text-foreground text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 w-fit border border-border/40">
+                  <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm text-foreground text-[10px] font-medium tracking-wider uppercase px-2 py-0.5 w-fit border border-border/40">
                     Unisex Fit
                   </Badge>
                 )}
@@ -114,7 +114,7 @@ export function ProductCard({ product }: { product: PrintifyProduct }) {
                 <Button 
                   variant="secondary" 
                   size="sm" 
-                  className="font-bold uppercase tracking-widest translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+                  className="font-medium tracking-tight translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
                   onClick={handleQuickViewClick}
                 >
                   Quick View
@@ -131,14 +131,14 @@ export function ProductCard({ product }: { product: PrintifyProduct }) {
             </Button>
           </CardHeader>
           <CardContent className="p-4 flex flex-col flex-1 gap-2">
-            <CardTitle className="text-sm font-bold uppercase tracking-wider leading-tight line-clamp-2">
+            <CardTitle className="text-sm font-medium leading-tight line-clamp-2">
               {product.title}
             </CardTitle>
             <div className="flex justify-between items-center mt-auto">
-                <span className="text-lg font-bold text-primary">
+                <span className="text-lg font-medium text-primary">
                     {price ? `$${price.toFixed(2)}` : 'N/A'}
                 </span>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground group-hover:text-primary transition-colors">
+                <span className="text-[10px] font-medium text-muted-foreground group-hover:text-primary transition-colors">
                   View Details
                 </span>
             </div>

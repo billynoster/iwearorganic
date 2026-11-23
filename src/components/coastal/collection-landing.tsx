@@ -77,7 +77,7 @@ export function CollectionLanding({
                 : 'mb-8 border border-oat bg-[color-mix(in_srgb,var(--ca-linen)_70%,var(--ca-oat))] px-4 py-4'
             }
           >
-            <p className="font-body text-sm font-semibold text-mineral-ink">
+            <p className="font-body text-sm font-medium text-mineral-ink">
               Catalog temporarily unavailable.
             </p>
             <p className="mt-2 font-body text-sm text-mineral-ink/70">

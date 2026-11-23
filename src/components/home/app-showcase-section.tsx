@@ -31,12 +31,12 @@ export function AppShowcaseSection({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Content Column */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-xs font-semibold tracking-wider uppercase text-red-200">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-xs font-medium tracking-wider uppercase text-red-200">
               <Sparkles className="h-3.5 w-3.5 text-red-500" />
               Now on the App Store for iPhone
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-headline tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium font-headline tracking-tight leading-tight">
               The I Wear Organic experience, now on iOS.
             </h2>
 
@@ -51,7 +51,7 @@ export function AppShowcaseSection({
                   <Zap className="h-4 w-4" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white">Instant Apple Pay</h4>
+                  <h4 className="font-medium text-white">Instant Apple Pay</h4>
                   <p className="text-xs text-slate-400 mt-0.5">Secure, 1-tap checkout right from your phone.</p>
                 </div>
               </div>
@@ -61,7 +61,7 @@ export function AppShowcaseSection({
                   <Bell className="h-4 w-4" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white">Drop Alerts</h4>
+                  <h4 className="font-medium text-white">Drop Alerts</h4>
                   <p className="text-xs text-slate-400 mt-0.5">Be the first to know when new items and limited collections drop.</p>
                 </div>
               </div>
@@ -71,7 +71,7 @@ export function AppShowcaseSection({
                   <Smartphone className="h-4 w-4" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white">Full Creator Feed</h4>
+                  <h4 className="font-medium text-white">Full Creator Feed</h4>
                   <p className="text-xs text-slate-400 mt-0.5">Watch high-res try-on videos and shop directly from looks.</p>
                 </div>
               </div>
@@ -81,7 +81,7 @@ export function AppShowcaseSection({
                   <ShieldCheck className="h-4 w-4" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white">Order Tracking</h4>
+                  <h4 className="font-medium text-white">Order Tracking</h4>
                   <p className="text-xs text-slate-400 mt-0.5">Live updates from print production straight to your door.</p>
                 </div>
               </div>
@@ -133,10 +133,10 @@ export function AppShowcaseSection({
                     <>
                       {/* Screen Header */}
                       <div className="pt-8 px-4 pb-3 flex items-center justify-between border-b border-neutral-800/80 bg-neutral-900/60 backdrop-blur">
-                        <span className="text-xs font-bold tracking-widest uppercase font-headline text-white">
+                        <span className="text-xs font-medium tracking-wider uppercase font-headline text-white">
                           I Wear Organic
                         </span>
-                        <span className="text-[10px] text-red-400 font-semibold bg-red-500/10 px-2 py-0.5 rounded-full">
+                        <span className="text-[10px] text-red-400 font-medium bg-red-500/10 px-2 py-0.5 rounded-full">
                           iOS App
                         </span>
                       </div>
@@ -144,13 +144,13 @@ export function AppShowcaseSection({
                       {/* App Mini Preview */}
                       <div className="p-3 flex-1 flex flex-col justify-between space-y-3">
                         <div className="rounded-xl bg-gradient-to-br from-neutral-800 to-neutral-900 p-3 border border-neutral-800">
-                          <div className="text-[11px] font-semibold text-white">New Drop: Vintage Racing & Hoodies</div>
+                          <div className="text-[11px] font-medium text-white">New Drop: Vintage Racing & Hoodies</div>
                           <div className="text-[10px] text-neutral-400 mt-0.5">Explore the Tennessee-crafted catalog.</div>
                         </div>
 
                         <div className="space-y-2">
                           <div className="h-16 rounded-lg bg-neutral-900/80 border border-neutral-800 flex items-center gap-2 p-2">
-                            <div className="w-12 h-12 rounded bg-neutral-800 shrink-0 flex items-center justify-center text-[10px] font-bold text-neutral-300">
+                            <div className="w-12 h-12 rounded bg-neutral-800 shrink-0 flex items-center justify-center text-[10px] font-medium text-neutral-300">
                               HOODIE
                             </div>
                             <div className="flex-1 min-w-0">
@@ -160,7 +160,7 @@ export function AppShowcaseSection({
                           </div>
 
                           <div className="h-16 rounded-lg bg-neutral-900/80 border border-neutral-800 flex items-center gap-2 p-2">
-                            <div className="w-12 h-12 rounded bg-neutral-800 shrink-0 flex items-center justify-center text-[10px] font-bold text-neutral-300">
+                            <div className="w-12 h-12 rounded bg-neutral-800 shrink-0 flex items-center justify-center text-[10px] font-medium text-neutral-300">
                               CREW
                             </div>
                             <div className="flex-1 min-w-0">
@@ -172,7 +172,7 @@ export function AppShowcaseSection({
 
                         {/* Bottom CTA on mock screen */}
                         <div className="pt-2 text-center">
-                          <div className="w-full py-2 rounded-xl bg-white text-black text-xs font-bold tracking-wide shadow-md group-hover:bg-neutral-200 transition-colors flex items-center justify-center gap-1.5">
+                          <div className="w-full py-2 rounded-xl bg-white text-black text-xs font-medium tracking-wide shadow-md group-hover:bg-neutral-200 transition-colors flex items-center justify-center gap-1.5">
                             <Sparkles className="h-3 w-3 text-red-500" />
                             Open on App Store
                           </div>

@@ -259,7 +259,7 @@ function MediaCard({
           <div className="p-2.5 rounded-full bg-black/30 backdrop-blur-md active:scale-90 transition-transform">
             <Heart className={`h-7 w-7 transition-colors ${isLiked ? 'text-primary fill-primary' : 'text-white'}`} />
           </div>
-          <span className="text-white text-xs font-bold drop-shadow-md">
+          <span className="text-white text-xs font-medium drop-shadow-md">
             {isLiked ? (parseFloat(item.likes) + 0.1).toFixed(1) + 'K' : item.likes}
           </span>
         </button>
@@ -270,12 +270,12 @@ function MediaCard({
               <div className="p-2.5 rounded-full bg-black/30 backdrop-blur-md active:scale-90 transition-transform">
                 <MessageCircle className="h-7 w-7 text-white" />
               </div>
-              <span className="text-white text-xs font-bold drop-shadow-md">{item.comments}</span>
+              <span className="text-white text-xs font-medium drop-shadow-md">{item.comments}</span>
             </button>
           </SheetTrigger>
           <SheetContent side="bottom" className="h-[70vh] rounded-t-3xl bg-background border-0">
             <SheetHeader className="pb-4 border-b">
-              <SheetTitle className="text-center font-bold">Comments</SheetTitle>
+              <SheetTitle className="text-center font-medium">Comments</SheetTitle>
             </SheetHeader>
             <div className="flex flex-col items-center justify-center p-12 text-muted-foreground text-center">
               <MessageCircle className="h-10 w-10 mb-4 opacity-50" />
@@ -297,7 +297,7 @@ function MediaCard({
           <div className="p-2.5 rounded-full bg-black/30 backdrop-blur-md active:scale-90 transition-transform">
             <Share2 className="h-7 w-7 text-white" />
           </div>
-          <span className="text-white text-xs font-bold drop-shadow-md">Share</span>
+          <span className="text-white text-xs font-medium drop-shadow-md">Share</span>
         </button>
 
         {/* Dynamic Shop The Look */}
@@ -307,12 +307,12 @@ function MediaCard({
               <div className="p-3 rounded-full bg-primary active:scale-90 transition-transform shadow-lg border-2 border-white/20">
                 <ShoppingBag className="h-6 w-6 text-primary-foreground" />
               </div>
-              <span className="text-white text-[10px] font-black uppercase tracking-wider drop-shadow-md mt-1">Shop</span>
+              <span className="text-white text-[10px] font-medium uppercase tracking-wider drop-shadow-md mt-1">Shop</span>
             </button>
           </SheetTrigger>
           <SheetContent side="bottom" className="h-[75vh] rounded-t-3xl bg-background border-0 p-0 flex flex-col z-[100]">
             <SheetHeader className="p-4 border-b sticky top-0 bg-background/95 backdrop-blur-sm z-10">
-              <SheetTitle className="text-center font-bold">Products in this video</SheetTitle>
+              <SheetTitle className="text-center font-medium">Products in this video</SheetTitle>
             </SheetHeader>
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
               {relatedProducts.length > 0 ? relatedProducts.map(product => (
@@ -321,14 +321,14 @@ function MediaCard({
                     <Image src={product.images[0]?.src || "https://placehold.co/400"} alt={product.title} fill className="object-cover" referrerPolicy="no-referrer" />
                   </div>
                   <div className="flex flex-col flex-1 justify-center">
-                    <h4 className="font-bold text-sm line-clamp-2">{product.title}</h4>
+                    <h4 className="font-medium text-sm line-clamp-2">{product.title}</h4>
                     {(() => {
                       const activeVariant = product.variants.find(v => v.is_enabled !== false && v.is_available !== false) || product.variants[0];
                       return (
                         <>
                           <p className="font-medium text-muted-foreground mt-1">${((activeVariant?.price || 0) / 100).toFixed(2)}</p>
                           <div className="mt-3 flex gap-2">
-                             <Button size="sm" className="w-full text-xs font-bold" onClick={(e) => { e.stopPropagation(); if (activeVariant) addToCart(product, activeVariant, 1); }}>Add to Bag</Button>
+                             <Button size="sm" className="w-full text-xs font-medium" onClick={(e) => { e.stopPropagation(); if (activeVariant) addToCart(product, activeVariant, 1); }}>Add to Bag</Button>
                           </div>
                         </>
                       );
@@ -348,15 +348,15 @@ function MediaCard({
       {/* Bottom Profile and Caption Area */}
       <div className="absolute bottom-6 left-4 right-24 z-20 flex flex-col gap-3 pointer-events-auto">
         <div className="flex items-center gap-2.5">
-          <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-black text-sm border border-white/50 shadow-lg">
+          <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-medium text-sm border border-white/50 shadow-lg">
              {item.author.avatar}
           </div>
           <div className="flex flex-col">
-            <span className="text-white font-bold text-sm drop-shadow-md leading-tight">
+            <span className="text-white font-medium text-sm drop-shadow-md leading-tight">
               {item.author.name}
             </span>
             <button 
-              className={`text-[10px] font-bold w-fit px-2 py-0.5 rounded-sm mt-0.5 transition-colors shadow-sm ${isFollowing ? 'bg-white/20 text-white backdrop-blur-md' : 'bg-primary text-primary-foreground'}`}
+              className={`text-[10px] font-medium w-fit px-2 py-0.5 rounded-sm mt-0.5 transition-colors shadow-sm ${isFollowing ? 'bg-white/20 text-white backdrop-blur-md' : 'bg-primary text-primary-foreground'}`}
               onClick={(e) => { 
                 e.stopPropagation(); 
                 if (!isLoggedIn) {
@@ -373,14 +373,14 @@ function MediaCard({
         
         <div className="text-white/95 text-sm font-medium drop-shadow-md leading-snug">
           {item.caption.split(' ').map((word, i) => (
-             word.startsWith('#') ? <span key={i} className="font-bold text-white cursor-pointer hover:underline">{word} </span> : word + ' '
+             word.startsWith('#') ? <span key={i} className="font-medium text-white cursor-pointer hover:underline">{word} </span> : word + ' '
           ))}
         </div>
         
         <div className="flex items-center gap-2 text-white/90 text-xs w-fit max-w-[80%] overflow-hidden bg-black/30 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
           <Music className="h-3.5 w-3.5 shrink-0" />
           <div className="animate-marquee whitespace-nowrap overflow-hidden">
-            <span className="drop-shadow-sm font-semibold">{item.song}</span>
+            <span className="drop-shadow-sm font-medium">{item.song}</span>
           </div>
         </div>
       </div>
@@ -439,10 +439,10 @@ export function MediaSection({ onMediaClick, userPrefs, products = [], feedItems
       
       {/* Top Navigation */}
       <div className="absolute top-6 left-0 right-0 z-50 flex justify-center items-center gap-4 pointer-events-none drop-shadow-md">
-         <button className="text-base font-bold text-white/60 transition-colors pointer-events-auto hover:text-white drop-shadow-md">Following</button>
+         <button className="text-base font-medium text-white/60 transition-colors pointer-events-auto hover:text-white drop-shadow-md">Following</button>
          <div className="h-4 w-px bg-white/40"></div>
          <div className="relative pointer-events-auto">
-            <button className="text-base font-bold text-white pb-1 flex items-center gap-1.5">
+            <button className="text-base font-medium text-white pb-1 flex items-center gap-1.5">
               For You <SparklesIcon className="w-3.5 h-3.5 text-primary" />
             </button>
             <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white rounded-full"></div>
@@ -483,10 +483,10 @@ export function MediaSection({ onMediaClick, userPrefs, products = [], feedItems
              <div className="p-4 rounded-full bg-primary/20 mb-6">
                 <Heart className="h-10 w-10 text-primary" />
              </div>
-             <h2 className="text-3xl font-bold mb-4 font-headline uppercase tracking-tight">Keep Discovering</h2>
+             <h2 className="text-3xl font-medium mb-4 font-headline tracking-tight">Keep Discovering</h2>
              <p className="text-zinc-400 mb-8 max-w-[280px] leading-relaxed text-sm">Sign in to unlock personalized feeds, shop your favorite looks, and join the community.</p>
-             <Button asChild size="lg" className="w-full max-w-[240px] uppercase font-bold tracking-widest"><Link href="/login">Sign In</Link></Button>
-             <Button asChild variant="ghost" size="lg" className="mt-4 uppercase text-xs tracking-widest text-zinc-400 hover:text-white"><Link href="/">Browse Collections</Link></Button>
+             <Button asChild size="lg" className="w-full max-w-[240px] font-medium"><Link href="/login">Sign In</Link></Button>
+             <Button asChild variant="ghost" size="lg" className="mt-4 text-xs tracking-wide text-zinc-400 hover:text-white"><Link href="/">Browse Collections</Link></Button>
           </div>
         )}
       </div>

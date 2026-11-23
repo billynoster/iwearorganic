@@ -381,7 +381,7 @@ export default function LoginPage() {
               disabled={isLoading}
               onClick={handleGoogleSignIn}
               className={cn(
-                'inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-mineral-ink/25 bg-linen px-6 py-3 font-body text-sm font-semibold tracking-wide text-mineral-ink transition-colors hover:bg-oat/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-offset-2 focus-visible:ring-offset-linen disabled:pointer-events-none disabled:opacity-60'
+                'inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-mineral-ink/25 bg-linen px-6 py-3 font-body text-sm font-medium tracking-wide text-mineral-ink transition-colors hover:bg-oat/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-offset-2 focus-visible:ring-offset-linen disabled:pointer-events-none disabled:opacity-60'
               )}
             >
               <GoogleGlyph />
@@ -392,7 +392,7 @@ export default function LoginPage() {
               disabled={isLoading}
               onClick={handleAppleSignIn}
               className={cn(
-                'inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-mineral-ink/25 bg-linen px-6 py-3 font-body text-sm font-semibold tracking-wide text-mineral-ink transition-colors hover:bg-oat/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-offset-2 focus-visible:ring-offset-linen disabled:pointer-events-none disabled:opacity-60'
+                'inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-mineral-ink/25 bg-linen px-6 py-3 font-body text-sm font-medium tracking-wide text-mineral-ink transition-colors hover:bg-oat/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-offset-2 focus-visible:ring-offset-linen disabled:pointer-events-none disabled:opacity-60'
               )}
             >
               <AppleGlyph />

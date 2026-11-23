@@ -170,7 +170,7 @@ function CheckoutSuccessContent() {
           <p className="font-body text-xs uppercase tracking-[0.14em] text-mineral-ink/50">
             Order reference
           </p>
-          <p className="mt-2 break-all font-body text-base font-semibold text-mineral-ink">
+          <p className="mt-2 break-all font-body text-base font-medium text-mineral-ink">
             {orderId}
           </p>
           {sessionId ? (

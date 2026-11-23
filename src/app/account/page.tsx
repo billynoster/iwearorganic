@@ -37,7 +37,7 @@ function AccountOverview() {
             className="flex items-baseline justify-between gap-4 py-5 transition-colors hover:text-mineral-ink"
           >
             <span>
-              <span className="block font-body text-base font-semibold text-mineral-ink">
+              <span className="block font-body text-base font-medium text-mineral-ink">
                 Profile
               </span>
               <span className="mt-1 block font-body text-sm text-mineral-ink/55">
@@ -55,7 +55,7 @@ function AccountOverview() {
             className="flex items-baseline justify-between gap-4 py-5 transition-colors hover:text-mineral-ink"
           >
             <span>
-              <span className="block font-body text-base font-semibold text-mineral-ink">
+              <span className="block font-body text-base font-medium text-mineral-ink">
                 Orders
               </span>
               <span className="mt-1 block font-body text-sm text-mineral-ink/55">
@@ -73,7 +73,7 @@ function AccountOverview() {
             className="flex items-baseline justify-between gap-4 py-5 transition-colors hover:text-mineral-ink"
           >
             <span>
-              <span className="block font-body text-base font-semibold text-mineral-ink">
+              <span className="block font-body text-base font-medium text-mineral-ink">
                 Addresses
               </span>
               <span className="mt-1 block font-body text-sm text-mineral-ink/55">

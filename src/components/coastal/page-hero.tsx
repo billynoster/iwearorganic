@@ -1,8 +1,7 @@
 interface PageHeroProps {
   eyebrow?: string;
   /**
-   * Collection landings — DM Sans Bold at `--text-collection` (32–56).
-   * Instrument Serif reserved for campaign / Lookbook storytelling headlines.
+   * Collection landings — Manrope Medium at `--text-collection` (brand kit v1.4).
    */
   editorial?: boolean;
   title: string;
@@ -22,7 +21,7 @@ export function PageHero({
         <h1
           className={
             editorial
-              ? 'ca-display text-collection font-bold'
+              ? 'ca-display text-collection font-medium'
               : 'ca-heading text-h3'
           }
         >

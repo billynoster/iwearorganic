@@ -29,7 +29,7 @@ export function AppHeader() {
           <Link
             href="/shopping"
             className={cn(
-              'text-sm font-bold uppercase tracking-widest transition-colors hover:text-primary',
+              'text-sm font-medium tracking-tight transition-colors hover:text-primary',
               pathname === '/shopping' || pathname?.startsWith('/shopping/')
                 ? 'text-primary'
                 : 'text-muted-foreground'
@@ -41,7 +41,7 @@ export function AppHeader() {
           <Link
             href="/discover"
             className={cn(
-              'text-sm font-bold uppercase tracking-widest transition-colors hover:text-primary',
+              'text-sm font-medium tracking-tight transition-colors hover:text-primary',
               pathname === '/discover' ? 'text-primary' : 'text-muted-foreground'
             )}
           >
@@ -51,7 +51,7 @@ export function AppHeader() {
           <Link
             href="/rescuing-pets"
             className={cn(
-              'text-sm font-bold uppercase tracking-widest transition-colors hover:text-primary',
+              'text-sm font-medium tracking-tight transition-colors hover:text-primary',
               pathname === '/rescuing-pets' ? 'text-primary' : 'text-muted-foreground'
             )}
           >
@@ -60,7 +60,7 @@ export function AppHeader() {
           <Link
             href="/about"
             className={cn(
-              'text-sm font-bold uppercase tracking-widest transition-colors hover:text-primary',
+              'text-sm font-medium tracking-tight transition-colors hover:text-primary',
               pathname === '/about' ? 'text-primary' : 'text-muted-foreground'
             )}
           >
@@ -94,7 +94,7 @@ export function AppHeader() {
               <Link
                 href="/shopping"
                 className={cn(
-                  'text-xl font-bold uppercase tracking-wider transition-colors',
+                  'text-xl font-medium tracking-tight transition-colors',
                   pathname === '/shopping' || pathname?.startsWith('/shopping/')
                     ? 'text-primary'
                     : 'text-muted-foreground'
@@ -105,7 +105,7 @@ export function AppHeader() {
               <Link
                 href="/discover"
                 className={cn(
-                  'text-xl font-bold uppercase tracking-wider transition-colors',
+                  'text-xl font-medium tracking-tight transition-colors',
                   pathname === '/discover' ? 'text-primary' : 'text-muted-foreground'
                 )}
               >
@@ -114,7 +114,7 @@ export function AppHeader() {
               <Link
                 href="/rescuing-pets"
                 className={cn(
-                  'text-xl font-bold uppercase tracking-wider transition-colors',
+                  'text-xl font-medium tracking-tight transition-colors',
                   pathname === '/rescuing-pets' ? 'text-primary' : 'text-muted-foreground'
                 )}
               >
@@ -123,7 +123,7 @@ export function AppHeader() {
               <Link
                 href="/about"
                 className={cn(
-                  'text-xl font-bold uppercase tracking-wider transition-colors',
+                  'text-xl font-medium tracking-tight transition-colors',
                   pathname === '/about' ? 'text-primary' : 'text-muted-foreground'
                 )}
               >
@@ -132,7 +132,7 @@ export function AppHeader() {
               <Link
                 href="/privacy"
                 className={cn(
-                  'text-xl font-bold uppercase tracking-wider transition-colors',
+                  'text-xl font-medium tracking-tight transition-colors',
                   pathname === '/privacy' ? 'text-primary' : 'text-muted-foreground'
                 )}
               >
@@ -141,7 +141,7 @@ export function AppHeader() {
               <Link
                 href="/terms"
                 className={cn(
-                  'text-xl font-bold uppercase tracking-wider transition-colors',
+                  'text-xl font-medium tracking-tight transition-colors',
                   pathname === '/terms' ? 'text-primary' : 'text-muted-foreground'
                 )}
               >
@@ -150,14 +150,14 @@ export function AppHeader() {
               <Link
                 href={uploadHref}
                 className={cn(
-                  'text-xl font-bold uppercase tracking-wider transition-colors',
+                  'text-xl font-medium tracking-tight transition-colors',
                   pathname === '/creator/upload' ? 'text-primary' : 'text-muted-foreground'
                 )}
               >
                 Upload Video
               </Link>
               <div className="pt-6 border-t border-border mt-2 space-y-2">
-                <p className="text-xs uppercase tracking-wider font-semibold text-muted-foreground">Download the App</p>
+                <p className="text-xs font-medium tracking-wider uppercase text-muted-foreground">Download the App</p>
                 <AppStoreBadge size="md" />
               </div>
             </nav>

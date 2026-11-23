@@ -264,7 +264,7 @@ export function SearchTypeahead({ onOpenChange, className }: SearchTypeaheadProp
                       )}
                     </span>
                     <span className="min-w-0">
-                      <span className="block truncate font-body text-sm font-semibold">
+                      <span className="block truncate font-body text-sm font-medium">
                         {product.title}
                       </span>
                       <span className="block truncate text-xs text-mineral-ink/50">

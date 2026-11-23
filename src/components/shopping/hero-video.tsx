@@ -175,7 +175,7 @@ export function HeroVideo({ videos = DEFAULT_HERO_VIDEOS }: HeroVideoProps) {
               type="button"
               id={`hero-pill-${idx}`}
               onClick={() => selectIndex(idx)}
-              className={`px-3 py-1 text-[11px] font-semibold tracking-wider uppercase rounded-full transition-all duration-300 backdrop-blur-md ${
+              className={`px-3 py-1 text-[11px] font-medium tracking-wider uppercase rounded-full transition-all duration-300 backdrop-blur-md ${
                 isCurrent
                   ? 'bg-white text-black shadow-md'
                   : 'bg-black/40 text-white/75 hover:bg-black/60 hover:text-white border border-white/10'

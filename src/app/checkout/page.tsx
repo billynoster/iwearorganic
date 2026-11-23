@@ -220,7 +220,7 @@ export default function CheckoutPage() {
                     )}
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="font-body text-base font-semibold text-mineral-ink">
+                    <p className="font-body text-base font-medium text-mineral-ink">
                       {item.product.title}
                     </p>
                     {summary.label ? (
@@ -262,8 +262,8 @@ export default function CheckoutPage() {
               </dd>
             </div>
             <div className="flex justify-between gap-4 border-t border-oat pt-4">
-              <dt className="font-semibold text-mineral-ink">Estimated total</dt>
-              <dd className="font-semibold tabular-nums text-mineral-ink">
+              <dt className="font-medium text-mineral-ink">Estimated total</dt>
+              <dd className="font-medium tabular-nums text-mineral-ink">
                 {formatMoney(subtotal)}
               </dd>
             </div>

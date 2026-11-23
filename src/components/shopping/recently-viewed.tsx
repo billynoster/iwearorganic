@@ -32,7 +32,7 @@ export function RecentlyViewed({ currentProductId }: { currentProductId?: string
     <section className="mt-24 pt-16 border-t border-border/50">
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-2">
-          <h2 className="text-2xl font-bold font-headline uppercase tracking-[0.1em]">Recently Viewed</h2>
+          <h2 className="text-2xl font-medium font-headline tracking-tight">Recently Viewed</h2>
           <p className="text-muted-foreground">Pick up where you left off.</p>
         </div>
         

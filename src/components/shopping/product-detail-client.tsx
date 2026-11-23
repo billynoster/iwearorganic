@@ -540,7 +540,7 @@ export function ProductDetailClient({ product }: { product: PrintifyProduct }) {
             <div className="space-y-8">
                 {/* Images Row */}
                 <div className="flex flex-col gap-3">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/60 ml-1">The Gallery</span>
+                    <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground/60 ml-1">The Gallery</span>
                     <div className="flex gap-3 overflow-x-auto pb-4 no-scrollbar">
                         {product.images.map((image) => (
                             <div
@@ -574,7 +574,7 @@ export function ProductDetailClient({ product }: { product: PrintifyProduct }) {
                 {/* Videos Row */}
                 {videoUrls.length > 0 && (
                     <div className="flex flex-col gap-3 animate-in fade-in slide-in-from-bottom-2 duration-500">
-                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/60 ml-1">Watch in Motion</span>
+                        <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground/60 ml-1">Watch in Motion</span>
                         <div className="flex gap-3 overflow-x-auto pb-4 no-scrollbar">
                             {videoUrls.map((url, idx) => (
                                 <div
@@ -590,7 +590,7 @@ export function ProductDetailClient({ product }: { product: PrintifyProduct }) {
                                 >
                                     <FileVideo className="h-8 w-8 text-primary/80" />
                                     <div className="absolute inset-0 bg-black/20" />
-                                    <span className="absolute bottom-1 right-1 text-[8px] font-bold uppercase bg-black/60 text-white px-1.5 py-0.5 rounded-sm tracking-widest">
+                                    <span className="absolute bottom-1 right-1 text-[8px] font-medium uppercase bg-black/60 text-white px-1.5 py-0.5 rounded-sm tracking-wider">
                                         Clip {videoUrls.length > 1 ? idx + 1 : ''}
                                     </span>
                                 </div>
@@ -604,7 +604,7 @@ export function ProductDetailClient({ product }: { product: PrintifyProduct }) {
         {/* Product Info Column */}
         <div className="flex flex-col gap-6 min-w-0">
             <div className="mb-2 flex justify-between items-center">
-              <Link href="/" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/" className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
                 <ArrowLeft className="h-4 w-4" />
                 The Shop
               </Link>
@@ -619,18 +619,18 @@ export function ProductDetailClient({ product }: { product: PrintifyProduct }) {
             </div>
             <div className="flex flex-col gap-2">
               {getProductGenderEligibility(product.title, product.tags).isUnisex && (
-                <Badge variant="secondary" className="w-fit text-[11px] font-semibold tracking-wider uppercase px-2.5 py-0.5 border border-border/60">
+                <Badge variant="secondary" className="w-fit text-[11px] font-medium tracking-wider uppercase px-2.5 py-0.5 border border-border/60">
                   Unisex Fit
                 </Badge>
               )}
-              <h1 className="text-3xl lg:text-5xl font-bold font-headline uppercase tracking-tight leading-tight">{product.title}</h1>
+              <h1 className="text-3xl lg:text-5xl font-medium font-headline tracking-tight leading-tight">{product.title}</h1>
             </div>
-            <p className="text-3xl font-bold text-primary">{price > 0 ? `$${price.toFixed(2)}` : 'N/A'}</p>
+            <p className="text-3xl font-medium text-primary">{price > 0 ? `$${price.toFixed(2)}` : 'N/A'}</p>
             <Separator className="my-2" />
             
             {options.map(option => (
                 <div key={option.name} className="grid gap-3">
-                    <Label className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">{option.name}</Label>
+                    <Label className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{option.name}</Label>
                     <RadioGroup
                         value={selectedOptions[option.name]}
                         onValueChange={(value) => handleOptionChange(option.name, value)}
@@ -641,7 +641,7 @@ export function ProductDetailClient({ product }: { product: PrintifyProduct }) {
                                 <RadioGroupItem value={value} id={`${option.name}-${value}`} className="peer sr-only" />
                                 <Label
                                     htmlFor={`${option.name}-${value}`}
-                                    className="px-5 py-2.5 border rounded-md cursor-pointer text-sm font-bold uppercase tracking-widest peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/10 peer-data-[state=checked]:text-primary hover:bg-accent/50 transition-all active:scale-95 inline-flex items-center justify-center text-center select-none"
+                                    className="px-5 py-2.5 border rounded-md cursor-pointer text-sm font-medium tracking-tight peer-data-[state=checked]:border-primary peer-data-[state=checked]:bg-primary/10 peer-data-[state=checked]:text-primary hover:bg-accent/50 transition-all active:scale-95 inline-flex items-center justify-center text-center select-none"
                                 >
                                     {value}
                                 </Label>
@@ -654,16 +654,16 @@ export function ProductDetailClient({ product }: { product: PrintifyProduct }) {
             <Separator className="my-2" />
 
             <div className="flex flex-col gap-3 mt-4">
-                <Button size="lg" className="w-full h-14 text-lg font-bold uppercase tracking-[0.2em]" onClick={handleExpressBuy} disabled={!selectedVariant}>
+                <Button size="lg" className="w-full h-14 text-lg font-medium" onClick={handleExpressBuy} disabled={!selectedVariant}>
                     <Zap className="mr-2 h-5 w-5 fill-current" /> Buy Now
                 </Button>
-                <Button size="lg" variant="outline" className="w-full h-14 text-lg font-bold uppercase tracking-[0.2em]" onClick={handleAddToCart} disabled={!selectedVariant}>
+                <Button size="lg" variant="outline" className="w-full h-14 text-lg font-medium" onClick={handleAddToCart} disabled={!selectedVariant}>
                     Add to Bag
                 </Button>
             </div>
 
             <div className="mt-8 prose dark:prose-invert max-w-none text-foreground product-description">
-                <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-4">The Narrative</h3>
+                <h3 className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-4">The Narrative</h3>
                 <div 
                     className="text-lg leading-relaxed opacity-90 overflow-x-auto no-scrollbar"
                     dangerouslySetInnerHTML={{ __html: product.description }} 
@@ -682,7 +682,7 @@ export function ProductDetailClient({ product }: { product: PrintifyProduct }) {
         <section className="mt-24 pt-16 border-t border-border/50">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-2">
-              <h2 className="text-2xl font-bold font-headline uppercase tracking-[0.1em]">Complete the Set</h2>
+              <h2 className="text-2xl font-medium font-headline tracking-tight">Complete the Set</h2>
               <p className="text-muted-foreground">Pair this item with matching pieces in {product.title.split(' ')[0]}.</p>
             </div>
             
@@ -706,10 +706,10 @@ export function ProductDetailClient({ product }: { product: PrintifyProduct }) {
 
       {/* Mobile Sticky Add to Cart */}
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-background/90 backdrop-blur-md border-t z-50 sm:hidden flex gap-3 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
-        <Button className="flex-1 h-12 font-bold uppercase tracking-widest" onClick={handleExpressBuy} disabled={!selectedVariant}>
+        <Button className="flex-1 h-12 font-medium" onClick={handleExpressBuy} disabled={!selectedVariant}>
           Buy Now
         </Button>
-        <Button variant="outline" className="flex-1 h-12 font-bold uppercase tracking-widest" onClick={handleAddToCart} disabled={!selectedVariant}>
+        <Button variant="outline" className="flex-1 h-12 font-medium" onClick={handleAddToCart} disabled={!selectedVariant}>
           Add to Bag
         </Button>
       </div>

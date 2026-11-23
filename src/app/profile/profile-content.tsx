@@ -371,7 +371,7 @@ export function ProfileContent() {
       <main className="w-full mx-auto max-w-5xl py-12 px-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
           <div>
-            <h1 className="text-3xl font-bold font-headline tracking-tight">My Account</h1>
+            <h1 className="text-3xl font-medium font-headline tracking-tight">My Account</h1>
             <p className="text-muted-foreground">{user.email}</p>
           </div>
           <Button variant="outline" onClick={handleSignOut}>
@@ -447,7 +447,7 @@ export function ProfileContent() {
             <Card className="text-center py-12">
               <CardContent>
                 <Package className="h-12 w-12 mx-auto text-muted-foreground mb-4 opacity-50" />
-                <h3 className="text-xl font-semibold mb-2">No orders yet</h3>
+                <h3 className="text-xl font-medium mb-2">No orders yet</h3>
                 <p className="text-muted-foreground mb-6">When you place an order, it will appear here.</p>
                 <Button asChild>
                   <a href="/shopping">Start Shopping</a>
@@ -470,7 +470,7 @@ export function ProfileContent() {
                       </div>
                       <div>
                         <CardDescription>Status</CardDescription>
-                        <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold bg-primary/10 text-primary capitalize">
+                        <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-primary/10 text-primary capitalize">
                           {order.status}
                         </span>
                       </div>
@@ -498,11 +498,11 @@ export function ProfileContent() {
                                 )}
                               </div>
                               <div className="flex-grow min-w-0">
-                                <p className="font-semibold text-sm sm:text-base truncate">{item.product?.title || 'Unknown Product'}</p>
+                                <p className="font-medium text-sm sm:text-base truncate">{item.product?.title || 'Unknown Product'}</p>
                                 <p className="text-xs sm:text-sm text-muted-foreground truncate">{item.variant?.title || 'Unknown Variant'}</p>
                               </div>
                               <div className="text-right shrink-0">
-                                <p className="font-semibold text-sm sm:text-base">${((item.variant?.price || 0) / 100).toFixed(2)}</p>
+                                <p className="font-medium text-sm sm:text-base">${((item.variant?.price || 0) / 100).toFixed(2)}</p>
                                 <p className="text-xs sm:text-sm text-muted-foreground">Qty: {item.quantity}</p>
                               </div>
                             </li>
@@ -535,7 +535,7 @@ export function ProfileContent() {
               ) : wishlistItems.length === 0 ? (
                 <div className="text-center py-12">
                   <Heart className="h-12 w-12 mx-auto text-muted-foreground mb-4 opacity-50" />
-                  <h3 className="text-xl font-semibold mb-2">Your wishlist is empty</h3>
+                  <h3 className="text-xl font-medium mb-2">Your wishlist is empty</h3>
                   <p className="text-muted-foreground mb-6">Save items you like by clicking the heart icon on products.</p>
                   <Button asChild>
                     <a href="/shopping">Start Shopping</a>
@@ -591,7 +591,7 @@ export function ProfileContent() {
             <CardContent>
               {isAddingAddress ? (
                 <form onSubmit={handleSaveAddress} className="space-y-6 border rounded-lg p-6 bg-muted/10">
-                  <h3 className="font-semibold text-lg mb-4">{currentAddress?.id ? 'Edit Address' : 'New Address'}</h3>
+                  <h3 className="font-medium text-lg mb-4">{currentAddress?.id ? 'Edit Address' : 'New Address'}</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First Name</Label>
@@ -685,7 +685,7 @@ export function ProfileContent() {
                         <CardContent className="p-6">
                           <div className="flex justify-between items-start mb-4">
                             <div>
-                              <h4 className="font-semibold text-lg">{address.firstName} {address.lastName}</h4>
+                              <h4 className="font-medium text-lg">{address.firstName} {address.lastName}</h4>
                               <div className="flex gap-2 mt-1">
                                 {address.isDefaultShipping && <Badge variant="secondary" className="text-xs">Default Shipping</Badge>}
                                 {address.isDefaultBilling && <Badge variant="outline" className="text-xs">Default Billing</Badge>}
@@ -730,7 +730,7 @@ export function ProfileContent() {
             </CardHeader>
             <CardContent className="space-y-8">
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Categories</h3>
+                <h3 className="text-lg font-medium">Categories</h3>
                 <div className="flex flex-wrap gap-2">
                   {allCategories.map(category => (
                     <Badge
@@ -746,7 +746,7 @@ export function ProfileContent() {
               </div>
               
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Style Preferences</h3>
+                <h3 className="text-lg font-medium">Style Preferences</h3>
                 <div className="flex flex-wrap gap-2">
                   {styleOptions.map(style => (
                     <Badge
@@ -776,7 +776,7 @@ export function ProfileContent() {
 
               <div className="pt-8 border-t space-y-6">
                 <div>
-                  <h3 className="text-xl font-semibold mb-1">Communication Preferences</h3>
+                  <h3 className="text-xl font-medium mb-1">Communication Preferences</h3>
                   <p className="text-sm text-muted-foreground">Manage how and when you receive updates from us.</p>
                 </div>
                 
