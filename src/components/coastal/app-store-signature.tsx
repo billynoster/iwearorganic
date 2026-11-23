@@ -1,8 +1,8 @@
 import { AppStoreBadge } from '@/components/ui/app-store-badge';
 
 /**
- * Compact App Store strip — precedes the footer.
- * Reduced vertical padding vs. prior homepage block.
+ * Compact App Store strip — parked until the I Wear Organic iOS app ships.
+ * Not mounted on homepage/lookbook currently.
  */
 export function AppStoreSignature() {
   return (

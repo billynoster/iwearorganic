@@ -4,7 +4,6 @@ import { CinematicHero } from '@/components/coastal/cinematic-hero';
 import { FeaturedProducts } from '@/components/coastal/featured-products';
 import { BrandProposition } from '@/components/coastal/brand-proposition';
 import { EditorialLifestyle } from '@/components/coastal/editorial-lifestyle';
-import { AppStoreSignature } from '@/components/coastal/app-store-signature';
 import { EditorialFooter } from '@/components/coastal/editorial-footer';
 import { SkipLink } from '@/components/coastal/skip-link';
 import { catalogService } from '@/services';
@@ -18,7 +17,8 @@ export const metadata: Metadata = {
 
 /**
  * Homepage flow:
- * Brand (Hero) → Shop (Featured) → Why Organic → Lifestyle → App → Footer
+ * Brand (Hero) → Shop (Featured) → Why Organic → Lifestyle → Footer
+ * App Store strip deferred until the iOS app ships.
  */
 export default async function CoastalHomePage() {
   const { products, meta: catalogMeta } = await catalogService.listProducts();
@@ -36,7 +36,6 @@ export default async function CoastalHomePage() {
         />
         <BrandProposition />
         <EditorialLifestyle />
-        <AppStoreSignature />
       </main>
       <EditorialFooter />
     </div>

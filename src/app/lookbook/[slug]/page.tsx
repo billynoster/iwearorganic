@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { AppStoreSignature } from '@/components/coastal/app-store-signature';
 import { EditorialFilm } from '@/components/coastal/lookbook/editorial-film';
 import { ShoppableLook } from '@/components/coastal/lookbook/shoppable-look';
 import { StyleEditCard } from '@/components/coastal/lookbook/style-edit-card';
@@ -189,8 +188,6 @@ export default async function StyleEditPage({ params }: StyleEditPageProps) {
           </div>
         </section>
       ) : null}
-
-      <AppStoreSignature />
     </main>
   );
 }
