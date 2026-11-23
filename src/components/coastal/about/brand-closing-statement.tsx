@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
 
-/** Closing brand signature + shop CTA (`/shopping`). */
+/** Closing brand signature + shop CTA. */
 export function BrandClosingStatement() {
   return (
     <section
@@ -10,26 +10,20 @@ export function BrandClosingStatement() {
     >
       <div className="ca-container py-16 sm:py-20 md:py-24">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="ca-eyebrow mb-5 text-sage">I Wear Organic</p>
           <h2
             id="about-closing-heading"
             className="ca-editorial-display text-[clamp(2.25rem,1.6rem+2.6vw,4.25rem)] leading-[1.08] tracking-[-0.015em] text-mineral-ink"
           >
-            Organic isn&apos;t a collection.
-            <br />
-            It&apos;s the entire store.
-          </h2>
-          <p className="ca-editorial mt-6 text-lg text-mineral-ink/60 sm:text-xl">
             Wear Better. Naturally.
-          </p>
+          </h2>
           <div className="mx-auto mt-8 max-w-xs border-t border-oat pt-8">
             <div className="flex justify-center">
-              <Logo variant="forest" className="w-[160px]" />
+              <Logo variant="forest" className="w-[132px]" />
             </div>
             <p className="ca-meta mt-3">
-              Made with organic materials.
+              Organic isn&apos;t a collection.
               <br />
-              Made to be worn.
+              It&apos;s the entire store.
             </p>
           </div>
           <div className="mt-10">
