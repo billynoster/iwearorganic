@@ -104,7 +104,8 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
-        <meta name="apple-itunes-app" content="app-id=6811465301" />
+        {/* Safari Smart App Banner — restore when the I Wear Organic iOS app ships:
+            <meta name="apple-itunes-app" content="app-id=6811465301" /> */}
       </head>
       <body className="font-body antialiased">
         <FirebaseClientProvider>
