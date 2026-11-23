@@ -5,9 +5,9 @@ const HERO_DESKTOP_1920 = '/editorial/heroes/home-hero-desktop-1920.webp';
 const HERO_MOBILE = '/editorial/heroes/home-hero-mobile.webp';
 
 /**
- * Homepage hero — brand kit §14
- * Fashion-first editorial plate. Manrope Medium headline (brand kit v1.4).
- * CTAs: Shop Women + Shop Men. Localized cotton wash only (no full-bleed overlay).
+ * Homepage hero — brand kit §26 / §46
+ * Soft Minimal coastal plates: desktop 16:9 (subject right, copy left),
+ * dedicated mobile 4:5. Manrope Medium headline. Localized cotton wash only.
  */
 export function CinematicHero() {
   return (
@@ -45,14 +45,14 @@ export function CinematicHero() {
               height={1500}
               decoding="async"
               fetchPriority="high"
-              className="absolute inset-0 h-full w-full object-cover object-[42%_36%] md:object-[72%_42%]"
+              className="absolute inset-0 h-full w-full object-cover object-[50%_38%] md:object-[78%_46%]"
             />
           </picture>
           <div
             className="pointer-events-none absolute inset-x-0 bottom-0 h-[58%] bg-gradient-to-t from-cotton/90 via-cotton/45 to-transparent md:hidden"
             aria-hidden="true"
           />
-          {/* Soft left wash for copy — new plate already has open wall on the left */}
+          {/* Soft left wash for copy over coastal negative space */}
           <div
             className="pointer-events-none absolute inset-y-0 left-0 hidden w-[min(26rem,32%)] bg-gradient-to-r from-cotton/70 via-cotton/35 to-transparent md:block lg:w-[min(24rem,28%)]"
             aria-hidden="true"
