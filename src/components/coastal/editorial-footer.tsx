@@ -17,7 +17,7 @@ const COLUMNS = [
     links: [
       { href: '/about', label: 'Our Story' },
       { href: '/about', label: 'Materials' },
-      { href: '/about', label: 'Organic Standards' },
+      { href: '/organic-standards', label: 'Organic Standards' },
     ],
   },
   {
