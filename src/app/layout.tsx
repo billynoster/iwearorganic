@@ -9,7 +9,17 @@ import { SiteChrome } from '@/components/coastal/site-chrome';
 
 export const dynamic = 'force-dynamic';
 
+const SITE_URL = 'https://iwearorganic.com';
+const OG_IMAGE = {
+  url: '/brand/social/og-default.jpg',
+  width: 1200,
+  height: 630,
+  alt: 'I Wear Organic — Wear Better. Naturally.',
+  type: 'image/jpeg',
+} as const;
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     template: '%s | I Wear Organic',
     default: 'I Wear Organic',
@@ -26,16 +36,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://iwearorganic.com',
+    url: SITE_URL,
     title: 'I Wear Organic',
     description: 'Wear Better. Naturally. Organic clothing made for everyday life.',
     siteName: 'I Wear Organic',
+    images: [OG_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'I Wear Organic',
     description: 'Wear Better. Naturally.',
     creator: '@iwearorganic',
+    images: [OG_IMAGE.url],
   },
 };
 
