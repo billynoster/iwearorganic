@@ -216,13 +216,26 @@
     color: var(--color-white);
   }
 
-  .ca-btn-primary:disabled {
-    color: var(--color-white);
+  .ca-btn-primary:disabled,
+  .ca-btn-primary:disabled:hover {
+    background-color: var(--color-forest);
+    color: color-mix(in srgb, white 72%, transparent);
+    opacity: 1;
+    cursor: not-allowed;
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, white 32%, transparent);
   }
 
   .ca-btn-secondary {
-    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-[var(--radius-md)] border border-forest bg-white px-6 py-3 font-body font-medium tracking-wide text-forest transition-colors duration-200 hover:bg-cotton focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-[var(--radius-md)] border border-forest bg-white px-6 py-3 font-body font-medium tracking-wide text-forest transition-colors duration-200 hover:bg-[#e6eee8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2 focus-visible:ring-offset-white;
     font-size: var(--text-button);
+  }
+
+  .ca-btn-secondary:disabled,
+  .ca-btn-secondary:disabled:hover {
+    background-color: var(--color-white);
+    color: var(--color-forest);
+    opacity: 1;
+    cursor: not-allowed;
   }
 
   .ca-text-link {
