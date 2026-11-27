@@ -91,7 +91,7 @@ function AccountOverview() {
         <button
           type="button"
           onClick={handleSignOut}
-          className="ca-btn-secondary border border-mineral-ink/20"
+          className="ca-btn-secondary"
         >
           Sign out
         </button>

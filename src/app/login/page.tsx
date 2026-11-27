@@ -19,7 +19,6 @@ import {
   resolveContinueShoppingHref,
 } from '@/lib/safe-shopping-return';
 import { GuestBrowsingFooter } from '@/components/account/continue-shopping-link';
-import { Logo } from '@/components/logo';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 
@@ -305,8 +304,6 @@ export default function LoginPage() {
       <main className="bg-cotton text-mineral-ink">
         <div className="ca-container flex justify-center px-4 pb-16 pt-10 sm:pb-20 sm:pt-14">
           <div className="w-full max-w-[440px]">
-            <Logo variant="forest" lockup="wordmark" className="mb-8 w-[132px]" />
-            <p className="ca-eyebrow mb-3 text-forest">I Wear Organic</p>
             <h1 className="ca-editorial-display text-editorial-section text-mineral-ink">
               Check your inbox.
             </h1>
@@ -330,10 +327,7 @@ export default function LoginPage() {
                 type="button"
                 disabled={isLoading}
                 onClick={() => void sendEmailLink(sentEmail, true)}
-                className={cn(
-                  'ca-btn-primary w-full justify-center',
-                  isLoading && 'pointer-events-none opacity-60'
-                )}
+                className="ca-btn-primary w-full justify-center"
               >
                 {loadingProvider === 'email' ? 'Sending…' : 'Resend sign-in link'}
               </button>
@@ -347,7 +341,7 @@ export default function LoginPage() {
                   setResendHint(null);
                   setEmailTouched(false);
                 }}
-                className="ca-btn-secondary w-full justify-center border border-mineral-ink/20"
+                className="ca-btn-secondary w-full justify-center"
               >
                 Change email
               </button>
@@ -364,8 +358,6 @@ export default function LoginPage() {
     <main className="bg-cotton text-mineral-ink">
       <div className="ca-container flex justify-center px-4 pb-16 pt-10 sm:pb-20 sm:pt-14">
         <div className="w-full max-w-[440px]">
-          <Logo variant="forest" lockup="wordmark" className="mb-8 w-[132px]" />
-          <p className="ca-eyebrow mb-3 text-forest">I Wear Organic</p>
           <h1 className="ca-editorial-display text-editorial-section text-mineral-ink">
             Wear Better. Naturally.
           </h1>
@@ -387,9 +379,7 @@ export default function LoginPage() {
               type="button"
               disabled={isLoading}
               onClick={handleGoogleSignIn}
-              className={cn(
-                'inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-mineral-ink/25 bg-cotton px-6 py-3 font-body text-sm font-medium tracking-wide text-mineral-ink transition-colors hover:bg-oat/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-offset-2 focus-visible:ring-offset-cotton disabled:pointer-events-none disabled:opacity-60'
-              )}
+              className="ca-btn-secondary w-full justify-center"
             >
               <GoogleGlyph />
               {loadingProvider === 'google' ? 'Connecting…' : 'Continue with Google'}
@@ -398,9 +388,7 @@ export default function LoginPage() {
               type="button"
               disabled={isLoading}
               onClick={handleAppleSignIn}
-              className={cn(
-                'inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-mineral-ink/25 bg-cotton px-6 py-3 font-body text-sm font-medium tracking-wide text-mineral-ink transition-colors hover:bg-oat/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haze-blue focus-visible:ring-offset-2 focus-visible:ring-offset-cotton disabled:pointer-events-none disabled:opacity-60'
-              )}
+              className="ca-btn-secondary w-full justify-center"
             >
               <AppleGlyph />
               {loadingProvider === 'apple' ? 'Connecting…' : 'Continue with Apple'}
@@ -460,11 +448,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={isLoading || !email.trim() || emailInvalid}
-              className={cn(
-                'ca-btn-primary w-full justify-center',
-                (isLoading || !email.trim() || emailInvalid) &&
-                  'pointer-events-none opacity-60'
-              )}
+              className="ca-btn-primary w-full justify-center"
             >
               {loadingProvider === 'email' ? 'Sending…' : 'Email me a sign-in link'}
             </button>
