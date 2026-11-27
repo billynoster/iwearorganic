@@ -19,7 +19,6 @@ import {
   resolveContinueShoppingHref,
 } from '@/lib/safe-shopping-return';
 import { GuestBrowsingFooter } from '@/components/account/continue-shopping-link';
-import { Logo } from '@/components/logo';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 
@@ -305,8 +304,6 @@ export default function LoginPage() {
       <main className="bg-cotton text-mineral-ink">
         <div className="ca-container flex justify-center px-4 pb-16 pt-10 sm:pb-20 sm:pt-14">
           <div className="w-full max-w-[440px]">
-            <Logo variant="forest" lockup="wordmark" className="mb-8 w-[132px]" />
-            <p className="ca-eyebrow mb-3 text-forest">I Wear Organic</p>
             <h1 className="ca-editorial-display text-editorial-section text-mineral-ink">
               Check your inbox.
             </h1>
@@ -361,8 +358,6 @@ export default function LoginPage() {
     <main className="bg-cotton text-mineral-ink">
       <div className="ca-container flex justify-center px-4 pb-16 pt-10 sm:pb-20 sm:pt-14">
         <div className="w-full max-w-[440px]">
-          <Logo variant="forest" lockup="wordmark" className="mb-8 w-[132px]" />
-          <p className="ca-eyebrow mb-3 text-forest">I Wear Organic</p>
           <h1 className="ca-editorial-display text-editorial-section text-mineral-ink">
             Wear Better. Naturally.
           </h1>

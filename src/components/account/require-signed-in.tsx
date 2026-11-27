@@ -50,7 +50,6 @@ export function RequireSignedIn({ children }: { children: React.ReactNode }) {
       <main className="bg-cotton text-mineral-ink">
         <div className="ca-container flex justify-center px-4 pb-16 pt-10 sm:pb-20 sm:pt-12">
           <div className="w-full max-w-[440px]">
-            <p className="ca-eyebrow mb-3 text-forest">I Wear Organic</p>
             <h1 className="ca-editorial-display text-editorial-section text-mineral-ink">
               A little more personal.
             </h1>

@@ -28,7 +28,6 @@ export function AccountShell({
     <main className="bg-cotton text-mineral-ink">
       <header className="border-b border-oat/70">
         <div className="ca-container py-10 sm:py-12">
-          <p className="ca-eyebrow mb-3 text-forest">I Wear Organic</p>
           <h1 className="ca-editorial-display text-editorial-section text-mineral-ink">
             {title}
           </h1>
